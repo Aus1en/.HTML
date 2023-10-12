@@ -1,0 +1,1160 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('Ubuntu-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+.bName, img {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  object-fit: scale-down;
+  z-index: 3;
+}
+
+li img {
+  width: 20px;
+  height: 20px;
+}
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Ubuntu';
+}
+
+canvas {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+header {
+  margin: 0;
+  padding: 1px;
+  height: 55px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  color: #000000;
+  background-color: #AEE2FC;
+}
+
+header a {
+  z-index: 0;
+}
+
+.navLinks{
+  display: flex;
+  flex-direction: row;
+}
+
+nav {
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  color: #fff;
+  background-color: #333;
+  align-items: center;
+  justify-content: right;
+  z-index: 1;
+}
+
+nav a {
+  padding: 5px 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+li a {
+  color:#000000;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  position: relative;
+  z-index: 0;
+}
+
+.mainStructure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cStructure{
+  margin-top: 20px;
+  width: 600px;
+  height: 300px;
+  position: relative;
+  display: flex;
+}
+
+.cSCADA, .cHMI, .cWeb, .cAlarms, .cEvents {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.indentSection {
+  margin-top: 10px;
+}
+
+.widget {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  cursor: move;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease-in-out;
+}
+
+.functionBlock {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.inline {
+  left: 4.8%;
+  height: 0;
+  position: absolute;
+  align-items: left;
+  width: 50px;
+  border: 1px solid #000000;
+}
+
+.outline {
+  left: 39%;
+  height: 0;
+  position: absolute;
+  align-items: center;
+  width: 50px;
+  border: 1px solid #000000;
+}
+
+.functionName {
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 150px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.functionUpper {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.functionIn {
+  margin-left: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.functionOut {
+  margin-left: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+  display: flex;
+  width: 50px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.sectHome {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.sectHome h1 {
+  margin-bottom: 0;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.sectHome p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectPerformance {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectAbility {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectCost {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectSafety {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectTurnkey {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectUpgrade {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectFabrication {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectSCADA {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectHMI {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+
+.sectWeb {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectDatabase {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectPLC {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectForms {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.sectPortal {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectContact {
+  height: 100%;
+  width: inherit;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.sectTitle {
+  margin-bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: left;
+  background-color: #ffffff;
+  position: relative;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.h2Font, .bWorld {
+  font-size: 22px;
+}
+
+.safetyFont {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Add media queries for responsiveness (adjust as needed) */
+@media screen and (max-width: 600px) {
+  .formContainer {
+      max-width: 100%;
+      max-height: 100%;
+  }
+}
+
+.formContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding-left: 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 5px;
+  border: 1px transparent #ddd; 
+}
+
+.formContent textarea {
+  width: 95%;
+  padding-bottom: 25%;
+  height: 150px;
+}
+
+.formContent label, .formContent input {
+  width: 350px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btnForm {
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  justify-content: flex-end;
+}
+
+button {
+  width: 75px;
+  display: flex;
+  padding: 10px 20px;
+  background-color: #AEE2FC;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: right;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+
+.btnFont {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.lftPara {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+
+.lftPara strong {
+  font-size: 14px;
+}
+
+.cirFont {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.opStructure {
+  font-size: 22px;
+  margin-top: 65px;
+}
+
+.cirPara {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+
+.cir {
+  display: flex;
+  margin-top: 65px;
+  margin-left: 5px;
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  width: 65px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+}
+
+.cirA {
+  background-color: #ffbe81;
+}
+
+.cirP {
+  background-color: #AEE2FC;
+}
+
+.cirQ {
+  background-color: #8183ff;
+}
+
+.cirOEE {
+  background-color: #b3ff81;
+}
+
+.popover {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  z-index: 1;
+  display: none;
+}
+
+.rhtPara {
+  display: flex;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+
+.sectContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background-color: #ffffff;
+}
+
+.sectContainer {
+  width: 300px;
+  display: inline-flex;
+  justify-content: flex-end;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.lftContent {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.rhtContent {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.rhtContent p, .rhtContent div {
+  margin-left: 400px;
+}
+
+.optContainer {
+  display: flex;
+  margin-right: 10px;
+  padding: 10px;
+  width: 60px;
+  height: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.optContainer:hover {
+  color: #000000;
+  background-color: #AEE2FC;
+}
+
+.optCmd {
+  display: flex;
+  padding: 5%;
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+li {
+  margin-top: 3px;
+  list-style-type: "-";
+  font-weight: bold;
+}
+
+.dashboard {
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 185px;
+  background-color: #f2f2f2;
+}
+
+.dashHeader {
+  width: 100px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.dashSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashContent {
+  padding-top: 2px;
+  padding-bottom: 5px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashContainer {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashContainer:hover {
+  color: #000000;
+  background-color: #AEE2FC;
+}
+
+.dashPortal {
+  top: 5px;
+  position: relative;
+}
+
+.btnDash {
+  padding: 5%;
+  width: 75%;
+  color: #000000;
+  background-color: #f2f2f2;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.btnContainer {
+  margin-top: 10px;
+  padding: 10px;
+  width: 60px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  transform: translate(-50%,-50%);
+}
+
+.btnContainer:hover {
+  color: #000000;
+  background-color: #AEE2FC;
+}
+
+.btnCmd {
+  padding: 5%;
+  width: inherit;
+  color: #000000;
+  text-align: center;
+  justify-content: center;
+  background-color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
+/*.widget:nth-child(1) {
+  top: 420px;
+  left: 0;
+}*/
+
+/*.widget:nth-child(2) {
+  top: 540px;
+  left: 0;
+}*/
+
+.widget.dragging {
+  transform: scale(.9);
+}
+
+.resizer {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: transparent;
+}
+
+.resizer-sw {
+  bottom: 0;
+  left: 0;
+  cursor: sw-resize;
+}
+
+.resizer-se {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.rocket {
+  display: flex;
+  top: 30px;
+  width: 75px; /* Adjust the size of the rocket ship as needed */
+  height: 75px;
+  position: absolute;
+  transform: translateY(-50%);
+  animation: moveRocket 10s linear infinite;
+  z-index: 1;
+}
+
+@keyframes moveRocket {
+0% {
+  left: -100px;
+  }
+100% {
+  left: calc(100% - 75px);
+}}
+
+footer {
+  padding: 0;
+  height: 35px;
+  display: flex;
+  color: #fff;
+  background-color: #333;
+  text-align: left;
+  align-items: center;
+}
+
+.lgxContent {
+  width: inherit;
+  height: 20%;
+  display: flex;
+  position: relative;
+  align-items: top;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.lgxContainer {
+  height: 125px;
+  width: 800px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lgxRung {
+  width: 100%;
+  height: 2px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: #000000;
+  margin-bottom: 20px;
+}
+
+.lgxBranch {
+  font-size: 18px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 75px;
+  background-color: transparent;
+  border-left: 2px solid #000000; 
+  border-right: 2px solid #000000; 
+  border-bottom: 2px solid #000000; 
+}
+
+.brTop {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.brBottom {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.brRun, .brStart, .brReady {
+  top: -2px;
+  width: 125px;
+  height: 75px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brRun, .brStart, .brReady {
+  top: -2px;
+  width: 125px;
+  height: 75px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.oteRun {
+  font-size: 18px;
+  top: -40px;
+  left: 200px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95px;
+  height: 75px;
+  background-color: transparent;
+}
+
+
+.xicStart, .xioStop, .xicEStop {
+  font-size: 18px;
+  top: -40px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 75px;
+  background-color: transparent;
+}
+
+.lgxName, .brName {
+  display: flex;
+  align-items: top;
+  justify-content: top;
+  background-color: transparent;
+}
+
+.lgxCarrots, .brCarrots {
+  top: -25px;
+  height: 20px;
+  width: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: auto;
+}
+
+.brReady .brCarrots, .xicEStop .lgxCarrots, .xioStop .lgxCarrots {
+  background-color: #84ffa9;
+}
+
+.lgxCarrots:hover, .brCarrots:hover {
+  background-color: #ffbe81;
+}
+
+.lgxLeft, .brLeft {
+  display: flex;
+  width: 15px;
+  justify-content: flex-start;
+}
+
+.lgxRight, .brRight {
+  display: flex;
+  width: 15px;
+  justify-content: flex-end;
+}
+
+.tblContent {
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: transparent;
+}
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+  
+th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  resize: horizontal;
+  overflow: hidden;
+}
+
+.action-cell {
+  text-align: center;
+  width: 100px; /* Set a fixed width for the action column */
+}
+
+#popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+#popup {
+  background: #fff;
+  width: 80%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#close-popup {
+  margin-top: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.selfie{
+  width: 100px; /* Adjust the width and height to fit your image */
+  height: 100px;
+  border-radius: 50%; /* This creates a circular frame */
+  overflow: hidden; /* Hides any parts of the image that go beyond the circular frame */
+}
+
+.selfie img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* This ensures the image fills the circular frame */
+}
+
+.flxStructure {
+  display: flex;
+  flex-direction: column;
+}
+
+.cPre {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  height: inherit;
+  width: inherit;
+  border: 1px solid #a0a0a0;
+  border-radius: 5px;
+}
+
+.flxContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.frmContainer {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.preContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #a0a0a0;
+  border-radius: 20px;
+}
+
+.preLeft {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.preRight {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chkBox {
+  margin-right: 25px;
+}
+
+.indSection {
+  margin-left: 20px;
+}
+
+.cProcess, .cOther {
+  margin-left: 10px;
+  padding-bottom: 2px;
+  height: 20px;
+  width: 500px;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.frmSection {
+  display: flex;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.preSection {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tossContainer {
+  width: 500px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.frmOptions {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  justify-content: flex-end;
+}
+
+.preOptions {
+  width: 350px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cCompany, .cName, .cEmail, .cPhone {
+  margin-left: 10px;
+  padding-bottom: 2px;
+  height: 20px;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.flxSection {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50%;
+  flex-direction: row;
+  border: 1px solid #000000;
+}
+
+.flxLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flxRight {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+} 
