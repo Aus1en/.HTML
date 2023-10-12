@@ -22,10 +22,6 @@ const asImg = document.querySelector('.imgAS');
 const icolink = document.querySelector('link[rel="icon"]');
 const icoshortLink = document.querySelector('link[rel="shortcut icon"]');
 const dashboard = document.querySelector('.dashboard');
-const widgets = document.querySelectorAll('.widget');
-const resizerEast = document.querySelectorAll('.resizer-se');
-const resizerWest = document.querySelectorAll('.resizer-sw');
-const resizers = document.querySelectorAll('.resizer');
 const btnGroups = document.querySelectorAll(".btnDash, .btnNav, .btnLink");
 const btnOptions = document.querySelectorAll(".btnCmd")
 const canvas = document.getElementById("canvasHeader");
@@ -34,6 +30,11 @@ const header = document.querySelector("header");
 const cirElements = document.querySelectorAll('.cir[data-popover]');
 const cirStructure = document.querySelector('.cirPara');
 const popover = document.createElement('div');
+const runButton = document.getElementById("btnRun");
+const lgxRun = document.getElementById("lgxRun");
+const lgxRunning = document.getElementById("lgxRunning");
+const lgxPACS = document.getElementById("lgxPACS");
+const lgxCarrots = document.querySelectorAll(".lgxCarrots, .brCarrots");
 const headerHeight = header.clientHeight;
 canvas.width = header.clientWidth; 
 canvas.height = headerHeight;
@@ -74,6 +75,7 @@ ab2Img.src = `${bDirIMG}AB.png`;
 rlImg.src = `${bDirIMG}RL.png`;
 asImg.src = `${bDirIMG}AS.png`;
 
+//Circle creation for canvas on header
 class Circle {
   constructor(x, y, radius, dx) {
     this.x = x;
@@ -119,7 +121,6 @@ btnGroups.forEach(button => {
     event.preventDefault();
     const id = button.getAttribute("id")
     const sectionId = button.getAttribute("data-sect");
-    console.log("Mapped section ID:", sectionId);
     showSection(sectionId, id)
   });
 });
@@ -129,7 +130,6 @@ btnOptions.forEach(button => {
     event.preventDefault();
     const id = button.getAttribute("id")
     const sectionId = button.getAttribute("data-sect");
-    console.log("Mapped section ID:", sectionId);
     showOption(sectionId, id)
   });
 });
@@ -192,19 +192,87 @@ function showOption(sectionId, id) {
     section.style.zIndex = "1";
 
     if (btnID) {
-      btnID.style.backgroundColor = "#AEE2FC";
+        btnID.style.backgroundColor = "#AEE2FC";
+      }    
+    } else {
+      document.querySelectorAll(".cStructure > div, .cPre").forEach(sec => {
+        sec.style.display = "none";
+      });
     }
-    
-  } else {
-    document.querySelectorAll(".cStructure > div, .cPre").forEach(sec => {
-      sec.style.display = "none";
-    });
-  }
 }
 
-// Show sectHome on startup
-showSection("sectHome");
+// Array of section IDs to hide initially (excluding 'sectHome')
+const sectionsToHide = ['sectPerformance', 'sectAbility', 
+                        'sectCost', 'sectSafety', 'sectTurnkey', 
+                        'sectUpgrade', 'sectFabrication', 'sectSCADA', 
+                        'sectHMI', 'sectWeb', 'sectDatabase', 'sectPLC', 
+                        'sectForms', 'sectPortal', 'sectContact'];
 
+// Show home section on startup
+showSection('sectHome', 'btnHome');
+hideOtherSections();
+// Attach an event listener to the "Show Home Section" button
+document.getElementById('btnHome').addEventListener('click', () => {
+  showSection('sectHome', 'btnHome');
+});
+
+// Function to hide all other sections
+function hideOtherSections() {
+  sectionsToHide.forEach(sectionId => {
+    const section = document.querySelector(`.${sectionId}`);
+    if (section) {
+      section.style.display = 'none';
+    }
+  });
+}
+
+// Ladder logic run/stop from home section.
+// Define a Map to store previous background colors
+let isGreen = false;
+const previousColors = new Map();
+
+// Add a click event listener to the "Run It" button
+runButton.addEventListener("click", function () {
+  // Toggle the background color of lgxCarrots between green and transparent
+  if (isGreen) {
+    lgxCarrots.forEach(carrot => {
+      const previousColor = previousColors.get(carrot);
+      if (previousColor) {
+        carrot.style.backgroundColor = previousColor;
+      }
+    });
+    isGreen = false;
+    runButton.style.backgroundColor = "#ffffff";
+  } else {
+    lgxCarrots.forEach(carrot => {
+      previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
+      carrot.style.backgroundColor = "#84ffa9";
+    });
+    isGreen = true;
+    runButton.style.backgroundColor = "#AEE2FC";
+  }
+});
+
+// Add hover effects to lgxCarrots
+lgxCarrots.forEach(carrot => {
+  carrot.addEventListener("mouseenter", function () {
+    if (!isGreen) {
+      previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
+      carrot.style.backgroundColor = "#ffbe81";
+    }
+  });
+
+  carrot.addEventListener("mouseleave", function () {
+    if (!isGreen) {
+      const previousColor = previousColors.get(carrot);
+      if (previousColor) {
+        carrot.style.backgroundColor = previousColor;
+      }
+    }
+  });
+});
+
+//OEE Hover Popups
 cirElements.forEach(cirElement => {
   cirElement.addEventListener('mouseenter', () => {
     const popoverContent = cirElement.getAttribute('data-popover');
@@ -223,71 +291,7 @@ cirElements.forEach(cirElement => {
   });
 });
 
-
-
-widgets.forEach(widget => {
-  widget.addEventListener('mousedown', (event) => {
-    isDragging = true;
-    activeElement = widget;
-    startX = event.clientX - widget.offsetLeft; // Calculate the offset from the left edge of the widget
-    startY = event.clientY - widget.offsetTop;  // Calculate the offset from the top edge of the widget
-
-    activeElement.classList.add('dragging'); // Add the dragging class
-    event.preventDefault();
-  });
-});
-
-resizers.forEach(resizer => {
-  resizer.addEventListener('mousedown', (event) => {
-    activeElement = resizer.parentElement;
-    startLeft = activeElement.offsetLeft;
-    startTop = activeElement.offsetTop;
-    startWidth = activeElement.offsetWidth;
-    startHeight = activeElement.offsetHeight;
-    startX = event.clientX;
-    startY = event.clientY;
-    resizeHandle = resizer;
-    isResizing = true;
-    event.stopPropagation();
-    event.preventDefault();
-  });
-});
-
-document.addEventListener('mousemove', (event) => {
-  if (isDragging && activeElement && !isResizing) {
-    const maxX = dashboard.offsetWidth - activeElement.offsetWidth;
-    const maxY = dashboard.offsetHeight - activeElement.offsetHeight;
-    const newX = event.clientX - startX;
-    const newY = event.clientY - startY;
-
-    activeElement.style.left = Math.max(0, Math.min(newX, maxX)) + 'px';
-    activeElement.style.top = Math.max(0, Math.min(newY, maxY)) + 'px';
-  }
-
-  if (isResizing && activeElement) {
-    const deltaX = event.clientX - startX;
-    const deltaY = event.clientY - startY;
-    let newWidth = startWidth + (resizeHandle.classList.contains('resizer-se') ? deltaX : -deltaX);
-    let newHeight = startHeight + deltaY;
-
-    newWidth = Math.max(50, newWidth);
-    newHeight = Math.max(50, newHeight);
-
-    activeElement.style.width = newWidth + 'px';
-    activeElement.style.height = newHeight + 'px';
-  }
-});
-
-document.addEventListener('mouseup', () => {
-  isDragging = false;
-  isResizing = false;
-  activeElement = null;
-
-  widgets.forEach(widget => {
-    widget.classList.remove('dragging'); // Remove the dragging class
-  });
-});
-
+//Email submition code for contacting.
 // Wait for the DOM to be loaded
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('form');
@@ -322,22 +326,3 @@ document.addEventListener('DOMContentLoaded', function() {
   // Attach the form submission event listener
   form.addEventListener('submit', validateForm);
 });
-
-// Function to show the modal popup
-function showPopup() {
-    document.getElementById("popup-container").style.display = "block";
-}
-
-// Function to close the modal popup
-function closePopup() {
-    document.getElementById("popup-container").style.display = "none";
-}
-
-// Check if a success message element exists
-const successMessage = document.getElementById("success-message");
-if (successMessage) {
-    showPopup();
-}
-
-// Close the popup when the "Close" button is clicked
-document.getElementById("close-popup").addEventListener("click", closePopup);
