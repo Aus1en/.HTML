@@ -1,7 +1,12 @@
-const htmlElement = document.querySelector('html');
-const bDirIMG = htmlElement.getAttribute('dirimg');
+window.onload = function () {
+  document.body.style.transform = 'scale(1)';
+};
+
+const header = document.querySelector("header");
 const navRocket = document.querySelector('header img.rocket')
 const headerImg = document.querySelector('header img');
+const htmlElement = document.querySelector('html');
+const bDirIMG = htmlElement.getAttribute('dirimg');
 const adImg = document.querySelector('.imgAD');
 const ad2Img = document.querySelector('.imgAD2');
 const ad3Img = document.querySelector('.imgAD3');
@@ -22,24 +27,30 @@ const asImg = document.querySelector('.imgAS');
 const icolink = document.querySelector('link[rel="icon"]');
 const icoshortLink = document.querySelector('link[rel="shortcut icon"]');
 const dashboard = document.querySelector('.dashboard');
-const btnGroups = document.querySelectorAll(".btnDash, .btnNav, .btnLink");
-const btnOptions = document.querySelectorAll(".btnCmd")
+const btnGroups = document.querySelectorAll(".btnDash, .btnNav, .btnLink, .btnHead");
+const btnOptions = document.querySelectorAll(".btnCmd");
 const canvas = document.getElementById("canvasHeader");
 const ctx = canvas.getContext("2d");
-const header = document.querySelector("header");
 const cirElements = document.querySelectorAll('.cir[data-popover]');
 const cirStructure = document.querySelector('.cirPara');
 const popover = document.createElement('div');
 const runButton = document.getElementById("btnRun");
-const lgxRun = document.getElementById("lgxRun");
-const lgxRunning = document.getElementById("lgxRunning");
-const lgxPACS = document.getElementById("lgxPACS");
+const homeButton = document.getElementById("btnHome");
+const cntctButton = document.getElementById("btnContact");
+const engButton = document.getElementById("dshTurnkey");
+const desButton = document.getElementById("dshSCADA");
+const proButton = document.getElementById("dshPLC");
+const porButton = document.getElementById("dshPortal");
+const forButton = document.getElementById("dshDraft");
 const lgxCarrots = document.querySelectorAll(".lgxCarrots, .brCarrots");
 const headerHeight = header.clientHeight;
 canvas.width = header.clientWidth; 
 canvas.height = headerHeight;
 popover.className = 'popover';
 document.body.appendChild(popover);
+const artist = document.getElementById("drawingCanvas");
+
+let isDrawing = false;
 
 let offsetX = 0;
 let offsetY = 0;
@@ -100,9 +111,9 @@ class Circle {
 }
 
 const circles = [
-  new Circle(25, 50, 10, 2),
-  new Circle(5, 20, 20, 1),
-  new Circle(50, 5, 20, 3),
+  new Circle(0, 10, 8, 3),
+  new Circle(5, 26, 13, 2),
+  new Circle(5, 23, 20, 1),
 ];
 
 function animate() {
@@ -116,21 +127,31 @@ function animate() {
 }
 animate();
 
+$(document).ready(function() {
+  $('.cir').hover(function() {
+    var cirColor = $(this).css('background-color');
+    
+    // Change the background color of all sections
+    $('.section').css('background-color', cirColor);
+  }, function() {
+    // On hover out, reset the background color of all sections to the default
+    //$('.section').css('background-color', 'white'); // You can change the default color
+  });
+  $('#btnRun').click(function() { // Change from hover to click
+    var cirColor = $('.btnHome').css('background-color');
+
+    // Change the background color of all sections
+    $('.section').css('background-color', cirColor);
+  });
+});
+
 btnGroups.forEach(button => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     const id = button.getAttribute("id")
     const sectionId = button.getAttribute("data-sect");
-    showSection(sectionId, id)
-  });
-});
-
-btnOptions.forEach(button => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    const id = button.getAttribute("id")
-    const sectionId = button.getAttribute("data-sect");
-    showOption(sectionId, id)
+    HideSections(sectionId);
+    showSection(sectionId, id);
   });
 });
 
@@ -138,10 +159,20 @@ function showSection(sectionId, id) {
   const btnID = document.getElementById(id);
   const section = document.querySelector(`.${sectionId}`);
 
-  document.querySelectorAll(".btnNav, .btnDash").forEach(btn => {
+  document.querySelectorAll(".btnNav, .btnDash, .btnHead").forEach(btn => {
     if (btn.className === "btnNav") {
       btn.style.backgroundColor = "transparent";
       btn.style.color = "#ffffff";
+    } else if (btn.className === "btnHead") {
+      btn.style.backgroundColor = "transparent";
+      btn.style.color = "#000000";
+      if (btnID.id === "btnEye") {
+        homeButton.style.backgroundColor = "transparent";
+        homeButton.style.color = "#ffffff";
+      } else {
+        cntctButton.style.backgroundColor = "transparent";
+        homeButton.style.color = "#ffffff";
+      }
     } else {
       btn.style.backgroundColor = "#f2f2f2";
     }
@@ -151,13 +182,40 @@ function showSection(sectionId, id) {
     // Reset z-index and visibility for all sections
     document.querySelectorAll(".mainStructure > div").forEach(sec => {
       sec.style.zIndex = "0";
+      sec.style.display = "none";
     });
 
     // Display the selected section
     section.style.zIndex = "1";
+    section.style.display = "flex";
 
     if (btnID) {
       if (btnID.className === "btnLink") {
+        if (btnID.id === "lnkEngine") {
+          engButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkDesign") {
+          desButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkProgramming") {
+          proButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkPortal") {
+          porButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm") {
+          forButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkContact" || btnID.id === "lnkContact2" || btnID.id === "lnkContact3") {
+          cntctButton.style.backgroundColor ="#AEE2FC";
+          cntctButton.style.color = "#000000";
+        } else if (btnID.id === "lnkCase1" || btnID.id === "lnkCase2" || btnID.id === "lnkCase3") {
+        }
+      } else if (btnID.className === "btnHead") {
+        btnID.style.backgroundColor = "transparent";
+        btnID.style.color = "#000000";
+        if (btnID.id === "btnEye") {
+          homeButton.style.backgroundColor = "#AEE2FC";
+          homeButton.style.color = "#000000";
+        } else {
+          cntctButton.style.backgroundColor = "#AEE2FC";
+          cntctButton.style.color = "#000000";
+        }
       } else {
         btnID.style.backgroundColor = "#AEE2FC";
       }
@@ -169,6 +227,15 @@ function showSection(sectionId, id) {
   }
 }
 
+btnOptions.forEach(button => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const id = button.getAttribute("id")
+    const sectionId = button.getAttribute("data-sect");
+    showOption(sectionId, id);
+  });
+});
+
 function showOption(sectionId, id) {
   const btnID = document.getElementById(id);
   const section = document.querySelector(`.${sectionId}`);
@@ -176,14 +243,14 @@ function showOption(sectionId, id) {
   document.querySelectorAll(".btnCmd").forEach(btn => {
     btn.style.backgroundColor = "#ffffff";
   });
-
-  document.querySelectorAll(".cStructure > div, .cPre").forEach(sec => {
+//.cPre, .cSi, .cPa
+  document.querySelectorAll(".cStructure > div, .cForm").forEach(sec => {
     sec.style.display = "none";
   });
 
   if (section) {
     // Reset z-index and visibility for all sections
-    document.querySelectorAll(".cStructure > div, .cPre").forEach(sec => {
+    document.querySelectorAll(".cStructure > div, .cForm").forEach(sec => {
       sec.style.zIndex = "0";
     });
 
@@ -195,36 +262,47 @@ function showOption(sectionId, id) {
         btnID.style.backgroundColor = "#AEE2FC";
       }    
     } else {
-      document.querySelectorAll(".cStructure > div, .cPre").forEach(sec => {
+      document.querySelectorAll(".cStructure > div, .cForm").forEach(sec => {
         sec.style.display = "none";
       });
     }
 }
 
-// Array of section IDs to hide initially (excluding 'sectHome')
-const sectionsToHide = ['sectPerformance', 'sectAbility', 
-                        'sectCost', 'sectSafety', 'sectTurnkey', 
-                        'sectUpgrade', 'sectFabrication', 'sectSCADA', 
-                        'sectHMI', 'sectWeb', 'sectDatabase', 'sectPLC', 
-                        'sectForms', 'sectPortal', 'sectContact'];
-
-// Show home section on startup
-showSection('sectHome', 'btnHome');
-hideOtherSections();
 // Attach an event listener to the "Show Home Section" button
 document.getElementById('btnHome').addEventListener('click', () => {
   showSection('sectHome', 'btnHome');
 });
 
-// Function to hide all other sections
-function hideOtherSections() {
-  sectionsToHide.forEach(sectionId => {
+// Array of section IDs
+const sections = ['sectHome', 'sectPerformance', 'sectAbility', 
+                        'sectCost', 'sectSafety', 'sectTurnkey', 
+                        'sectUpgrade', 'sectFabrication', 'sectSCADA', 
+                        'sectHMI', 'sectWeb', 'sectDatabase', 'sectPLC', 
+                        'sectForms', 'sectPortal', 'sectContact'];
+
+// Function to hide all but secthome
+function StartHomeSections() {
+  sections.forEach(sectionId => {
     const section = document.querySelector(`.${sectionId}`);
-    if (section) {
+    if (sectionId != "sectHome") {
       section.style.display = 'none';
     }
   });
 }
+
+// Function to hide all but selected
+function HideSections(sectId) {
+  sections.forEach(sectionId => {
+    const section = document.querySelector(`.${sectionId}`);
+    if (sectionId != sectId) {
+      section.style.display = 'none';
+    }
+  });
+}
+
+// Show home section on startup
+showSection('sectHome', 'btnHome');
+StartHomeSections();
 
 // Ladder logic run/stop from home section.
 // Define a Map to store previous background colors
@@ -246,7 +324,9 @@ runButton.addEventListener("click", function () {
   } else {
     lgxCarrots.forEach(carrot => {
       previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
-      carrot.style.backgroundColor = "#84ffa9";
+      if (carrot.id != "lgxRun") {
+        carrot.style.backgroundColor = "#84ffa9";
+      }
     });
     isGreen = true;
     runButton.style.backgroundColor = "#AEE2FC";
@@ -255,20 +335,14 @@ runButton.addEventListener("click", function () {
 
 // Add hover effects to lgxCarrots
 lgxCarrots.forEach(carrot => {
+  const previousColor = carrot.style.backgroundColor;
   carrot.addEventListener("mouseenter", function () {
-    if (!isGreen) {
-      previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
-      carrot.style.backgroundColor = "#ffbe81";
-    }
+    previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
+    carrot.style.backgroundColor = "#ffbe81";
   });
 
   carrot.addEventListener("mouseleave", function () {
-    if (!isGreen) {
-      const previousColor = previousColors.get(carrot);
-      if (previousColor) {
-        carrot.style.backgroundColor = previousColor;
-      }
-    }
+      carrot.style.backgroundColor = previousColor;
   });
 });
 
@@ -297,8 +371,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('form');
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
-  const genderInputs = document.querySelectorAll('input[name="gender"]');
-  const messageInput = document.getElementById('message');
 
   // Function to validate the form on submission
   function validateForm(event) {

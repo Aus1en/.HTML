@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html dircss=".CSS/" dirjs=".JS/" dirimg=".IMG/" lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0NTBBTTLQ"></script>
     <script>
@@ -9,20 +11,19 @@
         gtag('js', new Date());
         gtag('config', 'G-J0NTBBTTLQ');
     </script>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>PACS Consulting, LLC</title>
-    <link rel="icon" href="#" type="image/x-icon"/>
-    <link rel="shortcut icon" href="#" type="image/x-icon"/>
-    <link rel="stylesheet" href="#"/>
+    <link rel="icon" href="#" type="image/x-icon">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="#">
   </head>
-  <body>
+  <body class="bckcolor">
 
     <header>
-      <img src="#" alt=""/>
+      <img class="btnHead" src="#" alt="" id="btnEye" data-sect="sectHome">
       <canvas id="canvasHeader"></canvas>
-      <img class="rocket" src="#" alt=""/>
-      <a class="btnlink" id="lnkContact" data-sect="sectContact">
+      <img class="rocket" src="#" alt="">
+      <a class="btnHead" id="lnkContact" data-sect="sectContact">
         <strong class="bName">PACS Consulting, LLC.</strong>
       </a> 
     </header>
@@ -35,100 +36,167 @@
     </nav>
 
     <main>
+      <div class="pup" id="thankYouMessage">Thank you for contacting us!</div>
       <aside class="dashboard">
-        <div class="dashSection">
-          <div class="dashContainer">
-            <strong>P-</strong>
-            <a class="btnDash" id="dshPerformance" data-sect="sectPerformance">PERFORMANCE</a>
-          </div>
-          <div class="dashContainer">
-            <strong>A-</strong>
-            <a class="btnDash" id="dshAbility" data-sect="sectAbility">ACCOUNTABILITY</a>
-          </div>
-          <div class="dashContainer">
-            <strong>C-</strong>
-            <a class="btnDash" id="dshCost" data-sect="sectCost">COST</a>
-          </div>
-          <div class="dashContainer">
-            <strong>S-</strong>
-            <a class="btnDash" id="dshSafety" data-sect="sectSafety">SAFETY</a>
-          </div>
-        </div>
-        <div class="dashSection">
-          <h1 class="dashHeader">Services</h1>
-        </div>
-        <strong class="dashContent">Engineering</strong>
-        <div class="dashSection">
+        <div class="clmContainer">
           <div class="dashContent">
             <div class="dashContainer">
-              <strong>T-</strong>
-              <a class="btnDash" id="dshTurnkey" data-sect="sectTurnkey">TURNKEY</a>
+              <strong>P-</strong>
+              <a class="btnDash" id="dshPerformance" data-sect="sectPerformance">PERFORMANCE</a>
             </div>
             <div class="dashContainer">
-              <strong>U-</strong>
-              <a class="btnDash" id="dshUpgrade" data-sect="sectUpgrade">UPGRADE</a>
+              <strong>A-</strong>
+              <a class="btnDash" id="dshAbility" data-sect="sectAbility">ACCOUNTABILITY</a>
             </div>
             <div class="dashContainer">
-              <strong>F-</strong>
-              <a class="btnDash" id="dshFabrication" data-sect="sectFabrication">UL FABRICATION</a>
+              <strong>C-</strong>
+              <a class="btnDash" id="dshCost" data-sect="sectCost">COST</a>
+            </div>
+            <div class="dashContainer">
+              <strong>S-</strong>
+              <a class="btnDash" id="dshSafety" data-sect="sectSafety">SAFETY</a>
             </div>
           </div>
-        </div>
-        <strong class="dashContent">Design</strong>
-        <div class="dashSection">
           <div class="dashContent">
-            <div class="dashContainer"><strong>S-</strong>
-              <a class="btnDash" id="dshSCADA" data-sect="sectSCADA">SCADA</a>
-            </div>
-            <div class="dashContainer"><strong>H-</strong>
-              <a class="btnDash" id="dshHMI" data-sect="sectHMI">HMI</a>
-            </div>
-            <div class="dashContainer"><strong>W-</strong>
-              <a class="btnDash" id="dshWeb" data-sect="sectWeb">WEB</a>
-            </div>
-            <div class="dashContainer"><strong>D-</strong>
-              <a class="btnDash" id="dshDatabase" data-sect="sectDatabase">DATABASING</a>
-            </div>
+            <h1 class="dashHeader">Services</h1>
           </div>
-        </div>
-        <strong class="dashContent">Programming</strong>
-        <div class="dashSection">
+          <strong class="dashContent">Engineering</strong>
           <div class="dashContent">
-            <div class="dashContainer"><strong>P-</strong>
-                <a class="btnDash" id="dshPLC" data-sect="sectPLC">PLC</a>
+            <div class="dashContent">
+              <div class="dashContainer">
+                <strong>T-</strong>
+                <a class="btnDash" id="dshTurnkey" data-sect="sectTurnkey">TURNKEY</a>
               </div>
-            <div class="dashContainer"><strong>?-</strong>
-              <a class="btnDash" id="" data-sect="sectQuest">---</a>
+              <div class="dashContainer">
+                <strong>U-</strong>
+                <a class="btnDash" id="dshUpgrade" data-sect="sectUpgrade">UPGRADE</a>
+              </div>
+              <div class="dashContainer">
+                <strong>F-</strong>
+                <a class="btnDash" id="dshFabrication" data-sect="sectFabrication">UL FABRICATION</a>
+              </div>
             </div>
           </div>
-        </div>
-        <strong class="dashContent dashPortal">Customer Portal</strong>
-        <div class="dashSection dashPortal">
-          <div class="dashContent">
-            <div class="dashContainer"><strong>F-</strong>
-              <a class="btnDash" id="dshDraft" data-sect="sectForms">FORMS</a>
+          <strong class="dashContent">Design</strong>
+          <div>
+            <div class="dashContent">
+              <div class="dashContainer"><strong>S-</strong>
+                <a class="btnDash" id="dshSCADA" data-sect="sectSCADA">SCADA</a>
+              </div>
+              <div class="dashContainer"><strong>H-</strong>
+                <a class="btnDash" id="dshHMI" data-sect="sectHMI">HMI</a>
+              </div>
+              <div class="dashContainer"><strong>W-</strong>
+                <a class="btnDash" id="dshWeb" data-sect="sectWeb">WEB</a>
+              </div>
+              <div class="dashContainer"><strong>D-</strong>
+                <a class="btnDash" id="dshDatabase" data-sect="sectDatabase">DATABASING</a>
+              </div>
             </div>
-            <div class="dashContainer"><strong>C-</strong>
-              <a class="btnDash" id="dshPortal" data-sect="sectPortal">LOGIN</a>
+          </div>
+          <strong class="dashContent">Programming</strong>
+          <div>
+            <div class="dashContent">
+              <div class="dashContainer"><strong>P-</strong>
+                  <a class="btnDash" id="dshPLC" data-sect="sectPLC">PLC</a>
+                </div>
+              <div class="dashContainer"><strong>?-</strong>
+                <a class="btnDash" id="" data-sect="sectQuest">---</a>
+              </div>
+            </div>
+          </div>
+          <div class="dashPortal">
+            <strong class="dashContent">Customer Portal</strong>
+            <div class="dashContent">
+              <div class="dashContainer"><strong>F-</strong>
+                <a class="btnDash" id="dshDraft" data-sect="sectForms">FORMS</a>
+              </div>
+              <div class="dashContainer"><strong>C-</strong>
+                <a class="btnDash" id="dshPortal" data-sect="sectPortal">LOGIN</a>
+              </div>
             </div>
           </div>
         </div>
       </aside>
-      <div class="mainStructure">
-        <div class="sectHome">
-          <h1>Process Automated Control Systems</h1>
-            <p><strong>Performance. Accountability. Cost. Safety.</strong>
-              <div>
-                <div class="btnContainer">
-                  <a class="btnCmd" id="btnRun">RUN IT.</a>
+      <aside class="mainStructure">
+        <div class="sectHome section"><h1>Process Automated Control Systems</h1>
+          <p><strong>Performance. Accountability. Cost. Safety.</strong>
+            <div>
+              <div class="btnContainer">
+                <a class="btnHome" id="btnRun">RUN IT.</a>
+              </div>
+            </div>
+          </p>
+          <div class="lgxContent">
+            <div class="lgxContainer">
+              <div class="lgxRung">
+                <div class="lgxBranch">
+                  <div class="brTop">
+                    <div class="brStart">
+                      <div class="brName">
+                        Run_Button
+                      </div>
+                      <div id="lgxRun" class="brCarrots">
+                        <span class="brLeft">[</span>
+                        <span class="brRight">]</span>
+                      </div>
+                    </div>
+                    <div class="brReady">
+                      <div class="brName">
+                        Ready_Active
+                      </div>
+                      <div class="brCarrots">
+                        <span class="brLeft">[</span>
+                        <span class="brRight">]</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="brBottom">
+                    <div class="brRun">
+                      <div class="brName">
+                        Running
+                      </div>
+                      <div id="lgxRunning" class="brCarrots">
+                        <span class="brLeft">[</span>
+                        <span class="brRight">]</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="xicEStop">
+                  <div class="lgxName">
+                    Safety_Active
+                  </div>
+                  <div class="lgxCarrots">
+                    <span class="lgxLeft">[</span>
+                    <span class="lgxRight">]</span>
+                  </div>
+                </div>
+                <div class="xioStop">
+                  <div class="lgxName">
+                    Stop_Button
+                  </div>
+                  <div class="lgxCarrots">
+                    <span class="lgxLeft">[</span>
+                    <span>/</span>
+                    <span class="lgxRight">]</span>
+                  </div>
+                </div>
+                <div class="oteRun">
+                  <div class="lgxName">
+                    Run_PACS
+                  </div>
+                  <div id="lgxPACS" class="lgxCarrots">
+                    <span class="lgxLeft">(</span>
+                    <span class="lgxRight">)</span>
+                  </div>                  
                 </div>
               </div>
-            </p>
-        </div>
-        <div class="sectPerformance">
-          <div class="sectTitle">
-            <h1>Performance.</h1>
+            </div>
           </div>
+        </div>
+        <div class="sectPerformance section">
+          <div class="sectTitle"><h1>Performance.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">What do you want to see?
@@ -145,93 +213,97 @@
                 </span>
               </p>
               <div class="lftPara">
+                <p>
                 PACS Consulting can scope your entire facility from the business
                 end to the plant floor, creating an overall graphics design of the unique
                 processes critical in your day-to-day operation.
+                </p>
               </div>
               <div class="cStructure">
                 <div class="cSCADA">
                   <strong>Supervisory Control and Data Acquisition (SCADA)</strong>
-                  <div class="indentSection">Popular Options: <strong>CLICK TO SEE THERE WEBSITE!</strong>
-                    <ul>
-                      <li><img class="imgIG" src="#" alt=""><a href="https://inductiveautomation.com/scada-software/" target="_blank" rel="noopener">
-                        &gt; Ignition (Inductive Automation)</a>
-                      </li>
-                      <li><img class="imgAV" src="#" alt=""><a href="https://www.aveva.com/en/products/edge/" target="_blank" rel="noopener">
-                        &gt; Edge </a> / 
-                        <a href="https://www.aveva.com/en/solutions/operations/wonderware/" target="_blank" rel="noopener">
-                          Wonderware-Indusoft (AVEVA)</a>
-                      </li>
-                      <li><img class="imgADI" src="#" alt=""><a href="https://adisra.com/" target="_blank" rel="noopener">
-                        &gt; Adisra Smartview</a>
-                      </li>
-                      <li><img class="imgSI" src="#" alt=""><a href="https://www.siemens.com/global/en/products/automation/industry-software/automation-software/scada.html" target="_blank" rel="noopener">
-                        &gt; Siemens</a>
-                      </li>
-                      <li><img class="imgGE" src="#" alt=""><a href="https://www.ge.com/digital/applications/hmi-scada/ifix" target="_blank" rel="noopener">
-                        &gt; GE IFix</a>
-                      </li>
-                      <li>NO LIMIT!</li>
-                    </ul>
-                  </div>
+                  <div class="indentSection">Popular Options: <strong>Click a link to add a tab of there webpage!</strong></div>
+                  <ul>
+                    <li><img class="imgIG" src="#" alt=""><a href="https://inductiveautomation.com/scada-software/" target="_blank" rel="noopener">
+                      Ignition (Inductive Automation)</a>
+                    </li>
+                    <li><img class="imgAV" src="#" alt=""><a href="https://www.aveva.com/en/products/edge/" target="_blank" rel="noopener">
+                      Edge </a> / 
+                      <a href="https://www.aveva.com/en/solutions/operations/wonderware/" target="_blank" rel="noopener">
+                        Wonderware-Indusoft (AVEVA)</a>
+                    </li>
+                    <li><img class="imgADI" src="#" alt=""><a href="https://adisra.com/" target="_blank" rel="noopener">
+                      Adisra Smartview</a>
+                    </li>
+                    <li><img class="imgSI" src="#" alt=""><a href="https://www.siemens.com/global/en/products/automation/industry-software/automation-software/scada.html" target="_blank" rel="noopener">
+                      Siemens</a>
+                    </li>
+                    <li><img class="imgGE" src="#" alt=""><a href="https://www.ge.com/digital/applications/hmi-scada/ifix" target="_blank" rel="noopener">
+                      GE IFix</a>
+                    </li>
+                    <li>NO LIMIT!</li>
+                  </ul>
                 </div>
                 <div class="cHMI">
                   <strong>Human Machine Interface (HMI)</strong>
-                  <div class="indentSection">Popular Options: <strong>CLICK TO SEE THERE WEBSITE!</strong>
-                    <ul>
-                      <li><img class="imgAB" src="#" alt=""><a href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley/hmi.html" target="_blank" rel="noopener">
-                        &gt; Rockwell Automation PanelView</a>
-                      </li>
-                      <li><img class="imgWE" src="#" alt=""><a href="https://www.weintek.com/globalw/Product/Product_iE.aspx" target="_blank" rel="noopener">
-                        &gt; Weintek </a>
-                      </li>
-                      <li><img class="imgAD2" src="#" alt=""><a href="https://www.automationdirect.com/adc/shopping/catalog/hmi_(human_machine_interface)" target="_blank" rel="noopener">
-                        &gt; AutomationDirect</a>
-                      </li>
-                      <li><img class="imgRL" src="#" alt=""><a href="https://www.redlion.net/products/industrial-automation/hmis-and-panel-meters" target="_blank" rel="noopener">
-                        &gt; Red Lion</a>
-                      </li>
-                      <li><img class="imgSI2" src="#" alt=""><a href="https://www.siemens.com/global/en/products/automation/simatic-hmi/panels.html" target="_blank" rel="noopener">
-                        &gt; Siemens</a>
-                      </li>
-                      <li>and More!</li>
-                    </ul>
-                  </div>
+                  <div class="indentSection">Popular Options: <strong>Click a link to add a tab of there webpage!</strong></div>
+                  <ul>
+                    <li><img class="imgAB" src="#" alt=""><a href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley/hmi.html" target="_blank" rel="noopener">
+                      Rockwell Automation PanelView</a>
+                    </li>
+                    <li><img class="imgWE" src="#" alt=""><a href="https://www.weintek.com/globalw/Product/Product_iE.aspx" target="_blank" rel="noopener">
+                     Weintek </a>
+                    </li>
+                    <li><img class="imgAD2" src="#" alt=""><a href="https://www.automationdirect.com/adc/shopping/catalog/hmi_(human_machine_interface)" target="_blank" rel="noopener">
+                      AutomationDirect</a>
+                    </li>
+                    <li><img class="imgRL" src="#" alt=""><a href="https://www.redlion.net/products/industrial-automation/hmis-and-panel-meters" target="_blank" rel="noopener">
+                      Red Lion</a>
+                    </li>
+                    <li><img class="imgSI2" src="#" alt=""><a href="https://www.siemens.com/global/en/products/automation/simatic-hmi/panels.html" target="_blank" rel="noopener">
+                      Siemens</a>
+                    </li>
+                    <li>and More!</li>
+                  </ul>
                 </div>
                 <div class="cPLC">
                   <strong>Programmable Logic Controller (PLC)</strong>
-                  <div class="indentSection">Popular Options: <strong>CLICK TO SEE THERE WEBSITE!</strong>
-                    <ul>
-                      <li><img class="imgAB2" src="#" alt=""><a href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley/programmable-controllers.html" target="_blank" rel="noopener">
-                        &gt; Rockwell Automation</a>
-                      </li>
-                      <li><img class="imgAD3" src="#" alt=""><a href="https://www.automationdirect.com/adc/overview/catalog/programmable_controllers" target="_blank" rel="noopener">
-                        &gt; AutomationDirect</a>
-                      </li>
-                      <li><img class="imgSI3" src="#" alt=""><a href="https://www.siemens.com/global/en/products/automation/systems/industrial/plc.html" target="_blank" rel="noopener">
-                        &gt; Siemens</a>
-                      </li>
-                      <li><img class="imgAS" src="#" alt=""><a href="https://www.ascontecnologic.com/?lang=en" target="_blank" rel="noopener">
-                        &gt; Ascon</a>
-                      </li>
-                      <li>Or We Code From SCRATCH!</li>
-                    </ul>
-                  </div>
+                  <div class="indentSection">Popular Options: <strong>Click a link to add a tab of there webpage!</strong></div>
+                  <ul>
+                    <li><img class="imgAB2" src="#" alt=""><a href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley/programmable-controllers.html" target="_blank" rel="noopener">
+                      Rockwell Automation</a>
+                    </li>
+                    <li><img class="imgAD3" src="#" alt=""><a href="https://www.automationdirect.com/adc/overview/catalog/programmable_controllers" target="_blank" rel="noopener">
+                      AutomationDirect</a>
+                    </li>
+                    <li><img class="imgSI3" src="#" alt=""><a href="https://www.siemens.com/global/en/products/automation/systems/industrial/plc.html" target="_blank" rel="noopener">
+                      Siemens</a>
+                    </li>
+                    <li><img class="imgAS" src="#" alt=""><a href="https://www.ascontecnologic.com/?lang=en" target="_blank" rel="noopener">
+                      Ascon</a>
+                    </li>
+                    <li>Or We Code From SCRATCH!</li>
+                  </ul>
                 </div>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">Tell us what you want.
-              <div class="rhtPara"> 
-                At PACS Consulting, we are motivated by the fact we are not limited
-                to one software. Our flexibility with a base understanding of the 
+              <div class="rhtPara">
+                <p> 
+                At PACS Consulting, we are motivated by the fact we are <strong>not limited</strong>
+                to one software.
+                <br>
+                <br>
+                Our <strong>flexibility</strong> with a base understanding of the 
                 functionality of program language allows us to freely explore and
                 create a unique application with the software of your choice.
+                </p> 
               </div>
               <div>
                 <ul>
                   <li><a class="btnLink" id="lnkContact2" data-sect="sectContact">
-                    &gt; Contact Us</a>
+                    Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -239,10 +311,8 @@
             </aside>
           </div>
         </div>
-        <div class="sectAbility">
-          <div class="sectTitle">
-            <h1>Accountability.</h1>
-          </div>
+        <div class="sectAbility section">
+          <div class="sectTitle"><h1>Accountability.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">How should we present a problem?
@@ -255,53 +325,66 @@
                   </span>
                 </span>
               </p>
-              <div class="lftPara"> 
-                At PACS, we have experienced many customers needing constant traceability 
-                of their process during runtime. Constantly recording critical day to day 
-                operations of what is important for you to maintain, report, and create
-                reliable products has been a game changer for our customers.
+              <div class="lftPara">
+                <p>
+                At PACS, we have experienced many customers needing constant <strong>TRACEABILITY</strong> 
+                of their process during runtime. 
                 <br>
                 <br>
-                This has allowed our customers to store an accurate account of what has truly happened
-                during critical operation. 
+                Constantly recording critical day to day operations of what is important 
+                for you to maintain, report, and create <strong>RELIABLE</strong> products 
+                has been a game changer for our customers.
+                <br>
+                <br>
+                This has allowed our customers to store an <strong>ACCURATE</strong> account of what has truly happened
+                during critical operation.
+                <br>
                 Faults, speeds, setpoints, and whatever you deem important can be sent and stored to a database
-                for a massive opportunity to increase all keys to the PACS.  
+                for a massive opportunity to increase all <strong>KPIs</strong>.  
+                </p>
               </div>
               <div class="cStructure">
                 <div class="cAlarms">
                   <strong>Alarming</strong>
-                  <p class="lftPara">
-                    Alarming is an important function when it comes to quality control, and realtime adjustments
+                  <div class="lftPara">
+                    <p>
+                    Alarming is an important function when it comes to <strong>quality control</strong>, and realtime adjustments
                     to keep your process running at its max.
                     <br>
                     <br>
-                    Creating understandable and precise alarming functions can be achieved by collaborating with
-                    the ones that run the process, and those who understand how it should work. We can help make sure
-                    you gain every available edge by automating the process to tell us when it is not working how it should. 
-                  </p>
+                    Creating <strong>understandable</strong> and <strong>precise alarming</strong> functions can be achieved by collaborating with
+                    the ones that run the process, and those who understand how it should work. 
+                    <br>
+                    <br>
+                    We can help make sure you gain every available edge by automating the process  
+                    to tell us when it is not working how it should. 
+                    </p>
+                  </div>
                 </div>
                 <div class="cEvents">
                   <strong>Events</strong>
-                  <p class="lftPara">
-                    Taking accurate records of what is actually happening from an events perspective would be
-                    crucial when tracing operational adjustments.
+                  <div class="lftPara">
+                    <p>
+                    Taking <strong>accurate</strong> records of what is actually happening from an events perspective would be
+                    crucial when tracing <strong>operational adjustments</strong>.
                     <br>
                     <br>
                     We can track every button click, screen adjustment, settings adjustment, database transactions,
-                    and other events that can be used to reference improvements or for training purposes.
-                  </p>
+                    and other events that can be used to <strong>reference improvements</strong> or for training purposes.
+                    </p>
+                  </div>
                 </div>
               </div>
             </aside>
-            <aside class="tblContent">
+            <aside class="tblContent rhtContent">
               <p class="h2Font">
                 <h1>Alarm/Event Table</h1>
                 <table id="data">
                   <thead>
                     <tr id="header-row">
                       <th>ID</th>
-                      <th class="editable-header">Event</th>
-                      <th class="editable-header">Time</th>
+                      <th>Event</th>
+                      <th>Time</th>
                     </tr>
                   </thead>
                   <tbody id="body">
@@ -361,10 +444,8 @@
             </aside>
           </div>
         </div>
-        <div class="sectCost">
-          <div class="sectTitle">
-            <h1>Cost.</h1>
-          </div>
+        <div class="sectCost section">
+          <div class="sectTitle"><h1>Cost.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Where can we save you money?
@@ -374,15 +455,24 @@
                   </span>
                 </span>
               </p>
-              <div class="lftPara"> 
-                At PACS our packages are built with your budget in mind. Nevertheless, no matter the budget
-                we will give you the best possible package your money can buy. When it comes to the cost of
-                hardware and software, this will not hinder our ability to get the best possible performance
+              <div class="lftPara">
+                <p>
+                At PACS our packages are built with your budget in mind. 
+                <br>
+                <br>
+                Nevertheless, no matter the budget we will give you the best possible package your money can buy.
+                <br>
+                <br>
+                When it comes to the cost of hardware and software, this will not hinder our ability to get the best possible performance
                 from it.
                 <br>
                 <br>
                 Most hardware uses the same programming architecture. Knowing this, the hardware becomes 
-                irrevelant, and then becomes what color do you want?
+                irrevelant, and then becomes...
+                <br>
+                <br>
+                WHAT COLOR DO YOU WANT?
+                </p>    
               </div>
               <div class="cStructure">
                 <div class="cOEE">
@@ -403,23 +493,32 @@
               </div>
             </aside>
             <aside class="rhtContent">
-              <p class="h2Font">Content Sites
-              <div class="rhtPara"> 
-                Take a moment to check out these links to some of our favorite content on the subjects.
+              <p class="h2Font">Content Sites.
+              <div class="rhtPara">
+                <p> 
+                Take a moment to check out these links to some of our favorite content on the subject of OEE.
+                </p>
               </div>
+              <br>
+              <div class="rhtPara">
+                <p>
+                <strong>Click on the links!</strong>
+                </p>
+              </div>
+              <br>
               <div>
                 <ul>
                   <li><a href="https://www.oee.com/" target="_blank" rel="noopener">
-                    &gt; OEE</a>
+                    OEE</a>
                   </li>
                   <li><a href="https://www.oee.com/oee-six-big-losses/#oeeAndTpmLosses" target="_blank" rel="noopener">
-                    &gt; OEE: Six Big Losses in Manufacturing</a>
+                    OEE: Six Big Losses in Manufacturing</a>
                   </li>
                   <li><a href="https://www.steamsolutions.com/services/audits-consulting" target="_blank" rel="noopener">
-                    &gt; Steam Solutions: Audits</a>
+                    Steam Solutions: Audits</a>
                   </li>
                   <li><a href="https://www.chemicalslearning.com/2021/11/Process-audit-system.html" target="_blank" rel="noopener">
-                    &gt; Process Control System Audits</a>
+                    Process Control System Audits</a>
                   </li>
                 </ul>
               </div>
@@ -427,59 +526,67 @@
             </aside>
           </div>
         </div>
-        <div class="sectSafety">
-          <div class="sectTitle">
-            <h1>Safety.</h1>
-          </div>
+        <div class="sectSafety section">
+          <div class="sectTitle"><h1>Safety.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Our <strong class="safetyFont">GOAL.</strong></p>
-              <div class="lftPara"> 
+              <div class="lftPara">
+                <p> 
                 Safety is a crucial part of integrating our PACS process into your day to day operation.
-                While obtaining the best possible performance driven, accountable system at minimal cost and downtime
+                While obtaining the best possible <strong>performance driven</strong> accountable system at minimal cost and downtime
                 to your facility, a safe and reliable system is the only goal. 
                 <br>
                 <br>
-                We cannot and will not remove a safe environment at your facility, being that who maintains and drives your
-                products must be alerted and given the opportunity to make realtime changes that could potentially be harmful
+                We <strong>CANNOT</strong> and <strong>WILL NOT</strong> remove a safe environment at your facility, being that who maintains and drives your
+                products must be <strong>alerted</strong> and given the opportunity to make <strong>realtime changes</strong> that could potentially be harmful
                 not only to your products, but to their well-being.
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">Reach out!
-                <div class="rhtPara"> 
+                <div class="rhtPara">
+                  <p> 
                   Go to our contact page, and lets start a conversation on how we can help you.
+                  </p>
                 </div>
                 <div>
                   <ul>
                     <li><a class="btnLink" id="lnkContact3" data-sect="sectContact">
-                      &gt; Contact Us</a>
+                      Contact Us</a>
                     </li>
                     <li><a class="btnLink" id="lnkPreForm" data-sect="sectForms">
-                      &gt; Check out our forms</a>
+                      Check out our forms</a>
                     </li>
                   </ul>
                 </div>
                 <p class="h2Font">Check out our other pages.
-                  <div class="rhtPara"> 
-                    Interested in learning about our services? At PACS we can help you draft a perfect package
+                  <div class="rhtPara">
+                    <p>
+                    Interested in learning about our services?
+                    <br>
+                    <br>
+                    At PACS we can help you draft a perfect package
                     to help you achieve maximum output at your facility.
                     <br>
+                    <br>
                     Select a service below to direct you or take a look at our sidebar for more detailed options.
+                    </p>
                   </div>
                   <div>
                     <ul>
                       <li><a class="btnLink" id="lnkEngine" data-sect="sectTurnkey">
-                        &gt; Engineering</a>
+                        Engineering</a>
                       </li>
                       <li><a class="btnLink" id="lnkDesign" data-sect="sectSCADA">
-                        &gt; Design</a>
+                        Design</a>
                       </li>
                       <li><a class="btnLink" id="lnkProgramming" data-sect="sectPLC">
-                        &gt; Programming</a>
+                        Programming</a>
                       </li>
                       <li><a class="btnLink" id="lnkPortal" data-sect="sectPortal">
-                        &gt; Customer Portal</a>
+                        Customer Portal</a>
                       </li>
                     </ul>
                   </div>
@@ -488,50 +595,56 @@
             </aside>
           </div>
         </div>
-        <div class="sectTurnkey">
-          <div class="sectTitle">
-            <h1>Turnkey.</h1>
-          </div>
+        <div class="sectTurnkey section">
+          <div class="sectTitle"><h1>Turnkey.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
-              <p class="h2Font">When you need the our full services.</p>
+              <p class="h2Font">When you need our full services.</p>
               <div class="lftPara"> 
-                Our turnkey service allows us to create a fully sophisticated system with our PACS process, giving you
-                the benefit of guiding us to where you want to go, while we take care of the driving.
+                <p>
+                Our turnkey service allows us to create a fully <strong>sophisticated</strong> system with our PACS process.
                 <br>
                 <br>
-                We dedicate our full attention to finding the best possible options for you and your facility, creating
+                This gives our customers of the benefit of guiding the mission, while we take care of the mission.
+                <br>
+                <br>
+                We dedicate our <strong>full attention</strong> to finding the best possible options for you and your facility, creating
                 custom presentations, opening up possible avenues where automation is non-existent, and/or in need of 
                 an upgrade to something more reliable.
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">Sastifaction Guaranteed!
-              <div class="rhtPara"> 
+              <div class="rhtPara">
+                <p> 
                 We only want what is best, and that is includes your feedback.
+                </p>
               </div>
               <div>
                 <ul>
                   <li><a class="btnLink" id="lnkpgForm" data-sect="sectForms">
-                    &gt; Start our customer form</a>
+                    Start our customer form</a>
                   </li>
                 </ul>
               </div>
               </p>
               <p class="h2Font">Ellaboration.
-                <div class="rhtPara"> 
+                <div class="rhtPara">
+                  <p> 
                   Let us ellaborate on the subject of sastifaction. See some of our stories below.
+                  </p>
                 </div>
                 <div>
                   <ul>
-                    <li><a data-sect="sectCase1">
-                      &gt; Case 1</a>
+                    <li><a class="btnLink" id="lnkCase1" data-sect="sectCase1">
+                      Case 1</a>
                     </li>
-                    <li><a data-sect="sectCase2">
-                      &gt; Case 2</a>
+                    <li><a class="btnLink" id="lnkCase2" data-sect="sectCase2">
+                      Case 2</a>
                     </li>
-                    <li><a data-sect="sectCase3">
-                      &gt; Case 3</a>
+                    <li><a class="btnLink" id="lnkCase3" data-sect="sectCase3">
+                      Case 3</a>
                     </li>
                   </ul>
                 </div>
@@ -539,66 +652,91 @@
             </aside>
           </div>
         </div>
-        <div class="sectUpgrade">
-          <div class="sectTitle">
-            <h1>Upgrades.</h1>
-          </div>
+        <div class="sectUpgrade section">
+          <div class="sectTitle"><h1>Upgrades.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Everyone loves an upgrade!</p>
-              <div class="lftPara"> 
-                Do you currently have some automation in need of some TLC? We love tackling old out-of-date
-                systems finding a clear and concise opportunity to upgrade your systems with seamless integration,
+              <div class="lftPara">
+                <p> 
+                Do you currently have some automation in need of some TLC?
+                <br>
+                <br>
+                We love tackling old out-of-date systems finding a clear and concise opportunity to upgrade your systems with seamless integration,
                 minimal downtime, and as little to no invasion to your day-to-day operation as possible.
                 <br>
                 <br>
-                OUT-OF-DATE automation can be COSTLY, and very hard to find SPARES meaning longer DOWNTIME and less
-                support. Allowing us to examine what you have and coming up with a more reliable system can greatly
+                <strong>OUT-OF-DATE</strong> automation can be <strong>COSTLY</strong>, and very hard to find <strong>SPARES</strong>
+                 meaning longer <strong>DOWNTIME</strong> and less support. 
+                <br>
+                <br>
+                Allowing us to examine what you have and come up with a more reliable system can greatly
                 increase your productivity by knowing you have the best of the best that your money can buy.
                 <br>
                 <br>
                 As we are always looking for the best option possible for our customers to explore, especially
-                when it comes to saving money, with existing automation controls it is likely that most electrical
+                when it comes to saving money, with any existing automation controls it is likely that most electrical
                 components within the system are functional.
                 <br>
                 <br>
-                ASSESSING your existing SYSTEM can allow us to see what we can utilize that is existing. Including
-                the existing hardware and housing.
+                <strong>ASSESSING</strong> your existing <strong>SYSTEM</strong> can allow us to see what we can utilize that is existing.
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
-              <p class="h2Font">...
+              <p class="h2Font">Common Ideas.
                 <div class="rhtPara">
+                  <p>
+                    <ul>
+                      <li>Organization.</li>
+                      <li>Existing Panels.</li>
+                      <li>Existing PLC and SCADA/HMI Code.</li>
+                      <li>Drawings.</li>
+                      <li>Peripheral Devices: Sensors, Calibration.</li>
+                    </ul>
+                  </p>
                 </div>
               </p>
               <p class="h2Font">...
                 <div class="rhtPara">
+                  <p>
+                  </p>
                 </div>
               </p>
             </aside>
           </div>
         </div>
-        <div class="sectFabrication">
-          <div class="sectTitle">
-            <h1>Fabrication.</h1>
-          </div>
+        <div class="sectFabrication section">
+          <div class="sectTitle"><h1>Fabrication.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Built From Scratch.</p>
-              <div class="lftPara"> 
-                We are proud to say PACS Consulting, is an UL Listed Panel Shop offering fabricated panels with a UL stamp.
+              <div class="lftPara">
+                <p>
+                We are proud to say PACS Consulting is a <strong>UL Listed</strong> Panel Shop offering fabricated panels with a UL stamp.
+                <br>
+                <br>
                 Whether you need the stamp or not we are qualified to tackle any control panel fabrication you
                 may need.
                 <br>
                 <br>
-                Fabrication of a custom sosphiticated control panel includes but not limited too: Drawings and a detailed itemized
-                list of what is to be provided.
+                Fabrication of a <strong>custom</strong> sophisticated control panel includes but not limited too:
+                <ul>
+                  <li>Drawings</li>
+                  <li>SOP</li>
+                  <li>Hardware list</li>
+                  <li>UL Certification (If required)</li>
+                  <li>Sastifaction Guaranteed!</li>
+                </ul>
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">Content Sites.
                 <div class="rhtPara"> 
+                  <p>
                   Here are some of our favorite parts shops.
+                  </p>
                 </div>
                 <div>
                   <ul>
@@ -615,140 +753,182 @@
                 </div>
               </p>
               <p class="h2Font">Perspective.
-                <div class="rhtPara"> 
-                  We feel that giving you the perspective of what we would normally use as well as
-                  the opportunity to source is crucial for our initial visit or for addition to 
-                  your current parts stock. Having readily available spare parts can save you a
+                <div class="rhtPara">
+                  <p> 
+                  We feel that giving you the perspective of what we would normally use and
+                  giving you the opportunity to source is crucial for our initial visit or for addition to 
+                  your current parts stock. 
+                  <br>
+                  <br>
+                  Having readily available spare parts can save you a
                   pretty penny and cut on downtime.
+                  </p>
                 </div>
               </p>
             </aside>
           </div>
         </div>
-        <div class="sectSCADA">
-          <div class="sectTitle">
-            <h1>SCADA.</h1>
-          </div>
+        <div class="sectSCADA section">
+          <div class="sectTitle"><h1>SCADA.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Built From Scratch.</p>
-              <div class="lftPara"> 
-                Supervisory Control and Data Acquisition software is an overlooked and highly important
+              <div class="lftPara">
+                <p> 
+                Supervisory Control and Data Acquisition software is an overlooked and <strong>HIGHLY IMPORTANT</strong> 
                 improvement to a facilities abiliity to evolve. 
                 <br>
                 <br>
-                Designing a high performance and easily controlled interface for your facility will allow
-                not only you but the people that run your machinery to control with ease of mind. It is
-                important to make something as simple as 1, 2, 3... And we will teach you how to do it.
+                Designing a <strong>HIGH PERFORMANCE</strong> and easily controlled interface for your facility will allow
+                not only you but the people that run your machinery to control with <strong>EASE OF MIND</strong>.
+                <br>
+                <br>
+                It is important to make something as simple as 1, 2, 3...
+                <br>
+                <br>
+                <span class="sectContainer">
+                  <strong>This is the way!</strong><img class="mando" src=".IMG/Mando.png" alt="">
+                </span>
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">Keep in Mind.
-                <div class="rhtPara"> 
+                <div class="rhtPara">
+                  <p>
                   There are many softwares out there that can improve a great deal of performance to a process.
                   There are limitations to any software, but the biggest limit we have found at PACS can be
-                  the imagination of the improvement. Allow our imagination to show you there is no limit.
+                  the imagination of the improvement.
+                  <br>
+                  <br>
+                  Allow us to show you there is NO LIMIT!
+                  </p>
                 </div>
               </p>
               <p class="h2Font">...
-                <div class="rhtPara"> 
+                <div class="rhtPara">
+                  <p></p> 
                 </div>
               </p>
             </aside>
           </div>
         </div>
-        <div class="sectHMI">
-          <div class="sectTitle">
-            <h1>HMI.</h1>
-          </div>
+        <div class="sectHMI section">
+          <div class="sectTitle"><h1>HMI.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Human Machine Interface.</p>
-              <div class="lftPara"> 
+              <div class="lftPara">
+                <p>
                 The ability to control your facility with the touch of a button on a screen is absolutely crucial for
-                performance and safety. Technologies have allowed for better and faster control by integrating or improving
-                an interface designed for high performance and improved safety.
+                performance and safety.
                 <br>
                 <br>
+                Technologies have allowed for better and faster control by integrating or improving
+                an interface designed for high performance and <strong>improved safety</strong>.
+                <br>
+                <br>
+                Let us design a summary view of the process for when we need to be <strong>front and center at the process</strong>. 
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">Need help choosing?
-                <div class="rhtPara"> 
+                <div class="rhtPara">
+                  <p> 
                   PACS Consulting can help you choose the best option that exceeds your expectations by giving you the best
-                  without breaking the budget. Below is our visual form that can help us determine what direction to go
+                  without breaking the budget.
+                  <br>
+                  <br>
+                  Below is our visual form that can help us determine what direction to go
                   achieving the above and beyond.
+                  </p>
                 </div>
               </p>
               <p class="h2Font">...
                 <div class="rhtPara"> 
+                  <p></p>
                 </div>
               </p>
             </aside>
           </div>
         </div>
-        <div class="sectWeb">
-          <div class="sectTitle">
-            <h1>Web Client.</h1>
-          </div>
+        <div class="sectWeb section">
+          <div class="sectTitle"><h1>Web Client.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Internet of Things.</p>
-              <div class="lftPara"> 
+              <div class="lftPara">
+                <p> 
                 The ever changing use of technology has allowed HMI and SCADA systems to also be applied to your
-                favorite internet browser. Every facility has a certain or full access to an internet browser via
+                favorite internet browser. 
+                <br>
+                <br>
+                Every facility has a certain or full access to an internet browser via
                 there computer in the office or there mobile device that remains availabe anywhere.
                 <br>
                 <br>
-                We can help create a visual that can be applied and viewed from any browser of your choice. Whether you
-                are at the facility or in the comfort of your home, we can create an application that allows no extra software
-                installation to monitor your facility.
+                We can help create a visual to be applied and viewed from any browser of your choice.
+                <br>
+                <br>
+                Whether you are at the facility or in the comfort of your home, we can create an application that allows minimal
+                software installation to monitor your facility.
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">...
                 <div class="rhtPara"> 
+                <p></p>
                 </div>
               </p>
               <p class="h2Font">...
                 <div class="rhtPara"> 
+                <p></p>
                 </div>
               </p>
             </aside>
           </div>
         </div>
-        <div class="sectDatabase">
-          <div class="sectTitle">
-            <h1>Databasing.</h1>
-          </div>
+        <div class="sectDatabase section">
+          <div class="sectTitle"><h1>Databasing.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">History is made here.</p>
-              <div class="lftPara"> 
+              <div class="lftPara">
+                <p>
                 Let us take the time to build something that will keep track of all the history that
                 your process will create.
                 <br>
                 <br>
-                Fabrication of a custom sosphiticated control panel includes but not limited too: Drawings and a detailed itemized
-                list of what is to be provided.
+                <ul>
+                  <li><a>Save accurate process sensor readings like (Temperature, Pressure, etc..) for PREVENTATIVE MAINTENANCE.</a></li>
+                </ul>
+                <ul>
+                  <li><a>Save alarms to help for QUALITY CONTROL.</a></li>
+                </ul>
+                <ul>
+                  <li><a>Add capabilities to create trending, and track yearly growth.</a></li>
+                </ul>
+                </p>
               </div>
             </aside>
             <aside class="rhtContent">
               <p class="h2Font">...
                 <div class="rhtPara"> 
+                <p></p>
                 </div>
               </p>
               <p class="h2Font">...
                 <div class="rhtPara"> 
+                <p></p>
                 </div>
               </p>
             </aside>
           </div>
         </div>
-        <div class="sectPLC">
-          <div class="sectTitle">
-            <h1>PLC.</h1>
-          </div>
+        <div class="sectPLC section">
+          <div class="sectTitle"><h1>PLC.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
               <p class="h2Font">Programmable Logic Controller.
@@ -764,12 +944,16 @@
                   </span>
                 </span>
               </p>
-              <div class="lftPara"> 
-                Our programming skills have a combined knowledge base that is unstoppable. Our techs and
-                engineers are more than equip to handle any programming challenge you may be facing, considering
-                you have existing automation or completely brand new to the world of automation.
+              <div class="lftPara">
+                <p> 
+                Our programming skills have a combined knowledge base that is unstoppable.
                 <br>
                 <br>
+                Our techs and engineers are more than capable of handling any programming challenge you may be 
+                facing, considering you have existing automation or may be brand new to the world of automation.
+                <br>
+                <br>
+                </p>
               </div>
               <div class="cStructure">
                 <div class="cFBD">
@@ -790,22 +974,85 @@
                 </div>
                 <div class="cLadder">
                   <strong>Ladder Logic</strong>
-                  <p class="lftPara">
-                    <ul>
-                      <li><a class="btnLink" id="lnkHome" data-sect="sectHome">
-                        &gt; Click to go back to the home page and click the 'Run It.'
-                        <br>
-                        Watch as the ladder logic example changes below it.</a>
-                      </li>
-                    </ul>
-                  </p>
+                  <div class="lftPara">
+                    <div class="lgxContent">
+                      <div class="lgxContainer">
+                        <div class="lgxRung">
+                          <div class="lgxBranch">
+                            <div class="brTop">
+                              <div class="brStart">
+                                <div class="brName">
+                                  Run_Button
+                                </div>
+                                <div class="brCarrots">
+                                  <span class="brLeft">[</span>
+                                  <span class="brRight">]</span>
+                                </div>
+                              </div>
+                              <div class="brReady">
+                                <div class="brName">
+                                  Ready_Active
+                                </div>
+                                <div class="brCarrots">
+                                  <span class="brLeft">[</span>
+                                  <span class="brRight">]</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="brBottom">
+                              <div class="brRun">
+                                <div class="brName">
+                                  Running
+                                </div>
+                                <div class="brCarrots">
+                                  <span class="brLeft">[</span>
+                                  <span class="brRight">]</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="xicEStop">
+                            <div class="lgxName">
+                              Safety_Active
+                            </div>
+                            <div class="lgxCarrots">
+                              <span class="lgxLeft">[</span>
+                              <span class="lgxRight">]</span>
+                            </div>
+                          </div>
+                          <div class="xioStop">
+                            <div class="lgxName">
+                              Stop_Button
+                            </div>
+                            <div class="lgxCarrots">
+                              <span class="lgxLeft">[</span>
+                              <span>/</span>
+                              <span class="lgxRight">]</span>
+                            </div>
+                          </div>
+                          <div class="oteRun">
+                            <div class="lgxName">
+                              Run_PACS
+                            </div>
+                            <div class="lgxCarrots">
+                              <span class="lgxLeft">(</span>
+                              <span class="lgxRight">)</span>
+                            </div>                  
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="cText">
                   <strong>Structured Text Example:</strong>
                   <p class="lftPara">
+                    <br>
                     IF 1 + 1 = 2 THEN
                     <br>
+                    <br>
                     Run_PACS := True;
+                    <br>
                     <br>
                     END IF;
                   </p>
@@ -824,15 +1071,13 @@
             </aside>
           </div>
         </div>
-        <div class="sectForms">
-          <div class="sectTitle">
-            <h1>Customer Forms.</h1>
-          </div>
+        <div class="sectForms section">
+          <div class="sectTitle"><h1>Customer Forms.</h1></div>
           <div class="sectContent">
-            <p class="h2Font">Go through our forms to see which is right for you.
+            <p class="h2Font">Choose your form.
               <span class="sectContainer btnFont">
                 <span class="optContainer">
-                  <a class="btnCmd" id="btnPre" data-sect="cPre">Prelim</a>
+                  <a class="btnCmd" id="btnPre" data-sect="cPre">Help</a>
                 </span>
                 <span class="optContainer">
                   <a class="btnCmd" id="btnSi" data-sect="cSi">Signup</a>
@@ -843,181 +1088,208 @@
               </span>
             </p>
           </div>
-            <div class="cPre">
-              <form action="/submit" method="post">
-                <div class="flxStructure">
-                  <div class="flxContainer">
-                    <div class="flxLeft">
-                      <label for="process">What is your most critical process?</label>
-                      <input class="cProcess" type="text" id="process" name="process"><br><br>
+          <div class="sectContent">
+          <div class="cPre cForm">
+            <form action=".PHP/prelim.php" method="post">
+              <div class="flxStructure">
+                <div class="flxContainer">
+                  <div class="flxLeft">
+                    <label for="srvProcess">What is your most critical process?</label>
+                    <input class="srvProcess" type="text" id="srvProcess" name="srvProcess"><br><br>
+                  </div>
+                  <div class="flxRight">
+                    <div>
+                      <label for="srvAutomation">Do you currently have any automation?</label>
+                      <input class="srvAutomation" type="checkbox" id="srvAutomation" name="srvAutomation"><br><br>
                     </div>
-                    <div class="flxRight">
-                      <div>
-                        <label for="cAutomation">Do you currently have any automation?</label>
-                        <input class="cAutomation" type="checkbox" id="cAutomation" name="cAutomation"><br><br>
-                      </div>
-                      <div>
-                        <label for="cSoftware">If yes, do you have the software?</label>
-                        <input class="cSoftware" type="checkbox" id="cSoftware" name="cSoftware">
-                      </div>
+                    <div>
+                      <label for="srvSoftware">If yes, do you have the software?</label>
+                      <input class="srvSoftware" type="checkbox" id="srvSoftware" name="srvSoftware">
                     </div>
                   </div>
-                  <div class="frmContainer"><strong>What are you looking for?</strong>
-                    <div><strong>Graphics Design / Databasing</strong>
-                      <label class="indSection" for="cgSCADA">SCADA</label>
-                      <input class="chkBox cgSCADA" type="checkbox" id="cgSCADA" name="cgSCADA">
-                      <label for="cgHMI">HMI/Windows</label>
-                      <input class="chkBox cgHMI" type="checkbox" id="cgHMI" name="cgHMI">
-                      <label for="cgDATA">Database</label>
-                      <input class="chkBox cgDATA" type="checkbox" id="cgDATA" name="cgDATA">
-                    </div>
-                    <div class="frmSection">
-                      <label for="cgCreation">Creation</label>
-                      <input class="chkBox cgCreation" type="checkbox" id="cgCreation" name="cgCreation">
-                      <label for="cgRevisions">Revisions</label>
-                      <input class="chkBox cgRevisions" type="checkbox" id="cgRevisions" name="cgRevisions">
-                      <label for="cgTrouble">Troubleshooting</label>
-                      <input class="chkBox cgTrouble" type="checkbox" id="cgTrouble" name="cgTrouble">
-                      <div class="frmOptions">
-                        <label for="cgOther">Other</label>
-                        <input class="cOther" type="text" id="cgOther" name="cgOther">
-                      </div>
-                    </div>
-                    <div><strong>PLC Programming</strong></div>
-                    <div class="frmSection">
-                      <label for="cpCreation">Creation</label>
-                      <input class="chkBox cpCreation" type="checkbox" id="cpCreation" name="cpCreation">
-                      <label for="cpRevisions">Revisions</label>
-                      <input class="chkBox cpRevisions" type="checkbox" id="cpRevisions" name="cpRevisions">
-                      <label for="cpTrouble">Troubleshooting</label>
-                      <input class="chkBox cpTrouble" type="checkbox" id="cpTrouble" name="cpTrouble">
-                      <div class="frmOptions"> 
-                        <label for="cpOther">Other</label>
-                        <input class="cOther" type="text" id="cpOther" name="cpOther">
-                      </div>
-                    </div>
-                    <div><strong>Preferred Software</strong></div>
-                    <div><strong>Graphics</strong></div>
-                    <div class="frmSection">
-                      <label for="cgpIgnition">Ignition</label>
-                      <input class="chkBox cgpIgnition" type="checkbox" id="cgpIgnition" name="cgpCreation">
-                      <label for="cgpAVEVA">AVEVA</label>
-                      <input class="chkBox cgpAVEVA" type="checkbox" id="cgpAVEVA" name="cgpAVEVA">
-                      <label for="cgpRockwell">Rockwell</label>
-                      <input class="chkBox cgpRockwell" type="checkbox" id="cgpRockwell" name="cgpRockwell">
-                      <div class="frmOptions">
-                        <label for="cgpOther">Other</label>
-                        <input class="cOther" type="text" id="cgpOther" name="cgpOther">
-                      </div>
-                    </div>
-                    <div><strong>PLC</strong></div>
-                    <div class="frmSection">
-                    <label for="cpgRockwell">Rockwell</label>
-                    <input class="chkBox cpgRockwell" type="checkbox" id="cpgRockwell" name="cpgRockwell">
-                    <label for="cpgSiemens">Siemens</label>
-                    <input class="chkBox cpgSiemens" type="checkbox" id="cpgSiemens" name="cpgSiemens">
-                    <label for="cpgDirect">AutomationDirect</label>
-                    <input class="chkBox cpgDirect" type="checkbox" id="cpgDirect" name="cpgDirect">
+                </div>
+                <div class="frmContainer"><strong>What are you looking for?</strong>
+                  <div><strong>Graphics Design / Databasing</strong>
+                    <label class="indSection" for="srvgSCADA">SCADA</label>
+                    <input class="chkBox srvSCADA" type="checkbox" id="srvgSCADA" name="srvgSCADA">
+                    <label for="srvgHMI">HMI/Windows</label>
+                    <input class="chkBox srvHMI" type="checkbox" id="srvgHMI" name="srvgHMI">
+                    <label for="srvgDATA">Database</label>
+                    <input class="chkBox srvgDATA" type="checkbox" id="srvgDATA" name="srvgDATA">
+                  </div>
+                  <div class="frmSection">
+                    <label for="srvgCreation">Creation</label>
+                    <input class="chkBox srvgCreation" type="checkbox" id="srvgCreation" name="srvgCreation">
+                    <label for="srvgRevisions">Revisions</label>
+                    <input class="chkBox srvgRevisions" type="checkbox" id="srvgRevisions" name="srvgRevisions">
+                    <label for="srvgTrouble">Troubleshooting</label>
+                    <input class="chkBox srvgTrouble" type="checkbox" id="srvgTrouble" name="srvgTrouble">
                     <div class="frmOptions">
-                      <label for="cpgOther">Other</label>
-                      <input class="cOther" type="text" id="cpgOther" name="cpgOther">
+                      <label for="srvgOther">Other</label>
+                      <input class="cOther" type="text" id="srvgOther" name="srvgOther">
                     </div>
                   </div>
+                  <div><strong>PLC Programming</strong></div>
+                  <div class="frmSection">
+                    <label for="srvpCreation">Creation</label>
+                    <input class="chkBox srvpCreation" type="checkbox" id="srvpCreation" name="srvpCreation">
+                    <label for="srvpRevisions">Revisions</label>
+                    <input class="chkBox srvpRevisions" type="checkbox" id="srvpRevisions" name="srvpRevisions">
+                    <label for="srvpTrouble">Troubleshooting</label>
+                    <input class="chkBox srvpTrouble" type="checkbox" id="srvpTrouble" name="srvpTrouble">
+                    <div class="frmOptions"> 
+                      <label for="srvpOther">Other</label>
+                      <input class="cOther" type="text" id="srvpOther" name="srvpOther">
+                    </div>
                   </div>
-                  <div class="preContainer">
-                    <div class="preLeft">
-                      <div class="preSection">
-                        <h3>Thoughts of Service Selection</h3>
-                        <div class="tossContainer">
-                          <div class="preOptions">
-                            <label for="cConsult">Looking for Consulting service?</label>
-                          </div>
-                          <div class="preOptions">
-                            <input class="chkBox cConsult" type="checkbox" id="cConsult" name="cConsult">
-                          </div>
+                  <div><strong>Preferred Software</strong></div>
+                  <div><strong>Graphics</strong></div>
+                  <div class="frmSection">
+                    <label for="srvgIgnition">Ignition</label>
+                    <input class="chkBox srvgIgnition" type="checkbox" id="srvgIgnition" name="srvgIgnition">
+                    <label for="srvgAVEVA">AVEVA</label>
+                    <input class="chkBox srvgAVEVA" type="checkbox" id="srvgAVEVA" name="srvgAVEVA">
+                    <label for="srvgRockwell">Rockwell</label>
+                    <input class="chkBox srvgRockwell" type="checkbox" id="srvgRockwell" name="srvgRockwell">
+                    <div class="frmOptions">
+                      <label for="srvgOther1">Other</label>
+                      <input class="cOther" type="text" id="srvgOther1" name="srvgOther1">
+                    </div>
+                  </div>
+                  <div><strong>PLC</strong></div>
+                  <div class="frmSection">
+                    <label for="srvpRockwell">Rockwell</label>
+                    <input class="chkBox srvpRockwell" type="checkbox" id="srvpRockwell" name="srvpRockwell">
+                    <label for="srvpSiemens">Siemens</label>
+                    <input class="chkBox srvpSiemens" type="checkbox" id="srvpSiemens" name="srvpSiemens">
+                    <label for="srvpDirect">AutomationDirect</label>
+                    <input class="chkBox srvpDirect" type="checkbox" id="srvpDirect" name="srvpDirect">
+                    <div class="frmOptions">
+                      <label for="srvpOther1">Other</label>
+                      <input class="cOther" type="text" id="srvpOther1" name="srvpOther1">
+                    </div>
+                  </div>
+                </div>
+                <div class="preContainer">
+                  <div class="preLeft">
+                    <div class="preSection">
+                      <h3>Thoughts of Service Selection</h3>
+                      <div class="tossContainer">
+                        <div class="preOptions">
+                          <label for="srvConsult">Looking for Consulting service?</label>
                         </div>
-                        <div class="tossContainer">
-                          <div class="preOptions">
-                            <label for="cOnsite">Looking for Onsite service?</label>
-                          </div>
-                          <div class="preOptions">
-                            <input class="chkBox cOnsite" type="checkbox" id="cOnsite" name="cOnsite">
-                          </div>
-                        </div>
-                        <div class="tossContainer">
-                          <div class="preOptions">
-                            <label for="cRemote">Looking for Remote service?</label>
-                          </div>
-                          <div class="preOptions">
-                            <input class="chkBox cRemote" type="checkbox" id="cRemote" name="cRemote"> 
-                          </div>
-                        </div>
-                        <div class="tossContainer">
-                          <div class="preOptions">
-                            <label for="cEngine">Looking for Engineering service?</label>
-                          </div>
-                          <div class="preOptions">
-                            <input class="chkBox cEngine" type="checkbox" id="cEngine" name="cEngine"> 
-                          </div>            
+                        <div class="preOptions">
+                          <input class="chkBox srvConsult" type="checkbox" id="srvConsult" name="srvConsult">
                         </div>
                       </div>
+                      <div class="tossContainer">
+                        <div class="preOptions">
+                          <label for="srvOnsite">Looking for Onsite service?</label>
+                        </div>
+                        <div class="preOptions">
+                          <input class="chkBox srvOnsite" type="checkbox" id="srvOnsite" name="srvOnsite">
+                        </div>
+                      </div>
+                      <div class="tossContainer">
+                        <div class="preOptions">
+                          <label for="srvRemote">Looking for Remote service?</label>
+                        </div>
+                        <div class="preOptions">
+                          <input class="chkBox srvRemote" type="checkbox" id="srvRemote" name="srvRemote"> 
+                        </div>
+                      </div>
+                      <div class="tossContainer">
+                        <div class="preOptions">
+                          <label for="srvEngineering">Looking for Engineering service?</label>
+                        </div>
+                        <div class="preOptions">
+                          <input class="chkBox srvEngineering" type="checkbox" id="srvEngineering" name="srvEngineering"> 
+                        </div>            
+                      </div>
                     </div>
-                    <div class="preRight">
-                      <div class="preSection">
-                        <h3>Contact Information</h3>
-                        <div class="tossContainer">
+                  </div>
+                  <div class="preRight">
+                    <div class="preSection">
+                      <h3>Contact Information</h3>
+                      <div class="tossContainer">
+                        <div class="preOptions">
+                          <label for="srvCompany">Company</label>
+                        </div>              
+                        <div class="preOptions">
+                          <input class="srvCompany" type="text" id="srvCompany" name="srvCompany">
+                        </div>
+                      </div>
+                      <div class="tossContainer">
                           <div class="preOptions">
-                            <label for="cCompany">Company</label>
-                          </div>              
-                          <div class="preOptions">
-                            <input class="cCompany" type="text" id="cCompany" name="cCompany">
+                            <label for="srvName">Name</label>
+                          </div>
+                          <div class="preOptions"> 
+                            <input class="srvName" type="text" id="srvName" name="srvName" required>
                           </div>
                         </div>
                         <div class="tossContainer">
-                            <div class="preOptions">
-                              <label for="cName">Name</label>
-                            </div>
                           <div class="preOptions"> 
-                            <input class="cName" type="text" id="cName" name="cName">
-                          </div>
-                        </div>
-                        <div class="tossContainer">
-                          <div class="preOptions"> 
-                            <label for="cEmail">Email</label>
+                            <label for="srvEmail">Email</label>
                           </div>
                           <div class="preOptions"> 
-                            <input class="cEmail" type="email" id="cEmail" name="cEmail"> 
+                            <input class="srvEmail" type="email" id="srvEmail" name="srvEmail" required> 
                           </div>  
                         </div> 
                         <div class="tossContainer">
                           <div class="preOptions"> 
-                            <label for="cPhone">Phone</label>
+                            <label for="srvPhone">Phone</label>
                           </div>
                           <div class="preOptions"> 
-                            <input class="cPhone" type="tel" id="cPhone" name="cPhone"> 
+                            <input class="srvPhone" type="tel" id="srvPhone" name="srvPhone" required> 
                           </div> 
                         </div> 
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="btnForm">
+                  <div class="btnForm">
+                    <button type="submit">Submit</button>
+                  </div>
+                </div>
               </form>
+            </div>
+            <div class="cSi cForm">
+              <form action="#" method="post">
+                <div class="flxStructure">
+                  <div class="flxContainer">
+                    <p>
+                      <strong>Sign up form coming soon!</strong>
+                      <!--
+                      <label for="message"></label>
+                      <textarea id="sgnUp" name="message" placeholder=""></textarea>
+                      -->
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="cPa cForm">
+              <form action="#" method="post">
+                  <div class="flxContainer">
+                    <textarea class="noteContainer" id="notepad" name="message" placeholder="Use this as a notepad!"></textarea>
+                  </div>
+              </form>
+            </div>
           </div>
         </div>
-        <div class="sectPortal">
-          <div class="sectTitle">
-            <h1>Customer Login.</h1>
-          </div>
+        <div class="sectPortal section">
+          <div class="sectTitle"><h1>Customer Login.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
-              <p class="h2Font">COMING SOON.</p>
+              <p class="h2Font"><strong>COMING SOON.</strong></p>
               <div class="lftPara"> 
                 <br>
                 <br>
               </div>
             </aside>
             <aside class="rhtContent">
-              <p class="h2Font">:)
+              <p class="h2Font"><strong>:)</strong>
                 <div class="rhtPara"> 
                 </div>
               </p>
@@ -1028,46 +1300,47 @@
             </aside>
           </div>
         </div>
-        <div class="sectContact">
-          <div class="sectTitle">
-            <h1>Contact Us.</h1>
-          </div>
+        <div class="sectContact section">
+          <div class="sectTitle"><h1>Contact Us.</h1></div>
           <div class="sectContent">
             <aside class="lftContent">
-              <div class="formContainer">
-                <form action=".PHP/form.php" method="post">
-                  <h1>Send us an email!</h1>
-                  <div class="formContent">
-                    <label for="name">Your name: *</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="on">
-                  </div>
-                  <div class="formContent">
-                    <label for="email">Your email: *</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="on">
-                  </div>
-                  <div class="formContent">
-                    <label for="message">Brief message:</label>
-                    <textarea id="message" name="message" placeholder="Enter your message"></textarea>
-                  </div>
-                  <div class="formContent">
-                    <div class="btnForm">
-                      <button type="submit">Submit</button>
+              <div>
+                <div class="formContainer">
+                  <form action=".PHP/form.php" method="post">
+                    <h1>Send us an email!</h1>
+                    <div class="formContent">
+                      <label for="name">Your name: *</label>
+                      <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="on">
                     </div>
-                  </div>
-                </form>
+                    <div class="formContent">
+                      <label for="email">Your email: *</label>
+                      <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="on">
+                    </div>
+                    <div class="formContent">
+                      <label for="message">Brief message:</label>
+                      <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+                    </div>
+                    <div class="btnForm">
+                      <div class="btnForm">
+                        <button type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </aside>
             <aside class="rhtContent">
-              <p class="h2Font">Contact Information.
+              <p class="h2Font">Information.
                <div class="rhtPara"> 
-                  Headquartered in South Carolina.
+                  Headquartered in South Carolina and Utah.
                   <br>
                   <br>
                   Customer's helped WORLDWIDE!
                 </div>
               </p>
-              <div class="selfie">
-                <img src=".IMG/AL.png" alt=""/>
+              <div class="selfStructure">
+                <img src=".IMG/Globe.png" alt="">
+                <img src=".IMG/AL.png" alt="">
               </div>
               <p class="h2Font">Austen Loertscher.
                 <div class="rhtPara">
@@ -1083,77 +1356,13 @@
             </aside>
           </div>
         </div>
-        <div class="lgxContent">
-          <div class="lgxContainer">
-            <div class="lgxRung">
-              <div class="lgxBranch">
-                <div class="brTop">
-                  <div class="brStart">
-                    <div class="brName">
-                      Run_Button
-                    </div>
-                    <div id="lgxRun" class="brCarrots">
-                      <span class="brLeft">[</span>
-                      <span class="brRight">]</span>
-                    </div>
-                  </div>
-                  <div class="brReady">
-                    <div class="brName">
-                      Ready_Active
-                    </div>
-                    <div class="brCarrots">
-                      <span class="brLeft">[</span>
-                      <span class="brRight">]</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="brBottom">
-                  <div class="brRun">
-                    <div class="brName">
-                      Running
-                    </div>
-                    <div id="lgxRunning" class="brCarrots">
-                      <span class="brLeft">[</span>
-                      <span class="brRight">]</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="xicEStop">
-                <div class="lgxName">
-                  Safety_Active
-                </div>
-                <div class="lgxCarrots">
-                  <span class="lgxLeft">[</span>
-                  <span class="lgxRight">]</span>
-                </div>
-              </div>
-              <div class="xioStop">
-                <div class="lgxName">
-                  Stop_Button
-                </div>
-                <div class="lgxCarrots">
-                  <span class="lgxLeft">[</span>
-                  <span>/</span>
-                  <span class="lgxRight">]</span>
-                </div>
-              </div>
-              <div class="oteRun">
-                <div class="lgxName">
-                  Run_PACS
-                </div>
-                <div id="lgxPACS" class="lgxCarrots">
-                  <span class="lgxLeft">(</span>
-                  <span class="lgxRight">)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </aside>
     </main>
-
-    <footer>&copy; 2023 PACS Consulting, LLC. All rights reserved.</footer>
     <script src="zDir.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   </body>
+  <footer>&copy; 2023 PACS Consulting, LLC. All rights reserved.</footer>
 </html>
