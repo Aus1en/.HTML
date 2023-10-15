@@ -217,7 +217,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .sectHome h1 {
@@ -379,15 +379,14 @@ main {
   border-bottom: 1px solid #c0c0c0;
 }
 
-.h2Font, .bWorld {
-  font-size: 22px;
-}
-
 .safetyFont {
   font-size: 22px;
   font-weight: bold;
 }
 
+.h2Font, .bWorld {
+  font-size: 22px;
+}
 /* Add media queries for responsiveness (adjust as needed) */
 @media screen and (max-width: 600px) {
   .formContainer {
