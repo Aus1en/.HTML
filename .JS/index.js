@@ -1,9 +1,9 @@
 window.onload = function () {
   document.body.style.transform = 'scale(1)';
 };
-
+document.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector("header");
-const navRocket = document.querySelector('header img.rocket')
+const navEnterprise = document.querySelector('header img.Enterprise')
 const headerImg = document.querySelector('header img');
 const htmlElement = document.querySelector('html');
 const bDirIMG = htmlElement.getAttribute('dirimg');
@@ -26,13 +26,12 @@ const rlImg = document.querySelector('.imgRL');
 const asImg = document.querySelector('.imgAS');
 const icolink = document.querySelector('link[rel="icon"]');
 const icoshortLink = document.querySelector('link[rel="shortcut icon"]');
-const dashboard = document.querySelector('.dashboard');
-const btnGroups = document.querySelectorAll(".btnDash, .btnNav, .btnLink, .btnHead");
-const btnOptions = document.querySelectorAll(".btnCmd");
+const btnGroups = document.querySelectorAll(".btnCmd, .btnDash, .btnHead, .btnLink");
+//const btnOptions = document.querySelectorAll(".btnCmd");
 const canvas = document.getElementById("canvasHeader");
 const ctx = canvas.getContext("2d");
-const cirElements = document.querySelectorAll('.cir[data-popover]');
-const cirStructure = document.querySelector('.cirPara');
+const cirElements = document.querySelectorAll('.fntCir[data-popover]');
+const cirStructure = document.querySelector('.cirStructure');
 const popover = document.createElement('div');
 const runButton = document.getElementById("btnRun");
 const homeButton = document.getElementById("btnHome");
@@ -66,7 +65,7 @@ let resizeHandle = null;
 // Set the REFs to the images
 icolink.href = `${bDirIMG}PACS.ico`;
 icoshortLink.href = `${bDirIMG}PACS.ico`;
-navRocket.src = `${bDirIMG}Rocket.png`;
+navEnterprise.src = `${bDirIMG}Enterprise.png`;
 headerImg.src = `${bDirIMG}PACSBlacksmall.png`;
 adImg.src = `${bDirIMG}AD.png`;
 ad2Img.src = `${bDirIMG}AD.png`;
@@ -111,9 +110,9 @@ class Circle {
 }
 
 const circles = [
-  new Circle(0, 10, 8, 3),
-  new Circle(5, 26, 13, 2),
-  new Circle(5, 23, 20, 1),
+  new Circle(0, 10, 8, 1),
+  new Circle(5, 26, 13, .6),
+  new Circle(5, 23, 20, .2),
 ];
 
 function animate() {
@@ -128,17 +127,17 @@ function animate() {
 animate();
 
 $(document).ready(function() {
-  $('.cir').hover(function() {
+  $('.fntCir').hover(function() {
     var cirColor = $(this).css('background-color');
     
     // Change the background color of all sections
     $('.section').css('background-color', cirColor);
   }, function() {
     // On hover out, reset the background color of all sections to the default
-    //$('.section').css('background-color', 'white'); // You can change the default color
+    //$('.section').css('background-color', 'white');
   });
-  $('#btnRun').click(function() { // Change from hover to click
-    var cirColor = $('.btnHome').css('background-color');
+  $('#btnRun').click(function() {
+    var cirColor = $('#btnRun').css('background-color');
 
     // Change the background color of all sections
     $('.section').css('background-color', cirColor);
@@ -150,8 +149,11 @@ btnGroups.forEach(button => {
     event.preventDefault();
     const id = button.getAttribute("id")
     const sectionId = button.getAttribute("data-sect");
-    HideSections(sectionId);
-    showSection(sectionId, id);
+    if (sectionId.charAt(0) != "c") {
+      hideSections(sectionId);
+      showSection(sectionId, id);
+    }
+    showOption(sectionId, id); 
   });
 });
 
@@ -159,113 +161,87 @@ function showSection(sectionId, id) {
   const btnID = document.getElementById(id);
   const section = document.querySelector(`.${sectionId}`);
 
-  document.querySelectorAll(".btnNav, .btnDash, .btnHead").forEach(btn => {
-    if (btn.className === "btnNav") {
-      btn.style.backgroundColor = "transparent";
-      btn.style.color = "#ffffff";
-    } else if (btn.className === "btnHead") {
-      btn.style.backgroundColor = "transparent";
-      btn.style.color = "#000000";
-      if (btnID.id === "btnEye") {
-        homeButton.style.backgroundColor = "transparent";
-        homeButton.style.color = "#ffffff";
-      } else {
-        cntctButton.style.backgroundColor = "transparent";
-        homeButton.style.color = "#ffffff";
-      }
-    } else {
-      btn.style.backgroundColor = "#f2f2f2";
-    }
+  document.querySelectorAll(".btnDash, .btnCmd").forEach(btn => {
+    //if (btn.className === "btnCmd") {
+    btn.style.backgroundColor = "#f2f2f280";
+    btn.style.color = "#000000";
   });
+    if (section) {
+      // Reset z-index and visibility for all sections
+      document.querySelectorAll(".flxMain > div, .cStructure").forEach(sec => {
+        sec.style.zIndex = "0";
+        sec.style.display= "none";
+      });
 
-  if (section) {
-    // Reset z-index and visibility for all sections
-    document.querySelectorAll(".mainStructure > div").forEach(sec => {
-      sec.style.zIndex = "0";
-      sec.style.display = "none";
-    });
+      // Display the selected section
+      section.style.zIndex = "1";
+      section.style.display = "flex";
 
-    // Display the selected section
-    section.style.zIndex = "1";
-    section.style.display = "flex";
+      if (btnID) {
+        if (btnID.className === "btnLink") {
+          btnID.style.backgroundColor = "transparent"
+          if (btnID.id === "lnkEngine") {
+            engButton.style.backgroundColor ="#AEE2FC";
+          } else if (btnID.id === "lnkDesign") {
+            desButton.style.backgroundColor ="#AEE2FC";
+          } else if (btnID.id === "lnkProgramming") {
+            proButton.style.backgroundColor ="#AEE2FC";
+          } else if (btnID.id === "lnkPortal") {
+            porButton.style.backgroundColor ="#AEE2FC";
+          } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm" || btnID.id === "lnkHelp") {
+            forButton.style.backgroundColor ="#AEE2FC";
+          } else if (btnID.id === "lnkContact" || btnID.id === "lnkContact2" || btnID.id === "lnkContact3") {
+            cntctButton.style.backgroundColor ="#AEE2FC";
+            cntctButton.style.color = "#000000";
+          } else if (btnID.id === "lnkCase1" || btnID.id === "lnkCase2" || btnID.id === "lnkCase3") {
+          }
+     
+          showOption();  
 
-    if (btnID) {
-      if (btnID.className === "btnLink") {
-        if (btnID.id === "lnkEngine") {
-          engButton.style.backgroundColor ="#AEE2FC";
-        } else if (btnID.id === "lnkDesign") {
-          desButton.style.backgroundColor ="#AEE2FC";
-        } else if (btnID.id === "lnkProgramming") {
-          proButton.style.backgroundColor ="#AEE2FC";
-        } else if (btnID.id === "lnkPortal") {
-          porButton.style.backgroundColor ="#AEE2FC";
-        } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm") {
-          forButton.style.backgroundColor ="#AEE2FC";
-        } else if (btnID.id === "lnkContact" || btnID.id === "lnkContact2" || btnID.id === "lnkContact3") {
-          cntctButton.style.backgroundColor ="#AEE2FC";
-          cntctButton.style.color = "#000000";
-        } else if (btnID.id === "lnkCase1" || btnID.id === "lnkCase2" || btnID.id === "lnkCase3") {
-        }
-      } else if (btnID.className === "btnHead") {
-        btnID.style.backgroundColor = "transparent";
-        btnID.style.color = "#000000";
-        if (btnID.id === "btnEye") {
-          homeButton.style.backgroundColor = "#AEE2FC";
-          homeButton.style.color = "#000000";
+        } else if (btnID.className === "btnHead") {
+          if (btnID.id === "btnEye") {
+            homeButton.style.backgroundColor = "#AEE2FC";
+            homeButton.style.color = "#000000";
+          } else {
+            cntctButton.style.backgroundColor = "#AEE2FC";
+            cntctButton.style.color = "#000000";
+          }
         } else {
-          cntctButton.style.backgroundColor = "#AEE2FC";
-          cntctButton.style.color = "#000000";
+          btnID.style.backgroundColor = "#AEE2FC";
         }
-      } else {
-        btnID.style.backgroundColor = "#AEE2FC";
       }
-      if (btnID.className === "btnNav") {
-        btnID.style.color = "#000000";
-      }
-      showOption();
-    }
   }
 }
-
-btnOptions.forEach(button => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    const id = button.getAttribute("id")
-    const sectionId = button.getAttribute("data-sect");
-    showOption(sectionId, id);
-  });
-});
 
 function showOption(sectionId, id) {
   const btnID = document.getElementById(id);
   const section = document.querySelector(`.${sectionId}`);
 
   document.querySelectorAll(".btnCmd").forEach(btn => {
-    btn.style.backgroundColor = "#ffffff";
+    btn.style.backgroundColor = "#f2f2f280";
   });
-//.cPre, .cSi, .cPa
-  document.querySelectorAll(".cStructure > div, .cForm").forEach(sec => {
+
+  // Reset z-index and visibility for all sections
+  document.querySelectorAll(".cStructure, .cForm").forEach(sec => {
     sec.style.display = "none";
+    sec.style.zIndex = "0";
   });
 
   if (section) {
-    // Reset z-index and visibility for all sections
-    document.querySelectorAll(".cStructure > div, .cForm").forEach(sec => {
-      sec.style.zIndex = "0";
-    });
-
     // Display the selected section
-    section.style.display = "block";
+    section.style.display = "flex";
     section.style.zIndex = "1";
 
     if (btnID) {
+      if (btnID.className != "btnLink") {
         btnID.style.backgroundColor = "#AEE2FC";
       }    
     } else {
-      document.querySelectorAll(".cStructure > div, .cForm").forEach(sec => {
-        sec.style.display = "none";
-      });
-    }
+      document.querySelectorAll(".cStructure, .cForm").forEach(sec => {
+      sec.style.display = "none";
+    });
+  }
+}
 }
 
 // Attach an event listener to the "Show Home Section" button
@@ -291,7 +267,7 @@ function StartHomeSections() {
 }
 
 // Function to hide all but selected
-function HideSections(sectId) {
+function hideSections(sectId) {
   sections.forEach(sectionId => {
     const section = document.querySelector(`.${sectionId}`);
     if (sectionId != sectId) {
@@ -320,7 +296,7 @@ runButton.addEventListener("click", function () {
       }
     });
     isGreen = false;
-    runButton.style.backgroundColor = "#ffffff";
+    runButton.style.backgroundColor = "#f2f2f2";
   } else {
     lgxCarrots.forEach(carrot => {
       previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
@@ -338,7 +314,7 @@ lgxCarrots.forEach(carrot => {
   const previousColor = carrot.style.backgroundColor;
   carrot.addEventListener("mouseenter", function () {
     previousColors.set(carrot, getComputedStyle(carrot).backgroundColor);
-    carrot.style.backgroundColor = "#ffbe81";
+    carrot.style.backgroundColor = "#ffc880";
   });
 
   carrot.addEventListener("mouseleave", function () {
@@ -357,13 +333,29 @@ cirElements.forEach(cirElement => {
     popover.style.top = rect.top + 15 + 'px';
     popover.style.left = rect.left + 'px';
 
-    popover.style.display = 'block';
+    popover.style.display = 'flex';
+    popover.style.backgroundColor = '#f2f2f2';
   });
 
   cirElement.addEventListener('mouseleave', () => {
     popover.style.display = 'none';
   });
 });
+
+// JavaScript code to update the clock
+//function updateClock() {
+  //const now = new Date();
+  //const hours = now.getHours().toString().padStart(2, '0');
+  //const minutes = now.getMinutes().toString().padStart(2, '0');
+  //const seconds = now.getSeconds().toString().padStart(2, '0');
+  //const timeString = `${hours}:${minutes}:${seconds}`;
+
+//  document.getElementById("header-clock").textContent = timeString;
+//}
+
+      // Update the clock initially and every second
+      //updateClock();
+      //setInterval(updateClock, 1000);
 
 //Email submition code for contacting.
 // Wait for the DOM to be loaded
@@ -397,4 +389,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   // Attach the form submission event listener
   form.addEventListener('submit', validateForm);
+});
 });

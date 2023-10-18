@@ -1,852 +1,594 @@
-@media (min-width: 1440px) {
+@media (min-width: 1001px) {
 @media (orientation: landscape) {
-    /* Styles for small screens (e.g., smartphones) */
+    /* Styles for desktop */
     /* Style for landscape view */
-    @keyframes moveRocket {
-      0% {
-        left: -100px;
-        }
-      100% {
-        left: calc(100% - 75px);
-      }}
-  
-    @font-face {
-      src: url('Ubuntu-Regular.ttf') format('truetype');
-      font-family: 'Ubuntu';
-    }
+    /* @import 'mobilep.css';*/
+    /* @import 'desktopl.css';*/
+    /* @import 'desktopp.css';*/
 
-    @font-face {
-      src: url('Ubuntu-Bold.ttf') format('truetype');
-      font-family: 'Ubuntu';
-      font-weight: bold;
-    }
-  
-    .dashContainer:hover, .btnContainer:hover, .optContainer:hover, button:hover {
-      color: #000000;
-      background-color: #AEE2FC;
-    }
-  
-    button:hover {
-      color: #000000;
-      background-color: #00aaff;
-    }
-    
-    .indentSection {
-      margin-left: 3%;
-      margin-top: 3%;
-      margin-bottom: 3%;
-    }
-  
-    .bName, img {
-      font-size: 25px;
-      display: flex;
-      align-items: center;
-      object-fit: scale-down;
-      z-index: 3;
-    }
-  
-    .safetyFont {
-      font-size: 22px;
-      font-weight: bold;
-    }
-  
-    .h2Font, .bWorld {
-      font-size: 22px;
-    }
-  
-    .btnFont {
-      font-size: 14px;
-      font-weight: normal;
-    }
-  
-    .cirFont {
-      font-size: 30px;
-      font-weight: bold;
-    }
-  
-    body {
-      -webkit-user-select: none;
-      user-select: none;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Ubuntu';
-      background-color: #f1f1f1;
-    }
-  
-    canvas {
-      display: flex;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 0;
-    }
-  
-    header {
-      margin: 0;
-      padding: 1px;
-      height: 55px;
-      display: flex;
-      position: relative;
-      align-items: center;
-      color: #000000;
-      background-color: #AEE2FC;
-    }
-  
-    header a {
-      z-index: 0;
-    }
-  
-    nav {
-      height: 30px;
-      display: flex;
-      flex-direction: row;
-      position: relative;
-      color: #fff;
-      background-color: #333;
-      align-items: center;
-      justify-content: right;
-      z-index: 1;
-    }
-  
-    .navLinks{
-      display: flex;
-      flex-direction: row;
-    }
-  
-    nav a {
-      padding: 1% 10px;
-      color: #fff;
-      display: flex;
-      font-weight: bold;
-    }
-  
-    li {
-      margin-top: 1%;
-      list-style-type: "->";
-      font-weight: bold;
-      color: #000000;
-      border: transparent;
-    }
-  
-    li img {
-      width: 20px;
-      height: 20px;
-    }
-  
-    li a {
-      text-decoration: none !important;
-      color:#000000 !important;
-    }
-  
-    main {
-      flex: 1;
-      display: flex;
-    }
-  
-    .dashboard {
-      width: 10%;
-      height: 100%;
-      float: left;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      background-color: #f2f2f2;
-    }
-  
-    .dashHeader {
-      width: 90%;
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      padding-bottom: 3%;
-      border-bottom: 1px solid #c0c0c0;
-    }
-  
-    .dashContent {
-      width: 100%;
-      padding-bottom: 1%;
-      margin-bottom: 3%;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .dashContainer {
-      width: inherit;
-      height: 100%;
-      display: flex;
-      background-color: #f2f2f2;
-      border-radius: 5px;
-      border: 1px solid #000000;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .dashPortal {
-      top: 5%;
-      position: relative;
-    }
-  
-    .mainStructure {
-      width: 90%;
-      height: 100%;
-      flex: 1;
-      float: right;
-      display: flex;
-      position: relative;
-      z-index: 0;
-    }
-  
-    .sectTitle {
-      width: 100%;
-      display: flex;
-      background-color: #ffffff;
-      position: relative;
-      border-bottom: 1px solid #c0c0c0;
-    }
-  
-    .sectContent {
-      margin-top: 1%;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      position: relative;
-      background-color: #ffffff;
-    }
-  
-    .sectHome, .sectPerformance, .sectAbility,
-    .sectAbility, .sectCost, .sectSafety, .sectTurnkey,
-    .sectUpgrade, .sectFabrication, .sectSCADA, .sectHMI,
-    .sectWeb, .sectDatabase, .sectPLC, .sectForms, .sectPortal, .sectContact{
-      height: 100%;
-      width: 100%;
-      padding-left: 1%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent;
-      transition: background-color 0.3s;
-    }
-  
-    .btnContainer {
-      margin-left: 25%;
-      margin-top: 5%;
-      padding: 10px;
-      width: 80px;
-      height: 30px;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #ffffff;
-      border-radius: 5px;
-      border: 1px solid #000000;
-      transform: translate(-50%,-50%);
-    }
-  
-    .sectContainer {
-      margin-top: 2%;
-      margin-left: 20%;
-      display: inline-flex;
-      position: relative;
-      justify-content: left;
-      align-items: left;
-      background-color: #ffffff;
-      border-radius: 5px;
-    }
-  
-    .lgxContainer {
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .preContainer {
-      display: flex;
-      flex-direction: row;
-      border: 1px solid #a0a0a0;
-      border-radius: 20px;
-    }
-  
-    .clmContainer {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .flxContainer {
-      display: flex;
-      flex-direction: row;
-    }
-  
-    .frmContainer {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .formContainer {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      margin-top: 3%;
-      padding-left: 1%;
-      border: 1px solid #ddd;
-      border-radius: 3%;
-    }
-  
-    .optContainer {
-      margin-right: 10px;
-      padding: 10px;
-      width: 80px;
-      height: 30px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #ffffff;
-      border-radius: 5px;
-      border: 1px solid #000000;
-      transform: translate(-50%,-50%);
-    }
-  
-    .btnDash {
-      padding: 3%;
-      width: 80%;
-      color: #000000;
-      background-color: #f2f2f2;
-      font-weight: bold;
-      border-radius: 5px;
-      text-align: right;
-    }
-  
-    .btnForm {
-      display: flex;
-      margin-right: 15px;
-      margin-top: 5px;
-      background-color: #ffffff;
-      border: none;
-      border-radius: 4px;
-      text-align: center;
-      align-items: flex-end;
-      justify-content: flex-end;
-    }
-  
-    button {
-      width: 75px;
-      display: flex;
-      padding: 10px 20px;
-      background-color: #AEE2FC;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      justify-content: center;
-      text-align: center;
-    }
-  
-    .btnCmd {
-      width: 100%;
-      padding: 3%;
-      color: #000000;
-      text-align: center;
-      justify-content: center;
-      background-color: #ffffff;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-  
-    .btnHome {
-      width: 80%;
-      color: #000000;
-      text-align: center;
-      justify-content: center;
-      position: absolute;
-      background-color: #ffffff;
-      border-radius: 5px;
-    }
-  
-    .lftContent {
-      flex: 1;
-      max-width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      background-color: #ffffff;
-      border-radius: 5px;
-    }
-  
-    .rhtContent {
-      flex: 1; /* Allow rhtContent to expand and fill available space */
-      max-width: 50%; /* Set a maximum width of 25% */
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      background-color: #ffffff;
-      border-radius: 5px;
-      margin-left: 20%;
-      padding-right: 1%;
-    }
-  
-    .rhtPara {
-      display: flex;
-      font-size: 18px;
-      line-height: 1.5;
-      font-weight: normal;
-      background-color: #ffffff;
-    }
-  
-    .lftPara {
-      display: flex;
-      flex-direction: column;
-      font-size: 18px;
-      line-height: 1.5;
-      font-weight: normal;
-      background-color: #ffffff;
-    }
-  
-    .lftPara strong {
-      font-size: 16px;
-      display: inline-flex;
-    }
-  
-    .cStructure{
-      margin-top: 20px;
-      width: 600px;
-      height: 300px;
-      position: relative;
-      display: flex;
-    }
-  
-    .cSCADA, .cHMI, .cPLC, .cWeb, .cAlarms, .cEvents {
-      position: absolute;
-      width: inherit;
-      height: inherit;
-      justify-content: left;
-      display: flex;
-      flex-direction: column;
-      background-color: #ffffff;
-    }
-  
-    .widget {
-      margin-left: 5px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 300px;
-      height: 300px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-      cursor: move;
-      border: 1px solid #ddd;
-      transition: transform 0.2s ease-in-out;
-    }
-  
-    .functionBlock {
-      display: flex;
-      flex-direction: column;
-      width: 150px;
-      height: 200px;
-      border-radius: 5px;
-      border: 1px solid #000000;
-    }
-  
-    .inline {
-      left: 4.8%;
-      height: 0;
-      position: absolute;
-      align-items: left;
-      width: 50px;
-      border: 1px solid #000000;
-    }
-  
-    .outline {
-      left: 39%;
-      height: 0;
-      position: absolute;
-      align-items: center;
-      width: 50px;
-      border: 1px solid #000000;
-    }
-  
-    .functionName {
-      margin-bottom: 4px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 150px;
-      height: 20px;
-      border-radius: 5px;
-    }
-  
-    .functionUpper {
-      margin-bottom: 15px;
-      display: flex;
-      flex-direction: row;
-      width: 150px;
-      height: 20px;
-      border-radius: 5px;
-    }
-  
-    .functionIn {
-      margin-left: 5px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      width: 50px;
-      height: 20px;
-      border-radius: 5px;
-    }
-  
-    .functionOut {
-      margin-left: 15px;
-      align-items: center;
-      margin-bottom: 15px;
-      display: flex;
-      width: 50px;
-      height: 20px;
-      border-radius: 5px;
-    }
-  
-    .cirPara {
-      height: inherit;
-      width: inherit;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: normal;
-      background-color: #ffffff;
-    }
-  
-    .cir {
-      display: flex;
-      margin-top: 65px;
-      margin-left: 5px;
-      margin-right: 5px;
-      align-items: center;
-      justify-content: center;
-      height: 65px;
-      width: 65px;
-      border: 1px solid #000000;
-      border-radius: 15px;
-    }
-  
-    .cirA {
-      background-color: #ffbe81;
-    }
-  
-    .cirP {
-      background-color: #AEE2FC;
-    }
-  
-    .cirQ {
-      background-color: #8183ff;
-    }
-  
-    .cirOEE {
-      background-color: #b3ff81;
-    }
-  
-    .popover {
-      font-size: 16px;
-      font-weight: bold;
-      display: flex;
-      position: absolute;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      z-index: 1;
-      display: none;
-    }
-  
-    .rocket {
-      display: flex;
-      top: 30px;
-      width: 75px; /* Adjust the size of the rocket ship as needed */
-      height: 75px;
-      position: absolute;
-      transform: translateY(-50%);
-      animation: moveRocket 10s linear infinite;
-      z-index: 1;
-    }
-  
-    footer {
-      padding: 0;
-      height: 35px;
-      display: flex;
-      color: #fff;
-      background-color: #333333;
-      text-align: left;
-      align-items: center;
-    }
-  
-    .lgxName, .brName {
-      display: flex;
-      background-color: transparent;
-    }
-  
-    .lgxContent {
-      width: 100%;
-      display: flex;
-      position: relative;
-      padding-top: 10%;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-    }
-  
-    .lgxRung {
-      width: 100%;
-      height: 2px;
-      display: flex;
-      flex-direction: row;
-      background-color: #000000;
-      margin-bottom: 20px;
-    }
-  
-    .lgxBranch {
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 250px;
-      height: 75px;
-      background-color: transparent;
-      border-left: 2px solid #000000; 
-      border-right: 2px solid #000000; 
-      border-bottom: 2px solid #000000; 
-    }
-  
-    .brTop, .brBottom {
-      display: flex;
-      flex-direction: row;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .brRun, .brStart, .brReady {
-      top: -15%;
-      width: 125px;
-      height: 75px;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .oteRun {
-      left: 8%;
-    }
-  
-    .xicStart, .xioStop, .xicEStop, .oteRun {
-      top: -2500%;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 125px;
-      height: 75px;
-      background-color: transparent;
-    }
-  
-    .lgxCarrots, .brCarrots {
-      height: 30%;
-      width: 20%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background-color: #ffffff;
-    }
-  
-    .lgxLeft, .brLeft {
-      display: flex;
-      width: 15px;
-      justify-content: flex-start;
-    }
-  
-    .lgxRight, .brRight {
-      display: flex;
-      width: 15px;
-      justify-content: flex-end;
-    }
-  
-    .brReady .brCarrots, .xicEStop .lgxCarrots, .xioStop .lgxCarrots {
-      background-color: #84ffa9;
-    }
-  
-    .tblContent {
-      background-color: transparent;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    
-    th {
-      padding: 3%;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-      background-color: #f2f2f2;
-    } 
-  
-    td {
-      padding: 5px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-      resize: horizontal;
-      overflow: hidden;
-    }
-  
-    .selfStructure {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 5%;
-      margin-top: 15%;
-    }
-  
-    .selfStructure img {
-      display: flex;
-      width: 100px;
-      height: 100px;
-      margin-right: 10px;
-      border-radius: 50%;
-      object-fit: fill;
-    }
-  
-    .formContent {
-      display: flex;
-      flex-direction: column;
-      width: 95%;
-      margin-top: 3%;
-      padding-left: 1%;
-      border: 1px transparent #ddd; 
-    }
-  
-    .formContent textarea {
-      width: 95%;
-      padding-bottom: 25%;
-      height: 150px;
-    }
-  
-    .formContent label, .formContent input {
-      width: 350px;
-      padding-bottom: 5px;
-      display: flex;
-      justify-content: flex-start;
-    }
-  
-    .opStructure {
-      font-size: 22px;
-      margin-top: 65px;
-    }
-  
-    .flxStructure {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .flxSection {
-      width: 50%;
-      flex-direction: row;
-      border: 1px solid #000000;
-    }
-  
-    .flxLeft {
-      width: 50%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-  
-    .flxRight {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-    }
-  
-    .frmSection {
-      display: flex;
-      width: 50%;
-      flex-direction: row;
-      align-items: center;
-    }
-  
-    .preSection {
-      display: flex;
-      width: 50%;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .preLeft, .preRight {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .chkBox {
-      margin-left: 1%;
-      margin-right: 3%;
-    }
-  
-    .cPre {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      border: 1px solid #a0a0a0;
-      border-radius: 5px;
-    }
-  
-    .cCompany, .cName, .cEmail, .cPhone, .cProcess, .cOther {
-      padding-bottom: 2px;
-      height: 20px;
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #000000;
-    }
-  
-    .frmOptions {
-      width: 100%;
-      display: flex;
-      margin-top: 10px;
-      margin-left: 10px;
-      justify-content: flex-end;
-    }
-  
-    .preOptions {
-      width: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-  
-    .tossContainer {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
+@keyframes moveEnterprise {
+  0% {
+    left: -100px;
+    }
+  100% {
+    left: calc(99% - 75px);
+  }}
+
+@font-face {
+  src: url('Ubuntu-Regular.ttf') format('truetype');
+  font-family: 'Ubuntu';
+}
+
+@font-face {
+  src: url('Ubuntu-Bold.ttf') format('truetype');
+  font-family: 'Ubuntu';
+  font-weight: bold;
+}
+
+.hvrBlue:hover {     /* .optContainer:hover,.dashContainer:hover, .flxNav:hover, .btnContainer:hover, .optBtn:hover, .btnNav:hover,*/
+  color: #000000;
+  background-color: #AEE2FC;
+}
+
+form label:hover, form input:hover {
+  color: #000000;
+  background-color: #f2f2f2;
+}
+
+.brCarrots:hover {
+  background-color: #ffc880;
+}
+
+button:hover {
+  color: #000000;
+  background-color: #00aaff;
+}
+
+.posBelow {z-index: -10;}
+.posZero {z-index: 0;}
+.posOne {z-index: 1;}
+.posThree {z-index: 999;}
+
+.posLt420 {margin-left: -4.2%};
+
+.posRel {position: relative;}
+.posAbs {position: absolute;}
+.fntWhite {color: #ffffff;}
+.fntBlack {color: #000000;}
+
+.fntH2 {font-size: 22px;}
+
+input {border: transparent;}
+.radFive {border-radius: 5px;}
+.borTransparent {border: transparent;}
+.borDefault {border: 1px solid #f2f2f2;}
+.borOffset {border: 1px solid #cccccc;}
+.borBtDefault {border-bottom: 1px solid #f2f2f2;}
+.borBtOffset {border-bottom: 1px solid #cccccc;}
+
+.cirA {background-color: #ffbe81;}
+.cirP {background-color: #AEE2FC;}
+.cirQ {background-color: #8183ff;}
+.cirOEE {background-color: #b3ff81;}
+.bckTransparent {background-color: transparent;}
+.bckDefault {background-color: #f2f2f2;}
+.bckWhite {background-color: #ffffff;}
+.bckOffset {background-color: #cccccc;}
+.bckFoot {background-color: #333333;}
+
+.imgSclSmall {object-fit: scale-down;}
+.animTrans {transition: background-color 0.3s;}
+
+.padTenth {padding: .1%;}
+.padHalf {padding: .5%;}
+.padOne {padding: 1%;}
+.padThree {padding: 3%;}
+.padFive {padding: 5%;}
+.padTen {padding: 10%;}
+.padLtHf {padding-left: .5%;}
+.padLtOne {padding-left: 1%;}
+.padLtThree {padding-left: 3%;}
+.padLtFive {padding-left: 5%;}
+.padLtTen {padding-left: 10%;}
+.padRtHf {padding-right: .5%;}
+.padRtOne {padding-right: 1%;}
+.padRtThree {padding-right: 3%;}
+.padRtFive {padding-right: 5%;}
+.padRtTen {padding-right: 10%;}
+.padBtHf {padding-bottom: .5%;}
+.padBtOne {padding-bottom: 1%;}
+.padBtThree {padding-bottom: 3%;}
+.padBtFive {padding-bottom: 5%;}
+.padBtTen {padding-bottom: 10%;}
+.padTpHf {padding-top: .5%;}
+.padTpOne {padding-top: 1%;}
+.padTpThree {padding-top: 3%;}
+.padTpFive {padding-top: 5%;}
+.padTpTen {padding-top: 10%;}
+
+.marTenth {margin: .5%;}
+.marHalf {margin: .5%;}
+.marOne {margin: 1%;}
+.marLtHf {margin-left: .5%;}
+.marLtOne {margin-left: 1%;}
+.marLtTwo {margin-left: 2%;}
+.marLtThree {margin-left: 3%;}
+.marLtFive {margin-left: 5%;}
+.marLtTen {margin-left: 10%;}
+.marLtThirteen {margin-left: 13%;}
+.marLtTwenty {margin-left: 20%;}
+.marLtTwentyFive {margin-left: 25%;}
+.marRtHf {margin-right: .5%;}
+.marRtOne {margin-right: 1%;}
+.marRtTwo {margin-right: 2%;}
+.marRtThree {margin-right: 3%;}
+.marRtFive {margin-right: 5%;}
+.marRtTen {margin-right: 10%;}
+.marRtTwenty {margin-right: 20%;}
+.marRtTwentyFive {margin-right: 25%;}
+.marBtHf {margin-bottom: .5%;}
+.marBtOne {margin-bottom: 1%;}
+.marBtTwo {margin-bottom: 2%;}
+.marBtThree {margin-bottom: 3%;}
+.marBtFive {margin-bottom: 5%;}
+.marBtTen {margin-bottom: 10%;}
+.marBtTwentyFive {margin-bottom: 25%;}
+.marTpHf {margin-top: .5%;}
+.marTpOne {margin-top: 1%;}
+.marTpTwo {margin-top: 2%;}
+.marTpThree {margin-top: 3%;}
+.marTpFive {margin-top: 5%;}
+.marTpTen {margin-top: 10%;}
+.marTpTwenty {margin-top: 20%;}
+
+.flxWd2 {width: 2%;}
+.flxWd4 {width: 4%;}
+.flxWd8 {width: 8%;}
+.flxWd10 {width: 10%;}
+.flxWd15 {width: 15%;}
+.flxWd35 {width: 35%;}
+.flxWd50 {width: 50%;}
+.flxWd75 {width: 75%;}
+.flxWd95 {width: 95%;}
+.flxWd {width: 100%;}
+.flxHt0 {height: 0%;}
+.flxHt2 {height: 2%;}
+.flxHt8 {height: 8%;}
+.flxHt10 {height: 10%;}
+.flxHt15 {height: 15%;}
+.flxHt35 {height: 35%;}
+.flxHt50 {height: 50%;}
+.flxHt75 {height: 75%;}
+.flxHt {height: 100%;}
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Ubuntu';
+  background-color: #f2f2f2;
+}
+
+.section {
+  padding-left: 1%;
+  transition: background-color 0.3s;
+}
+
+.flxNav {
+  width: 10%;
+  height: 25%;
+}
+
+.flxTitle {
+  width: 100%;
+  margin-bottom: 1%;
+  display: flex;
+  position: relative;
+  background-color: transparent;
+  border-bottom: 1px solid #bebebe;
+}
+
+.flxColRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flxMain {
+  width: 95%;
+  height: 100%;
+}
+
+.flxNineNine {
+  display: flex;
+  width: 99.5%;
+  height: 99.5%;
+}
+
+.flxFull {
+  width: 100%;
+  height: 100%;
+}
+
+.flxDash {
+  width: inherit;
+  height: 100%;
+  display: flex;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flxRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flxCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.indentSection {
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+header {
+  padding: .1%;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  background-color: #AEE2FC;
+  z-index: -99;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dashboard {
+  width: 15%;
+}
+
+.Enterprise {
+  width: 5%; /* Adjust the size of the rocket ship as needed */
+  height: 100%;
+  position: absolute;
+  animation: moveEnterprise 60s linear infinite;
+  z-index: 0;
+}
+
+.fntBtn, .fntDash {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fntCir {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+li {
+  margin-top: 1%;
+  list-style-type: "->";
+  font-weight: bold;
+  color: #000000;
+  border: transparent;
+}
+
+li img {
+  width: 20px;
+  height: 20px;
+}
+
+.btnLink, .decorationOff {
+  text-decoration: none !important;
+  color:#000000 !important;
+}
+
+nav {
+  height: 4%;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  z-index: 2;
+}
+
+.alnCenter {
+  align-items: center;
+  justify-content: center;
+}
+
+.alnCtrRt {
+  align-items: center;
+  justify-content: right;
+}
+
+.alnCtrLt {
+  align-items: center;
+  justify-content: left;
+}
+
+.alnLt {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.alnRt {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.alnBottom {
+  align-items: bottom;
+  justify-content: bottom;
+}
+
+.dashHeader {
+  width: 90%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 3%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.lgxContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noteContainer {
+  display: block;
+  flex: 1;
+  position: relative;
+  width: 100%;
+}
+
+.btnCmd {
+  width: 85%;
+  height: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: #000000;
+  background-color: #f2f2f2;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 3%;
+}
+
+.btnDash {
+  padding: 3%;
+  width: 80%;
+  color: #000000;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.btnForm {
+  display: flex;
+  margin-top: 1%;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+button {
+  width: 75px;
+  display: flex;
+  padding: 10px 20px;
+  background-color: #AEE2FC;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+}
+
+.rhtContent {
+  margin-left: 13%;
+}
+
+.rhtPara {
+  display: flex;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+  background-color: #cccccc;
+}
+
+.lftPara {
+  display: flex;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+  background-color: #cccccc;
+}
+
+.lftPara strong {
+  font-size: 16px;
+  display: inline-flex;
+}
+
+.widget {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #f2f2f2;
+}
+
+.popover {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #f2f2f2;
+  z-index: 10;
+}
+
+.lgxName, .brName {
+  display: flex;
+  background-color: transparent;
+}
+
+.lgxContent {
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding-top: 10%;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.lgxRung {
+  width: 100%;
+  height: 2px;
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  margin-bottom: 20px;
+}
+
+.lgxBranch {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 75px;
+  background-color: transparent;
+  border-left: 2px solid #000000; 
+  border-right: 2px solid #000000; 
+  border-bottom: 2px solid #000000; 
+}
+
+.brTop, .brBottom {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.brRun, .brStart, .brReady {
+  top: -15%;
+  width: 125px;
+  height: 75px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.oteRun {
+  left: 8%;
+}
+
+.xicStart, .xioStop, .xicEStop, .oteRun {
+  top: -2500%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  height: 75px;
+  background-color: transparent;
+}
+
+.lgxCarrots, .brCarrots {
+  height: 30%;
+  width: 20%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.lgxLeft, .brLeft {
+  display: flex;
+  width: 15px;
+  justify-content: flex-start;
+}
+
+.lgxRight, .brRight {
+  display: flex;
+  width: 15px;
+  justify-content: flex-end;
+}
+
+.brReady .brCarrots, .xicEStop .lgxCarrots, .xioStop .lgxCarrots {
+  background-color: #84ffa9;
+}
+
+table {
+  max-width: 100%;
+  border: transparent;
+  font-size: 14px;
+}
+
+th {
+  padding: 1%;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  background-color: #f2f2f2;
+} 
+
+td {
+  padding: 1%;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  resize: horizontal;
+  overflow: hidden;
+}
+
+.selfStructure {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5%;
+  margin-top: 15%;
+}
+
+.selfStructure img {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+textarea {
+  width: 95%;
+  padding-bottom: 25%;
+  height: 150px;
+  resize: both;
+  background-color: #f2f2f2;
+}
 }
 }
