@@ -45,19 +45,6 @@ popover.className = 'popover';
 document.body.appendChild(popover);
 const artist = document.getElementById("drawingCanvas");
 
-let isDrawing = false;
-
-let offsetX = 0;
-let offsetY = 0;
-let startX = 0;
-let startY = 0;
-let startWidth = 0;
-let startHeight = 0;
-let isDragging = false;
-let isResizing = false;
-let activeElement = null;
-let resizeHandle = null;
-
 // Set the REFs to the images
 icolink.href = `${bDirIMG}PACS.ico`;
 icoshortLink.href = `${bDirIMG}PACS.ico`;
@@ -80,6 +67,8 @@ abImg.src = `${bDirIMG}AB.png`;
 ab2Img.src = `${bDirIMG}AB.png`;
 rlImg.src = `${bDirIMG}RL.png`;
 asImg.src = `${bDirIMG}AS.png`;
+
+let isGreen = false;
 
 //Circle creation for canvas on header
 class Circle {
@@ -145,7 +134,7 @@ btnGroups.forEach(button => {
     event.preventDefault();
     const id = button.getAttribute("id")
     const sectionId = button.getAttribute("data-sect");
-    if (sectionId.charAt(0) != "c") {
+    if (sectionId && sectionId.charAt(0) != "c") {
       hideSections(sectionId);
       showSection(sectionId, id);
     }
@@ -162,50 +151,53 @@ function showSection(sectionId, id) {
     btn.style.backgroundColor = "#f2f2f280";
     btn.style.color = "#000000";
   });
-    if (section) {
-      // Reset z-index and visibility for all sections
-      document.querySelectorAll(".flxMain > div, .cStructure").forEach(sec => {
-        sec.style.zIndex = "0";
-        sec.style.display= "none";
-      });
 
-      // Display the selected section
-      section.style.zIndex = "1";
-      section.style.display = "flex";
+   if (section) {
+    // Reset z-index and visibility for all sections
+    document.querySelectorAll(".flxMain > div, .cStructure").forEach(sec => {
+      sec.style.zIndex = "0";
+      sec.style.display= "none";
+    });
 
-      if (btnID) {
-        if (btnID.className === "btnLink") {
-          btnID.style.backgroundColor = "transparent"
-          if (btnID.id === "lnkEngine") {
-            engButton.style.backgroundColor ="#AEE2FC";
-          } else if (btnID.id === "lnkDesign") {
-            desButton.style.backgroundColor ="#AEE2FC";
-          } else if (btnID.id === "lnkProgramming") {
-            proButton.style.backgroundColor ="#AEE2FC";
-          } else if (btnID.id === "lnkPortal") {
-            porButton.style.backgroundColor ="#AEE2FC";
-          } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm" || btnID.id === "lnkHelp") {
-            forButton.style.backgroundColor ="#AEE2FC";
-          } else if (btnID.id === "lnkContact" || btnID.id === "lnkContact2" || btnID.id === "lnkContact3") {
-            cntctButton.style.backgroundColor ="#AEE2FC";
-            cntctButton.style.color = "#000000";
-          } else if (btnID.id === "lnkCase1" || btnID.id === "lnkCase2" || btnID.id === "lnkCase3") {
-          }
-     
-          showOption();  
+    // Display the selected section
+    section.style.zIndex = "1";
+    section.style.display = "flex";
 
-        } else if (btnID.className === "btnHead") {
-          if (btnID.id === "btnEye") {
-            homeButton.style.backgroundColor = "#AEE2FC";
-            homeButton.style.color = "#000000";
-          } else {
-            cntctButton.style.backgroundColor = "#AEE2FC";
-            cntctButton.style.color = "#000000";
-          }
-        } else {
-          btnID.style.backgroundColor = "#AEE2FC";
+    if (btnID) {
+      if (btnID.className === "btnLink") {
+        btnID.style.backgroundColor = "transparent"
+        if (btnID.id === "lnkEngine") {
+          engButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkDesign") {
+          desButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkProgramming") {
+          proButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkPortal") {
+          porButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm" || btnID.id === "lnkHelp") {
+          forButton.style.backgroundColor ="#AEE2FC";
+        } else if (btnID.id === "lnkContact" || btnID.id === "lnkContact2" || btnID.id === "lnkContact3") {
+          cntctButton.style.backgroundColor ="#AEE2FC";
+          cntctButton.style.color = "#000000";
+        } else if (btnID.id === "lnkCase1" || btnID.id === "lnkCase2" || btnID.id === "lnkCase3") {
         }
+    
+        showOption();  
+
+      } else if (btnID.className === "btnHead") {
+
+        if (btnID.id === "btnEye") {
+          homeButton.style.backgroundColor = "#AEE2FC";
+          homeButton.style.color = "#000000";
+        } else {
+          cntctButton.style.backgroundColor = "#AEE2FC";
+          cntctButton.style.color = "#000000";
+        }
+
+      } else {
+        btnID.style.backgroundColor = "#AEE2FC";
       }
+    }
   }
 }
 
@@ -234,10 +226,10 @@ function showOption(sectionId, id) {
       }    
     } else {
       document.querySelectorAll(".cStructure, .cForm").forEach(sec => {
-      sec.style.display = "none";
-    });
+        sec.style.display = "none";
+      });
+    }
   }
-}
 }
 
 // Attach an event listener to the "Show Home Section" button
@@ -247,10 +239,10 @@ document.getElementById('btnHome').addEventListener('click', () => {
 
 // Array of section IDs
 const sections = ['sectHome', 'sectPerformance', 'sectAbility', 
-                        'sectCost', 'sectSafety', 'sectTurnkey', 
-                        'sectUpgrade', 'sectFabrication', 'sectSCADA', 
-                        'sectHMI', 'sectWeb', 'sectDatabase', 'sectPLC', 
-                        'sectForms', 'sectPortal', 'sectContact'];
+                  'sectCost', 'sectSafety', 'sectTurnkey', 
+                  'sectUpgrade', 'sectFabrication', 'sectSCADA', 
+                  'sectHMI', 'sectWeb', 'sectDatabase', 'sectPLC', 
+                  'sectForms', 'sectPortal', 'sectContact'];
 
 // Function to hide all but secthome
 function StartHomeSections() {
@@ -278,7 +270,6 @@ StartHomeSections();
 
 // Ladder logic run/stop from home section.
 // Define a Map to store previous background colors
-let isGreen = false;
 const previousColors = new Map();
 
 // Add a click event listener to the "Run It" button

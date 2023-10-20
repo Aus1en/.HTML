@@ -418,6 +418,7 @@
   }
 
   li {
+    font-size: 10px;
     margin-top: 1%;
     list-style-type: "->";
     font-weight: bold;
