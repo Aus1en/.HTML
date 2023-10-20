@@ -9,7 +9,7 @@
       /* @import 'mobilep.css';*/
       /* @import 'desktopl.css';*/
       /* @import 'desktopp.css';*/
-  @media (max-width: 1000px) {
+  @media (max-width: 1233px) {
   @keyframes moveEnterprise {
     0% {
       left: -100px;
@@ -28,13 +28,12 @@
     font-family: 'Ubuntu';
     font-weight: bold;
   }
-
-  .btnLink, .decorationOff {
-    text-decoration: none !important;
-    color:#000000 !important;
-  }
+  .flxLadder {font-size: 8px;}
+  #lgxStop, #lgxSafe, #lgxReady, #plcStop, #plcSafe, #plcReady {background-color: #84ffa9;}
+  #lgxRunning, #lgxStart, #lgxPACS, #plcRunning, #plcStart, #plcPACS {background-color: #f2f2f2;}
+  .flxLadder span:hover {background-color: #ffc880;}
   
-  .hvrBlue:hover {     /* .optContainer:hover,.dashContainer:hover, .flxNav:hover, .btnContainer:hover, .optBtn:hover, .btnNav:hover,*/
+  .hvrBlue:hover {
     color: #000000;
     background-color: #AEE2FC;
   }
@@ -43,11 +42,7 @@
     color: #000000;
     background-color: #f2f2f2;
   }
-
-  .brCarrots:hover {
-    background-color: #ffc880;
-  }
-
+  
   button:hover {
     color: #000000;
     background-color: #00aaff;
@@ -62,18 +57,63 @@
   
   .posRel {position: relative;}
   .posAbs {position: absolute;}
+  .fntH2 {font-size: 16px;}
   .fntWhite {color: #ffffff;}
   .fntBlack {color: #000000;}
+  .fnt8 {font-size: 8px;}
+
+  .fntBtn, .fntDash {
+    font-size: 8px;
+    font-weight: bold;
+  }
   
-  .fntH2 {font-size: 16px;}
-  
+  .fntCir {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-weight: normal;
+    font-size: 18px;
+  }
+
+  p strong {
+    font-size: 12px;
+  }
+
+  .chkBox {
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+  }
+   
   input {border: transparent;}
   .radFive {border-radius: 5px;}
   .borTransparent {border: transparent;}
   .borDefault {border: 1px solid #f2f2f2;}
+  .borBlack {border: 1px solid #000000;}
+  .borTpBlack {border-top: 1px solid #000000;}
   .borOffset {border: 1px solid #cccccc;}
   .borBtDefault {border-bottom: 1px solid #f2f2f2;}
   .borBtOffset {border-bottom: 1px solid #cccccc;}
+  .borBtBlack {border-bottom: 2px solid #000000;}
+  
+  .borBranch {
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+  }
+  
+  .flxBtBranch {
+    height: 200%;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .flxTpBranch {
+    margin-bottom: -10px;
+    align-items: center;
+    justify-content: flex-end;
+  }
   
   .cirA {background-color: #ffbe81;}
   .cirP {background-color: #AEE2FC;}
@@ -155,8 +195,10 @@
   .flxWd8 {width: 8%;}
   .flxWd10 {width: 10%;}
   .flxWd15 {width: 15%;}
+  .flxWd20 {width: 20%;}
   .flxWd35 {width: 35%;}
   .flxWd50 {width: 50%;}
+  .flxWd65 {width: 65%;}
   .flxWd75 {width: 75%;}
   .flxWd95 {width: 95%;}
   .flxWd {width: 100%;}
@@ -166,11 +208,233 @@
   .flxHt8 {height: 8%;}
   .flxHt10 {height: 10%;}
   .flxHt15 {height: 15%;}
+  .flxHt20 {height: 20%;}
   .flxHt35 {height: 35%;}
   .flxHt50 {height: 50%;}
   .flxHt75 {height: 75%;}
   .flxHt {height: 100%;}
 
+  .indentSection {
+    margin-left: 1%;
+    margin-top: 1%;
+  }
+
+  .dashboard {width: 30%;}
+  
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-flex;
+    flex-direction: column;
+    font-family: 'Ubuntu';
+    background-color: #cccccc;
+  }
+
+  .section {
+    padding-left: 1%;
+    transition: background-color 0.3s;
+  }
+
+  .flxNav {
+    width: 20%;
+    height: 15%;
+  }
+
+  .flxTitle {
+    width: 100%;
+    margin-bottom: 1%;
+    display: -webkit-flex;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 1px solid #bebebe;
+  }  
+
+  .flxRow {
+    display: -webkit-flex;
+    flex-direction: row;
+  }
+  
+  .flxCol {
+    display: -webkit-flex;
+    flex-direction: column;
+  }
+
+  .flxColRow {
+    display: -webkit-flex;
+    flex-direction: column;
+  }
+
+  .flxMain {
+    width: 100%;
+    height: 100%;
+  }
+
+  .flxNineNine {
+    display: -webkit-flex;
+    width: 99.5%;
+    height: 99.5%;
+  }
+  
+  .flxFull {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .flxDash {
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    align-items: center;
+    justify-content: left;
+  }
+  
+  header {
+    padding: .1%;
+    height: 8%;
+    width: 100%;
+    display: -webkit-flex;
+    position: relative;
+    background-color: #AEE2FC;
+    z-index: -99;
+    font-size: 22px;
+    font-weight: bold;
+    align-items: center;
+    align-items: left;
+  }
+  
+  .Enterprise {
+    width: 15%; /* Adjust the size of the rocket ship as needed */
+    height: 100%;
+    position: absolute;
+    animation: moveEnterprise 60s linear infinite;
+    z-index: 0;
+  }
+  
+  nav {
+    height:6%;
+    font-weight: bold;
+  }
+  
+  main {
+    flex: 1;
+    display: -webkit-flex;
+    z-index: 2;
+  }
+
+  .dashHeader {
+    width: 90%;
+    display: -webkit-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 3%;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .btnCmd {
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    background-color: #f2f2f2;
+    text-align: center;
+    justify-content: center;
+    border-radius: 3%;
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+  .btnDash {
+    padding: 3%;
+    width: 80%;
+    color: #000000;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: right;
+  }
+  
+  .btnForm {
+    display: -webkit-flex;
+    margin-top: 1%;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  
+  button {
+    width: 100%;
+    display: -webkit-flex;
+    padding: 20% 75%;
+    background-color: #AEE2FC;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .lftPara {
+    display: -webkit-flex;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: normal;
+    background-color: #cccccc;
+  }
+    
+  .rhtPara {
+    display: -webkit-flex;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: normal;
+    background-color: #cccccc;
+  }
+
+  .widget {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #f2f2f2;
+  }
+  
+  .popover {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    display: -webkit-flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #f2f2f2;
+    z-index: 10;
+  }
+
+  li {
+    margin-top: 1%;
+    list-style-type: "->";
+    font-weight: bold;
+    color: #000000;
+    border: transparent;
+  }
+  
+  li img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .btnLink, .decorationOff {
+    text-decoration: none !important;
+    color:#000000 !important;
+  }
+  
   .alnCenter {
     align-items: center;
     justify-content: center;
@@ -200,354 +464,6 @@
     align-items: bottom;
     justify-content: bottom;
   }
-  
-  body {
-    -webkit-user-select: none;
-    user-select: none;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Ubuntu';
-    background-color: #cccccc;
-  }
-
-  .flxMain {
-    width: 50%;
-    height: 100%;
-  }
-  .section {
-    padding-left: 1%;
-    transition: background-color 0.3s;
-  }
-
-  .flxTitle {
-    width: 100%;
-    margin-bottom: 1%;
-    display: flex;
-    position: relative;
-    background-color: transparent;
-    border-bottom: 1px solid #bebebe;
-  }
-
-  .flxNav {
-    width:33%;
-    height: 25%;
-  }
-
-  .flxColRow {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .flxNineNine {
-    display: flex;
-    width: 99.5%;
-    height: 99.5%;
-  }
-  
-  .flxFull {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .flxDash {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    align-items: center;
-    justify-content: left;
-  }
-  
-  .flxRow {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .flxCol {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .indentSection {
-    margin-left: 1%;
-    margin-top: 1%;
-  }
-  
-  header {
-    padding: .1%;
-    height: 5%;
-    width: 100%;
-    display: flex;
-    position: relative;
-    background-color: #AEE2FC;
-    z-index: -99;
-    font-size: 22px;
-    font-weight: bold;
-    align-items: center;
-    align-items: left;
-  }
-  
-  .Enterprise {
-    width: 5%; /* Adjust the size of the rocket ship as needed */
-    height: 100%;
-    position: absolute;
-    animation: moveEnterprise 60s linear infinite;
-    z-index: 0;
-  }
-  
-  .fntBtn, .fntDash {
-    font-size: 10px;
-    font-weight: bold;
-  }
-  
-  .fntCir {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  nav {
-    height:6%;
-    font-weight: bold;
-  }
-  
-  main {
-    flex: 1;
-    display: flex;
-    z-index: 2;
-  }
-
-  .dashboard {
-    width: 30%;
-  }
-  
-  .dashHeader {
-    width: 90%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
-    padding-bottom: 3%;
-    border-bottom: 1px solid #ffffff;
-  }
-  
-  h1 {
-    font-weight: normal;
-    font-size: 20px;
-  }
-  
-  .lgxContainer {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-    
-  .noteContainer {
-    display: block;
-    flex: 1;
-    position: relative;
-    width: 100%;
-  }
-
-  .btnCmd {
-    width: 85%;
-    height: 100%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    color: #000000;
-    background-color: #f2f2f2;
-    text-align: center;
-    justify-content: center;
-    font-weight: bold;
-    border-radius: 3%;
-  }
-
-  .btnDash {
-    padding: 3%;
-    width: 80%;
-    color: #000000;
-    background-color: #f2f2f2;
-    font-weight: bold;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: right;
-  }
-  
-  .btnForm {
-    display: flex;
-    margin-top: 1%;
-    background-color: transparent;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    align-items: flex-end;
-    justify-content: flex-end;
-  }
-  
-  button {
-    width: 75px;
-    display: flex;
-    padding: 10px 20px;
-    background-color: #AEE2FC;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .rhtPara {
-    display: flex;
-    font-size: 12px;
-    line-height: 1.5;
-    font-weight: normal;
-    background-color: #cccccc;
-  }
-  
-  .lftPara {
-    display: flex;
-    font-size: 12px;
-    line-height: 1.5;
-    font-weight: normal;
-    background-color: #cccccc;
-  }
-  
-  .widget {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    border: 1px solid #f2f2f2;
-  }
-  
-  .popover {
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    background-color: #f2f2f2;
-    z-index: 10;
-  }
-  
-  .lgxName, .brName {
-    display: flex;
-    background-color: transparent;
-  }
-  
-  .lgxContent {
-    width: 100%;
-    display: flex;
-    position: relative;
-    padding-top: 10%;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-  }
-  
-  .lgxRung {
-    width: 100%;
-    height: 2px;
-    display: flex;
-    flex-direction: row;
-    background-color: #000000;
-    margin-bottom: 20px;
-  }
-  
-  .lgxBranch {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    height: 75px;
-    background-color: transparent;
-    border-left: 2px solid #000000; 
-    border-right: 2px solid #000000; 
-    border-bottom: 2px solid #000000; 
-  }
-  
-  .brTop, .brBottom {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .brRun, .brStart, .brReady {
-    top: -15%;
-    width: 125px;
-    height: 75px;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .oteRun {
-    left: 8%;
-  }
-  
-  .xicStart, .xioStop, .xicEStop, .oteRun {
-    top: -2500%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 125px;
-    height: 75px;
-    background-color: transparent;
-  }
-  
-  .lgxCarrots, .brCarrots {
-    height: 30%;
-    width: 20%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #f2f2f2;
-  }
-  
-  .lgxLeft, .brLeft {
-    display: flex;
-    width: 15px;
-    justify-content: flex-start;
-  }
-  
-  .lgxRight, .brRight {
-    display: flex;
-    width: 15px;
-    justify-content: flex-end;
-  }
-  
-  .brReady .brCarrots, .xicEStop .lgxCarrots, .xioStop .lgxCarrots {
-    background-color: #84ffa9;
-  }
-
-  li {
-    margin-top: 1%;
-    list-style-type: "->";
-    font-weight: bold;
-    color: #000000;
-    border: transparent;
-  }
-  
-  li img {
-    width: 20px;
-    height: 20px;
-  }
 
   table {
     max-width: 100%;
@@ -571,14 +487,14 @@
   }
   
   .selfStructure {
-    display: flex;
+    display: -webkit-flex;
     align-items: flex-start;
     margin-bottom: 5%;
     margin-top: 15%;
   }
   
   .selfStructure img {
-    display: flex;
+    display: -webkit-flex;
     width: 100px;
     height: 100px;
     margin-right: 10px;
@@ -588,7 +504,7 @@
     
   textarea {
     width: 95%;
-    padding-bottom: 25%;
+    padding-bottom: 15%;
     height: 150px;
     resize: both;
     background-color: #f2f2f2;

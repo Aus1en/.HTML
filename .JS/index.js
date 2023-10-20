@@ -1,6 +1,3 @@
-window.onload = function () {
-  document.body.style.transform = 'scale(1)';
-};
 document.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector("header");
 const navEnterprise = document.querySelector('header img.Enterprise')
@@ -26,8 +23,7 @@ const rlImg = document.querySelector('.imgRL');
 const asImg = document.querySelector('.imgAS');
 const icolink = document.querySelector('link[rel="icon"]');
 const icoshortLink = document.querySelector('link[rel="shortcut icon"]');
-const btnGroups = document.querySelectorAll(".btnCmd, .btnDash, .btnHead, .btnLink");
-//const btnOptions = document.querySelectorAll(".btnCmd");
+const btnGroups = document.querySelectorAll(".btnHead, .btnCmd, .btnDash, .btnLink");
 const canvas = document.getElementById("canvasHeader");
 const ctx = canvas.getContext("2d");
 const cirElements = document.querySelectorAll('.fntCir[data-popover]');
