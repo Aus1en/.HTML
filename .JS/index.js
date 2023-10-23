@@ -147,9 +147,9 @@ function showSection(sectionId, id) {
   const section = document.querySelector(`.${sectionId}`);
 
   document.querySelectorAll(".btnDash, .btnCmd").forEach(btn => {
-    //if (btn.className === "btnCmd") {
-    btn.style.backgroundColor = "#f2f2f280";
-    btn.style.color = "#000000";
+    if (btn.id != "btnRun") {
+      btn.style.backgroundColor = "#f2f2f280";
+    }
   });
 
    if (section) {
@@ -206,7 +206,9 @@ function showOption(sectionId, id) {
   const section = document.querySelector(`.${sectionId}`);
 
   document.querySelectorAll(".btnCmd").forEach(btn => {
-    btn.style.backgroundColor = "#f2f2f280";
+    if (btn.id != "btnRun") {
+      btn.style.backgroundColor = "#f2f2f280";
+    }
   });
 
   // Reset z-index and visibility for all sections
@@ -328,21 +330,6 @@ cirElements.forEach(cirElement => {
     popover.style.display = 'none';
   });
 });
-
-// JavaScript code to update the clock
-//function updateClock() {
-  //const now = new Date();
-  //const hours = now.getHours().toString().padStart(2, '0');
-  //const minutes = now.getMinutes().toString().padStart(2, '0');
-  //const seconds = now.getSeconds().toString().padStart(2, '0');
-  //const timeString = `${hours}:${minutes}:${seconds}`;
-
-//  document.getElementById("header-clock").textContent = timeString;
-//}
-
-      // Update the clock initially and every second
-      //updateClock();
-      //setInterval(updateClock, 1000);
 
 //Email submition code for contacting.
 // Wait for the DOM to be loaded

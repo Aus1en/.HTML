@@ -11,7 +11,7 @@
     left: -100px;
     }
   100% {
-    left: calc(99% - 75px);
+    left: calc(99.5% - 75px);
   }}
 
 @font-face {
@@ -90,7 +90,8 @@ input {border: transparent;}
 }
 
 .flxBtBranch {
-  height: 200%;
+  margin-bottom: -20px;
+  height: 100%;
   align-items: center;
   justify-content: flex-end;
 }
@@ -148,6 +149,7 @@ input {border: transparent;}
 .marLtOne {margin-left: 1%;}
 .marLtTwo {margin-left: 2%;}
 .marLtThree {margin-left: 3%;}
+.marLtFour {margin-left: 4%;}
 .marLtFive {margin-left: 5%;}
 .marLtTen {margin-left: 10%;}
 .marLtThirteen {margin-left: 13%;}
@@ -397,7 +399,7 @@ li img {
 
 .btnForm {
   display: flex;
-  margin-top: 1%;
+  width: 100%;
   background-color: transparent;
   border: none;
   border-radius: 4px;
@@ -407,9 +409,9 @@ li img {
 }
 
 button {
-  width: 25%;
+  width: 15%;
   display: flex;
-  padding: 10% 15%;
+  padding: 1%;
   background-color: #AEE2FC;
   color: #fff;
   border: none;

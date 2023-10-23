@@ -23,8 +23,8 @@
     <meta http-equiv="pragma" content="no-cache" />
     <title>PACS Consulting, LLC</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href=".CSS/mobile.css?v=5.0.1">
-    <link rel="stylesheet" href=".CSS/desktopl.css?v=5.0.1">
+    <link rel="stylesheet" href=".CSS/mobile.css?v=5.0.2">
+    <link rel="stylesheet" href=".CSS/desktopl.css?v=5.0.2">
     <link rel="icon" href="#" type="image/x-icon">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <!---->
@@ -37,10 +37,8 @@
         gtag('js', new Date());
         gtag('config', 'G-J0NTBBTTLQ');
     </script>
-    <!--<link rel="stylesheet" href=".CSS/mobilep.css?v=0.1.2">-->
   </head>
   <body>
-    
     <!---->
     <!--Header Structure-->
     <!---->  
@@ -95,7 +93,7 @@
             </div>
           </div>
           <!---->
-          <!--Dashboard- Header Services-->
+          <!--Dashboard- Header-->
           <!---->
           <div class="flxCol flxWd alnCenter">
             <h2 class="dashHeader">Services</h2>
@@ -187,7 +185,7 @@
             <div class="flxRow flxWd alnCenter">
               <div class="flxRow flxWd alnCenter">
                 <div class="flxRow flxWd flxHt alnCenter">
-                  <div class="flxRow flxWd15 flxHt15 alnCenter padOne radFive borBlack bckDefault hvrBlue">
+                  <div class="flxRow flxWd10 flxHt10 alnCenter padOne radFive borBlack bckDefault hvrBlue">
                     <a class="btnCmd" id="btnRun">RUN IT.</a>
                   </div>
                 </div>
@@ -203,7 +201,7 @@
                 <div class="flxCol flxFull alnCenter">
                   <div class="flxRow flxFull alnCenter bckDefault borBtBlack posOne">
                     <div class="flxCol flxFull flxTpBranch posRel">Run_Button
-                      <div id="lgxStart" class="lgxCarrots">
+                      <div id="lgxStart">
                         <span>[</span>
                         <span>]</span>
                       </div>
@@ -215,8 +213,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="flxRow flxFull alnCenter">
-                    <div class="flxCol flxWd65 flxBtBranch posRel bckDefault borBranch posZero">Running
+                  <div class="flxRow flxFull alnCenter borBranch bckDefault posZero">
+                    <div class="flxCol flxWd65 flxBtBranch posRel bckTransparent">Running
                       <div id="lgxRunning" class="lgxCarrots">
                         <span class="brLeft">[</span>
                         <span class="brRight">]</span>
@@ -1202,7 +1200,7 @@
                           <div class="flxHt0 marTpOne flxWd4 posLt420 flxCol posAbs borBlack"></div>
                         </div>
                         <div class="flxRow flxWd marLtFive marBtOne">Run_PACS
-                          <div class="flxHt0 marTpOne flxWd4 marLtFive flxCol posAbs borBlack"></div>
+                          <div class="flxHt0 marTpOne flxWd4 marLtFour flxCol posAbs borBlack"></div>
                         </div>
                       </div>
                       <div class="flxRow flxWd marLtThree marBtOne">Ready
@@ -1229,7 +1227,7 @@
                       <div class="flxCol flxFull alnCenter">
                         <div class="flxRow flxFull alnCenter bckDefault borBtBlack posOne">
                           <div class="flxCol flxFull flxTpBranch posRel">Run_Button
-                            <div id="plcStart" class="lgxCarrots">
+                            <div id="plcStart">
                               <span>[</span>
                               <span>]</span>
                             </div>
@@ -1241,8 +1239,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="flxRow flxFull alnCenter">
-                          <div class="flxCol flxWd65 flxBtBranch posRel bckDefault borBranch posZero">Running
+                        <div class="flxRow flxFull alnCenter borBranch bckDefault posZero">
+                          <div class="flxCol flxWd65 flxBtBranch posRel bckTransparent">Running
                             <div id="plcRunning" class="lgxCarrots">
                               <span class="brLeft">[</span>
                               <span class="brRight">]</span>
@@ -1478,16 +1476,12 @@
             <!--Section- cSi-->
             <!---->
             <div class="flxRow flxFull bckOffset padLtHf padRtHf cForm cSi">
-              <form action="#" method="post">
-                <div class="flxCol">
-                  <div class="flxRow">
-                    <p>
-                      <strong>Sign up form coming soon!</strong>
-                      <!--<label for="message"></label>
-                      <textarea id="sgnUp" name="message" placeholder=""></textarea>-->
-                    </p>
-                  </div>
-                </div>
+              <form action=".PHP/signup.php" method="post">
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" id="username" required><br><br>
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" id="password" required><br><br>
+                  <input type="submit" value="Sign Up">
               </form>
             </div>
             <!---->
@@ -1609,7 +1603,7 @@
     <div>
       <footer class="flxRow flxWd fntWhite alnCtrLt bckFoot">&copy; 2023 PACS Consulting, LLC. All rights reserved.</footer>
     </div> 
-    <script src=".JS/index.js?v=5.0.1"></script>
+    <script src=".JS/index.js?v=5.0.2"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>
