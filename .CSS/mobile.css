@@ -9,7 +9,7 @@
       /* @import 'mobilep.css';*/
       /* @import 'desktopl.css';*/
       /* @import 'desktopp.css';*/
-  @media (max-width: 1233px) {
+  @media (max-width: 1149px) {
   @keyframes moveEnterprise {
     0% {
       left: -100px;
@@ -33,6 +33,11 @@
   #lgxRunning, #lgxStart, #lgxPACS, #plcRunning, #plcStart, #plcPACS {background-color: #f2f2f2;}
   .flxLadder span:hover {background-color: #ffc880;}
   
+  .hvrOffset:hover {
+    color: #000000;
+    background-color: #cccccc;
+  }
+  
   .hvrBlue:hover {
     color: #000000;
     background-color: #AEE2FC;
@@ -48,10 +53,12 @@
     background-color: #00aaff;
   }
   
+  .bxShadow {box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);}
+
   .posBelow {z-index: -10;}
-  .posZero {z-index: 0;}
-  .posOne {z-index: 1;}
-  .posThree {z-index: 999;}
+  .pos0 {z-index: 0;}
+  .pos1 {z-index: 1;}
+  .pos3 {z-index: 999;}
   
   .posLt420 {margin-left: -4.2%};
   
@@ -59,8 +66,10 @@
   .posAbs {position: absolute;}
   .fntH2 {font-size: 16px;}
   .fntWhite {color: #ffffff;}
+  .fntDefault {color: #f2f2f2;}
   .fntBlack {color: #000000;}
   .fnt8 {font-size: 8px;}
+  .fnt22 {font-size: 22px;}
 
   .fntBtn, .fntDash {
     font-size: 8px;
@@ -74,7 +83,7 @@
 
   h1 {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   p strong {
@@ -87,7 +96,8 @@
   }
    
   input {border: transparent;}
-  .radFive {border-radius: 5px;}
+  .rad5 {border-radius: 5px;}
+  .rad15 {border-radius: 15px;}
   .borTransparent {border: transparent;}
   .borDefault {border: 1px solid #f2f2f2;}
   .borBlack {border: 1px solid #000000;}
@@ -95,23 +105,23 @@
   .borOffset {border: 1px solid #cccccc;}
   .borBtDefault {border-bottom: 1px solid #f2f2f2;}
   .borBtOffset {border-bottom: 1px solid #cccccc;}
-  .borBtBlack {border-bottom: 2px solid #000000;}
+  .borBtBlack {border-bottom: 1px solid #000000;}
   
   .borBranch {
-    border-left: 2px solid #000000;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
   }
 
   .flxBtBranch {
-    margin-bottom: -20px;
+    margin-bottom: -15px;
     height: 100%;
     align-items: center;
     justify-content: flex-end;
   }
   
   .flxTpBranch {
-    margin-bottom: -20px;
+    margin-bottom: -15px;
     align-items: center;
     justify-content: flex-end;
   }
@@ -129,71 +139,73 @@
   .imgSclSmall {object-fit: scale-down;}
   .animTrans {transition: background-color 0.3s;}
   
-  .padTenth {padding: .1%;}
-  .padHalf {padding: .5%;}
-  .padOne {padding: 1%;}
-  .padThree {padding: 3%;}
-  .padFive {padding: 5%;}
-  .padTen {padding: 10%;}
-  .padLtHf {padding-left: .5%;}
-  .padLtOne {padding-left: 1%;}
-  .padLtThree {padding-left: 3%;}
-  .padLtFive {padding-left: 5%;}
-  .padLtTen {padding-left: 10%;}
-  .padRtHf {padding-right: .5%;}
-  .padRtOne {padding-right: 1%;}
-  .padRtThree {padding-right: 3%;}
-  .padRtFive {padding-right: 5%;}
-  .padRtTen {padding-right: 10%;}
-  .padBtHf {padding-bottom: .5%;}
-  .padBtOne {padding-bottom: 1%;}
-  .padBtThree {padding-bottom: 3%;}
-  .padBtFive {padding-bottom: 5%;}
-  .padBtTen {padding-bottom: 10%;}
-  .padTpHf {padding-top: .5%;}
-  .padTpOne {padding-top: 1%;}
-  .padTpThree {padding-top: 3%;}
-  .padTpFive {padding-top: 5%;}
-  .padTpTen {padding-top: 10%;}
+  .pad_10 {padding: .1%;}
+  .pad_5 {padding: .5%;}
+  .pad1 {padding: 1%;}
+  .pad3 {padding: 3%;}
+  .pad5 {padding: 5%;}
+  .pad10 {padding: 10%;}
+  .padLt_5 {padding-left: .5%;}
+  .padLt1 {padding-left: 1%;}
+  .padLt3 {padding-left: 3%;}
+  .padLt5 {padding-left: 5%;}
+  .padLt10 {padding-left: 10%;}
+  .padRt_5 {padding-right: .5%;}
+  .padRt1 {padding-right: 1%;}
+  .padRt3 {padding-right: 3%;}
+  .padRt5 {padding-right: 5%;}
+  .padRt10 {padding-right: 10%;}
+  .padBt_5 {padding-bottom: .5%;}
+  .padBt1 {padding-bottom: 1%;}
+  .padBt3 {padding-bottom: 3%;}
+  .padBt5 {padding-bottom: 5%;}
+  .padBt10 {padding-bottom: 10%;}
+  .padTp_5 {padding-top: .5%;}
+  .padTp1 {padding-top: 1%;}
+  .padTp3 {padding-top: 3%;}
+  .padTp5 {padding-top: 5%;}
+  .padTp10 {padding-top: 10%;}
   
-  .marTenth {margin: .5%;}
-  .marHalf {margin: .5%;}
-  .marOne {margin: 1%;}
-  .marLtHf {margin-left: .5%;}
-  .marLtOne {margin-left: 1%;}
-  .marLtTwo {margin-left: 2%;}
-  .marLtThree {margin-left: 3%;}
-  .marLtFour {margin-left: 4%;}
-  .marLtFive {margin-left: 5%;}
-  .marLtTen {margin-left: 10%;}
-  .marLtThirteen {margin-left: 13%;}
-  .marLtTwenty {margin-left: 20%;}
-  .marLtTwenty {margin-left: 25%;}
-  .marRtHf {margin-right: .5%;}
-  .marRtOne {margin-right: 1%;}
-  .marRtTwo {margin-right: 2%;}
-  .marRtThree {margin-right: 3%;}
-  .marRtFive {margin-right: 5%;}
-  .marRtTen {margin-right: 10%;}
-  .marRtTwenty {margin-right: 20%;}
-  .marRtTwenty {margin-right: 25%;}
-  .marBtHf {margin-bottom: .5%;}
-  .marBtOne {margin-bottom: 1%;}
-  .marBtTwo {margin-bottom: 2%;}
-  .marBtThree {margin-bottom: 3%;}
-  .marBtFive {margin-bottom: 5%;}
-  .marBtTen {margin-bottom: 10%;}
-  .marBtTwenty {margin-bottom: 25%;}
-  .marTpHf {margin-top: .5%;}
-  .marTpOne {margin-top: 1%;}
-  .marTpTwo {margin-top: 2%;}
-  .marTpThree {margin-top: 3%;}
-  .marTpFive {margin-top: 5%;}
-  .marTpTen {margin-top: 10%;}
-  .marTpTwenty {margin-top: 20%;}
+  .mar_10 {margin: .5%;}
+  .mar_5 {margin: .5%;}
+  .mar1 {margin: 1%;}
+  .marLt_5 {margin-left: .5%;}
+  .marLt1 {margin-left: 1%;}
+  .marLt2 {margin-left: 2%;}
+  .marLt3 {margin-left: 3%;}
+  .marLt4 {margin-left: 4%;}
+  .marLt5 {margin-left: 5%;}
+  .marLt8 {margin-left: 8%;}
+  .marLt10 {margin-left: 10%;}
+  .marLt13 {margin-left: 13%;}
+  .marLt20 {margin-left: 20%;}
+  .marLt25 {margin-left: 25%;}
+  .marRt_5 {margin-right: .5%;}
+  .marRt1 {margin-right: 1%;}
+  .marRt2 {margin-right: 2%;}
+  .marRt3 {margin-right: 3%;}
+  .marRt5 {margin-right: 5%;}
+  .marRt10 {margin-right: 10%;}
+  .marRt20 {margin-right: 20%;}
+  .marRt25 {margin-right: 25%;}
+  .marBt_5 {margin-bottom: .5%;}
+  .marBt1 {margin-bottom: 1%;}
+  .marBt2 {margin-bottom: 2%;}
+  .marBt3 {margin-bottom: 3%;}
+  .marBt5 {margin-bottom: 5%;}
+  .marBt10 {margin-bottom: 10%;}
+  .marBt20 {margin-bottom: 25%;}
+  .marTp_5 {margin-top: .5%;}
+  .marTp1 {margin-top: 1%;}
+  .marTp2 {margin-top: 2%;}
+  .marTp3 {margin-top: 3%;}
+  .marTp5 {margin-top: 5%;}
+  .marTp10 {margin-top: 10%;}
+  .marTp20 {margin-top: 20%;}
   
   .flxWd2 {width: 2%;}
   .flxWd4 {width: 4%;}
+  .flxWd6 {width: 6%;}
   .flxWd8 {width: 8%;}
   .flxWd10 {width: 10%;}
   .flxWd15 {width: 15%;}
@@ -202,18 +214,24 @@
   .flxWd50 {width: 50%;}
   .flxWd65 {width: 65%;}
   .flxWd75 {width: 75%;}
+  .flxWd85 {width: 85%;}
   .flxWd95 {width: 95%;}
   .flxWd {width: 100%;}
   .flxHt0 {height: 0%;}
-  .flxHtTenth{height: 2px;}
+  .flxHt_10{height: 2px;}
   .flxHt2 {height: 2%;}
+  .flxHt4 {height: 4%;}
+  .flxHt6 {height: 6%;}
   .flxHt8 {height: 8%;}
   .flxHt10 {height: 10%;}
   .flxHt15 {height: 15%;}
   .flxHt20 {height: 20%;}
   .flxHt35 {height: 35%;}
   .flxHt50 {height: 50%;}
+  .flxHt65 {height: 65%;}
   .flxHt75 {height: 75%;}
+  .flxHt85 {height: 85%;}
+  .flxHt95 {height: 95%;}
   .flxHt {height: 100%;}
 
   .indentSection {
@@ -221,7 +239,10 @@
     margin-top: 1%;
   }
 
-  .dashboard {width: 30%;}
+  .dashboard {
+    height: 100%;
+    width: 30%;
+  }
   
   body {
     -webkit-user-select: none;
@@ -237,11 +258,6 @@
   .section {
     padding-left: 1%;
     transition: background-color 0.3s;
-  }
-
-  .flxNav {
-    width: 20%;
-    height: 15%;
   }
 
   .flxTitle {
@@ -268,13 +284,17 @@
     flex-direction: column;
   }
 
-  .flxMain {
+  .flxNav {
     width: 100%;
     height: 100%;
   }
 
-  .flxNineNine {
-    display: -webkit-flex;
+  .flx80 {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .flx99 {
     width: 99.5%;
     height: 99.5%;
   }
@@ -293,6 +313,51 @@
     border: 1px solid #000000;
     align-items: center;
     justify-content: left;
+  }
+
+  .flxRun {
+    width: 35%;
+    height: 25%;
+  }
+
+  .flxPops {
+    right: 3%;
+    top: 12%;
+    min-width: 30%;
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+  }
+  
+  .flxOps {
+    right: 1%;
+    min-width: 70%;
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  #ddOp1 .flxOps {top: 13%;}
+  #ddOp2 .flxOps {top: 27%;}
+  #ddOp3 .flxOps {top: 70%;}
+  #ddOp4 .flxOps {top: 84%;}
+  
+  .flxPops div div a, .flxOps div div a {
+    padding: 8%;
+    text-decoration: none;
+    display: -webkit-flex;
+    text-align: flex-start;
+    flex-direction: row;
+    color: #cccccc;
+  }
+  
+  #ddIndustry:hover .flxPops, #ddOp1:hover .flxOps, #ddOp2:hover .flxOps, #ddOp3:hover .flxOps, #ddOp4:hover .flxOps {
+    display: -webkit-flex;
+    flex-direction: column;
   }
   
   header {
@@ -317,11 +382,6 @@
     z-index: 0;
   }
   
-  nav {
-    height:6%;
-    font-weight: bold;
-  }
-  
   main {
     flex: 1;
     display: -webkit-flex;
@@ -341,20 +401,22 @@
   }
   
   .btnCmd {
+    height: 50%;
     width: 100%;
-    height: 100%;
+    padding: 1%;
+    font-size: 8px;
     color: #000000;
     background-color: #f2f2f2;
     text-align: center;
+    align-content: center;
     justify-content: center;
-    border-radius: 3%;
-    font-size: 10px;
-    font-weight: normal;
+    font-weight: bold;
+    border-radius: 5px;
   }
 
   .btnDash {
     padding: 3%;
-    width: 80%;
+    width: 90%;
     color: #000000;
     background-color: #f2f2f2;
     font-weight: bold;
@@ -375,7 +437,7 @@
   }
   
   button {
-    width: 15%;
+    width: 25%;
     display: -webkit-flex;
     padding: 1%;
     background-color: #AEE2FC;
@@ -408,6 +470,15 @@
     border: 1px solid #f2f2f2;
   }
   
+  .popup {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
   .popover {
     width: 100%;
     font-size: 16px;
@@ -421,7 +492,7 @@
 
   li {
     font-size: 10px;
-    margin-top: 1%;
+    margin-top: 3%;
     list-style-type: "->";
     font-weight: bold;
     color: #000000;
@@ -463,9 +534,16 @@
     justify-content: flex-end;
   }
   
-  .alnBottom {
-    align-items: bottom;
-    justify-content: bottom;
+  .alnCtrBt {
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+  }
+  
+  .alnCtrTp {
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
   }
 
   table {

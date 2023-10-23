@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- COMMENT SECTION -->
-<!--<div class="pup" id="thankYouMessage">Thank you for contacting us!</div> <div class="flxRow flwWd alnCtrRt posThree" id="header-clock"></div>-->
-<!--<div class="flxRow flwWd alnCtrRt posThree" id="header-clock"></div>-->
+<!--<div class="pup" id="thankYouMessage">Thank you for contacting us!</div> <div class="flxRow flwWd alnCtrRt pos3" id="header-clock"></div>-->
+<!--<div class="flxRow flwWd alnCtrRt pos3" id="header-clock"></div>-->
 <html dircss=".CSS/" dirjs=".JS/" dirimg=".IMG/" lang="en">
   <!---->
   <!--META Structure-->
@@ -23,8 +23,8 @@
     <meta http-equiv="pragma" content="no-cache" />
     <title>PACS Consulting, LLC</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href=".CSS/mobile.css?v=5.0.2">
-    <link rel="stylesheet" href=".CSS/desktopl.css?v=5.0.2">
+    <link rel="stylesheet" href=".CSS/mobile.css?v=5.0.7">
+    <link rel="stylesheet" href=".CSS/desktopl.css?v=5.0.7">
     <link rel="icon" href="#" type="image/x-icon">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <!---->
@@ -43,24 +43,178 @@
     <!--Header Structure-->
     <!---->  
     <header>
-      <img class="btnHead" src="#" alt="" id="btnEye" data-sect="sectHome">
-      <a class="btnHead" id="lnkContact" data-sect="sectContact">
-        <strong class="posOne">PACS Consulting, LLC.</strong>
-      </a> 
+      <img class="btnHead pos3" src="#" alt="" id="btnEye" data-sect="sectHome">
+      <a class="btnHead flxRow flxFull alnCtrLt pos3" id="lnkContact" data-sect="sectContact">
+        <strong>PACS Consulting, LLC.</strong>
+      </a>
+      <canvas class="flxRow flx99 pos0 posAbs" id="canvasHeader"></canvas>
       <img class="Enterprise" src="#" alt="">
-      <canvas class="flxNineNine posAbs posBelow" id="canvasHeader"></canvas>
     </header>
     <!---->
     <!--Navigation Structure-->
     <!---->  
-    <nav class="flxRow flxWd bckOffset alnCenter">
-      <div class="flxRow flxFull alnCenter">
-        <div class="flxRow flxWd alnCtrRt">
-          <div class="flxNav flxRow radFive marRtThree alnCenter bckOffset hvrBlue">
+    <nav class="flxRow flxWd flxHt4 bckOffset alnCenter fntDash">
+      <div class="flxRow flxFull">
+        <div class="flxRow flxFull">
+          <p class="flxRow flxFull alnCtrLt" id="welcomeMessage">Welcome!</p>
+        </div>
+        <div class="flxRow flxNav flxHt alnCenter">
+          <div class="flxCol flxFull rad5 marRt3 alnCenter bckOffset hvrBlue">
             <a class="btnCmd" id="btnHome" data-sect="sectHome">HOME</a>
           </div>
-          <div class="flxNav flxRow radFive alnCenter bckOffset hvrBlue">
+          <div class="flxCol flxFull rad5 marRt3 alnCenter bckOffset hvrBlue">
             <a class="btnCmd" id="btnContact" data-sect="sectContact">CONTACT US</a>
+          </div>
+          <div class="flxCol flxFull rad5 alnCenter bckOffset hvrBlue" id="ddIndustry">
+            <a class="btnCmd" id="btnIndustry" data-sect="sectIndustry">INDUSTRY</a>
+            <div class="flxPops">
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgBusiness marRt5" src="#" alt="">
+                <div class="flxRow flxFull" id="ddOp1">
+                  <a class="flxRow flxFull alnCenter hvrOffset">BUSINESS</a>
+                  <div class="flxOps">
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgSmall flxWd6 flxHt6 marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnSmallBz" data-sect="sectSmallBz">SMALL</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgDomain flxWd10 flxHt10 marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnDomain" data-sect="sectDomain">DOMAIN</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgCorp flxWd15 flxHt15 marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnCorp" data-sect="sectCorp">CORPORATE</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgFood marRt5" src="#" alt="">
+                <div class="flxRow flxFull" id="ddOp2">
+                  <a class="flxRow flxFull alnCenter hvrOffset">FOOD</a>
+                  <div class="flxOps">
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgBeverage marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnBottle" data-sect="sectBottle">BOTTLE</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgPackaged marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnPackaged" data-sect="sectPackaged">PACKAGED</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgPet marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnPet" data-sect="sectPet">PET</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgHospital marRt5" src="#" alt="">
+                <div class="flxRow flxFull">
+                  <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnHospital" data-sect="sectHospital">HOSPITAL</a>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgHVAC marRt5" src="#" alt="">
+                <div class="flxRow flxFull">
+                  <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnHVAC" data-sect="sectHVAC">HVAC</a>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgManufacturing marRt5" src="#" alt="">
+                <div class="flxRow flxFull" id="ddOp3">
+                  <a class="flxRow flxFull alnCenter hvrOffset">MANUFACTURING</a>
+                  <div class="flxOps">
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgCement marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnCement" data-sect="sectCement">CEMENT</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgForge marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnChemical" data-sect="sectForge">FORGE</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgOEM marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnOEM" data-sect="sectOEM">OEM</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgPlastic marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnPlastics" data-sect="sectPlastics">PLASTICS</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgSpecChem marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnSpecChem" data-sect="sectSpecChem">SPEC CHEM</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgProcess marRt5" src="#" alt="">
+                <div class="flxRow flxFull" id="ddOp4">
+                  <a class="flxRow flxFull alnCenter hvrOffset">PROCESS</a>
+                  <div class="flxOps">
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgAir marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnAir" data-sect="sectAir">AIR</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgElectric marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnElectric" data-sect="sectElectric">ELECTRIC</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgGas marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnGas" data-sect="sectGas">GAS</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgSteam marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnSteam" data-sect="sectSteam">STEAM</a>
+                      </div>
+                    </div>
+                    <div class="flxRow flxFull alnCtrLt">
+                      <img class="imgWater marRt5" src="#" alt="">
+                      <div class="flxRow flxFull">
+                        <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnWater" data-sect="sectWater">WATER</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCtrLt">
+                <img class="imgUniversity marRt5" src="#" alt="">
+                <div class="flxRow flxFull">
+                  <a class="btnLink flxRow flxFull alnCenter hvrOffset" id="btnUniversity" data-sect="sectUniversity">UNIVERSITY</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -72,9 +226,9 @@
       <!---->
       <!--Dashboard Structure-->
       <!---->
-      <aside class="flxCol dashboard padTenth bckOffset">
+      <aside class="flxCol dashboard pad_10 bckOffset">
         <div class="flxCol flxFull bckOffset fntDash">
-          <div class="flxCol flxWd padbtOne">
+          <div class="flxCol flxWd padBt1">
             <div class="flxDash hvrBlue">
               <strong>P-</strong>
               <a class="btnDash" id="dshPerformance" data-sect="sectPerformance">PERFORMANCE</a>
@@ -115,7 +269,7 @@
           <!---->
           <!--Dashboard- Engineering-->
           <!---->
-          <strong class="flxCol flxWd alnCenter padbtOne">Engineering</strong>
+          <strong class="flxCol flxWd alnCenter padBt1">Engineering</strong>
           <div class="flxCol flxWd alnCenter">
             <div class="flxCol flxWd alnCenter">
               <div class="flxDash hvrBlue">
@@ -135,7 +289,7 @@
           <!---->
           <!--Dashboard- Design-->
           <!---->  
-          <strong class="flxCol flxWd alnCenter padbtOne">Design</strong>
+          <strong class="flxCol flxWd alnCenter padBt1">Design</strong>
           <div class="flxCol flxWd alnCenter">
             <div class="flxCol flxWd alnCenter">
               <div class="flxDash hvrBlue"><strong>S-</strong>
@@ -155,8 +309,8 @@
           <!---->
           <!--Dashboard- Programming-->
           <!---->
-          <strong class="flxCol flxWd alnCenter padbtOne">Programming</strong>
-          <div class="flxCol flxWd alnCenter padbtOne">
+          <strong class="flxCol flxWd alnCenter padBt1">Programming</strong>
+          <div class="flxCol flxWd alnCenter padBt1">
             <div class="flxCol flxWd alnCenter">
               <div class="flxDash hvrBlue"><strong>P-</strong>
                   <a class="btnDash" id="dshPLC" data-sect="sectPLC">PLC</a>
@@ -171,12 +325,12 @@
       <!---->
       <!--Main Flex Structure-->
       <!---->
-      <aside class="flxMain flxCol bckDefault">
+      <aside class="flxCol flxMain bckDefault">
         <!---->
         <!--Section- Home-->
         <!---->
         <div class="flxCol flxFull alnCenter bckTransparent animTrans section sectHome">
-          <div class="flxCol flxFull alnCenter">
+          <div class="flxCol flxFull alnCtrBt">
             <h1>Process Automated Control Systems</h1>
             <p><strong>Performance. Accountability. Cost. Safety.</strong></p>
             <!---->
@@ -185,7 +339,7 @@
             <div class="flxRow flxWd alnCenter">
               <div class="flxRow flxWd alnCenter">
                 <div class="flxRow flxWd flxHt alnCenter">
-                  <div class="flxRow flxWd10 flxHt10 alnCenter padOne radFive borBlack bckDefault hvrBlue">
+                  <div class="flxRow flxRun alnCenter pad1 rad5 borBlack bckDefault hvrBlue">
                     <a class="btnCmd" id="btnRun">RUN IT.</a>
                   </div>
                 </div>
@@ -195,11 +349,11 @@
           <!---->
           <!--Section- Main ladder logic section-->
           <!---->
-          <div class="flxCol flxFull alnCenter">
-            <div class="flxRow flxFull posRel alnCenter flxLadder">
-              <div class="flxRow flxWd75 flxHt20 alnCenter posAbs">
+          <div class="flxCol flxFull alnCtrTp">
+            <div class="flxRow flxFull posRel alnCtrTp flxLadder">
+              <div class="flxRow flxWd flxHt50 alnCtrTp">
                 <div class="flxCol flxFull alnCenter">
-                  <div class="flxRow flxFull alnCenter bckDefault borBtBlack posOne">
+                  <div class="flxRow flxFull alnCenter bckDefault borBtBlack pos3">
                     <div class="flxCol flxFull flxTpBranch posRel">Run_Button
                       <div id="lgxStart">
                         <span>[</span>
@@ -213,7 +367,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="flxRow flxFull alnCenter borBranch bckDefault posZero">
+                  <div class="flxRow flxFull alnCenter borBranch bckDefault pos0">
                     <div class="flxCol flxWd65 flxBtBranch posRel bckTransparent">Running
                       <div id="lgxRunning" class="lgxCarrots">
                         <span class="brLeft">[</span>
@@ -252,14 +406,14 @@
                 </div>
               </div>
             </div>
-          </div>      
+          </div>
         </div>
         <!---->
         <!--Section- Performance-->
         <!---->
         <div class="flxCol flxFull animTrans section sectPerformance">
           <div class="flxTitle"><h1>Performance.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf padTpHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5 padTp_5">
             <!---->
             <!--Section- Buttons-->
             <!---->
@@ -268,17 +422,17 @@
                 <p class="flxWd fntH2 alnCenter bckTransparent">What do you want to see?</p>
                 <div class="flxRow flxWd alnCenter bckTransparent">
                   <div class="flxRow flxWd alnCenter bckTransparent">
-                    <div class="flxWd75 fntBtn flxRow alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxWd75 fntBtn flxRow alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnSCADA" data-sect="cSCADA">SCADA</a>
                     </div>
                   </div>
                   <div class="flxRow flxWd alnCenter bckTransparent">
-                    <div class="flxWd75 fntBtn flxRow alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxWd75 fntBtn flxRow alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnHMI" data-sect="cHMI">HMI</a>
                     </div>
                   </div>
                   <div class="flxRow flxWd alnCenter bckTransparent">
-                    <div class="flxWd75 fntBtn flxRow alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxWd75 fntBtn flxRow alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnPLC" data-sect="cPLC">PLC</a>
                     </div>
                   </div>
@@ -409,7 +563,7 @@
         <!---->        
         <div class="flxCol flxFull bckTransparent animTrans section sectAbility">
           <div class="flxTitle"><h1>Accountability.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
               <!---->
               <!--Section- Buttons-->
               <!---->
@@ -418,11 +572,11 @@
                 <p class="flxRow flxWd fntH2 bckTransparent">How should we present a problem?</p>
                 <div class="flxRow flxWd50 alnCenter">
                   <div class="flxRow flxWd alnCenter bckTransparent">
-                    <div class="flxWd fntBtn flxRow marRtTen alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxRow flxWd fntBtn marRt10 alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnAlarms" data-sect="cAlarms">ALARMS</a>
                     </div>
                     <div class="flxRow flxWd alnCenter bckTransparent">
-                      <div class="flxWd fntBtn flxRow alnCenter borBlack radFive bckDefault hvrBlue">
+                      <div class="flxRow flxWd fntBtn alnCenter borBlack rad5 bckDefault hvrBlue">
                         <a class="btnCmd" id="btnEvents" data-sect="cEvents">EVENTS</a>
                       </div>
                     </div>
@@ -568,7 +722,7 @@
         <!---->        
         <div class="flxCol flxFull bckTransparent animTrans section sectCost">
           <div class="flxTitle"><h1>Cost.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Buttons-->
             <!---->
@@ -577,7 +731,7 @@
                 <p class="fntH2 flxRow flxWd">Where can we save you money?</p>
                 <div class="flxRow flxWd50 alnCenter">
                   <div class="flxRow flxWd alnCtrLt bckTransparent">
-                    <div class="flxWd35 fntBtn flxRow alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxWd35 fntBtn flxRow alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnOEE" data-sect="cOEE">OEE</a>
                     </div>
                   </div>
@@ -617,13 +771,13 @@
                   <div class="indentSection">Hover for more information.</div>
                   <div class="flxRow flxFull alnCenter indentSection cirStructure">
                     <div class="flxRow flxWd alnCtrLt">
-                      <div class="radFive padFive alnCenter cirA fntCir" data-popover="Availability = Run Time / Planned Production Time">A</div>
-                      <div class="marLtOne marRtOne"><strong>X</strong></div>
-                      <div class="radFive padFive alnCenter cirP fntCir" data-popover="Performance = (Total Count / Run Time) / Ideal Run Rate">P</div>
-                      <div class="marLtOne marRtOne"><strong>X</strong></div>
-                      <div class="radFive padFive cirQ fntCir" data-popover="Quality = Good Product / Total Product">Q</div>
-                      <div class="marLtOne marRtOne"><strong>=</strong></div>
-                      <div class="radFive padFive alnCenter cirOEE fntCir" data-popover="=Overall Equipment Effectiveness!">OEE</div>
+                      <div class="rad5 pad5 alnCenter cirA fntCir" data-popover="Availability = Run Time / Planned Production Time">A</div>
+                      <div class="marLt1 marRt1"><strong>X</strong></div>
+                      <div class="rad5 pad5 alnCenter cirP fntCir" data-popover="Performance = (Total Count / Run Time) / Ideal Run Rate">P</div>
+                      <div class="marLt1 marRt1"><strong>X</strong></div>
+                      <div class="rad5 pad5 cirQ fntCir" data-popover="Quality = Good Product / Total Product">Q</div>
+                      <div class="marLt1 marRt1"><strong>=</strong></div>
+                      <div class="rad5 pad5 alnCenter cirOEE fntCir" data-popover="=Overall Equipment Effectiveness!">OEE</div>
                     </div>
                   </div>
                 </div>
@@ -675,7 +829,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectSafety">
           <div class="flxTitle"><h1>Safety.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -752,7 +906,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectTurnkey">
           <div class="flxTitle"><h1>Turnkey.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -763,11 +917,11 @@
                 Our turnkey service allows us to create a fully <strong>sophisticated</strong> system with our PACS process.
                 <br>
                 <br>
-                This gives our customers of the benefit of guiding the mission, while we take care of the mission.
+                This gives our customers the benefit of guiding, while we take care of the mission.
                 <br>
                 <br>
                 We dedicate our <strong>full attention</strong> to finding the best possible options for you and your facility, creating
-                custom presentations, opening up possible avenues where automation is non-existent, and/or in need of 
+                custom <strong>presentations</strong> and <strong>reports</strong>, opening up possible avenues where automation is non-existent, and/or in need of 
                 an upgrade to something more reliable.
                 </p>
               </div>
@@ -816,9 +970,9 @@
         <!---->
         <!--Section- Upgrade-->
         <!---->  
-        <div class="flxCol flxFull bckTransparent animTrans padLtOne section sectUpgrade">
+        <div class="flxCol flxFull bckTransparent animTrans padLt1 section sectUpgrade">
           <div class="flxTitle"><h1>Upgrades.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -884,7 +1038,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectFabrication">
           <div class="flxTitle"><h1>Fabrication.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -955,7 +1109,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectSCADA">
           <div class="flxTitle"><h1>SCADA.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -1011,7 +1165,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectHMI">
           <div class="flxTitle"><h1>HMI.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -1060,7 +1214,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectWeb">
           <div class="flxTitle"><h1>Web Client.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -1106,7 +1260,7 @@
         <!---->  
         <div class="flxCol flxFull alnCenter bckTransparent animTrans section sectDatabase">
           <div class="flxTitle"><h1>Databasing.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
@@ -1148,7 +1302,7 @@
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectPLC">
           <div class="flxTitle"><h1>PLC.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Buttons-->
             <!---->
@@ -1157,13 +1311,13 @@
                 <p class="fntH2 flxRow flxWd">Programmable Logic Controller.</p>
                 <div class="flxRow flxWd50 alnCenter">
                   <div class="flxRow flxWd alnCtrLt bckTransparent">
-                    <div class="flxWd35 fntBtn flxRow marRtTen alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxWd35 fntBtn flxRow marRt10 alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnFBD" data-sect="cFBD">FBD</a>
                     </div>
-                    <div class="flxWd35 fntBtn flxRow marRtTen alnCenter borBlack radFive bckDefault hvrBlue">
-                      <a class="btnCmd" id="btnLadder" data-sect="cLadder">PLC</a>
+                    <div class="flxWd35 fntBtn flxRow marRt10 alnCenter borBlack rad5 bckDefault hvrBlue">
+                      <a class="btnCmd" id="btnLadder" data-sect="cLadder">LDR</a>
                     </div>
-                    <div class="flxWd35 fntBtn flxRow alnCenter borBlack radFive bckDefault hvrBlue">
+                    <div class="flxWd35 fntBtn flxRow alnCenter borBlack rad5 bckDefault hvrBlue">
                       <a class="btnCmd" id="btnText" data-sect="cText">ST</a>
                     </div>
                   </div>
@@ -1191,41 +1345,42 @@
                 <!--Section- cFBD-->
                 <!---->
                 <div class="flxCol flxFull cStructure cFBD">
-                  <strong>Function Block Diagram</strong>
-                  <div class="flxCol alnCenter flxWd50 flxHt75 radFive borDefault marLtThree widget">
+                  <strong>Function Block Diagram:</strong>
+                  <div class="flxCol alnCenter flxFull rad5 borDefault marLt3 widget">
                     <div class="flxRow alnCenter flxWd">Function_PACS</div>
-                    <div class="flxCol flxWd50 flxHt75 bckOffset posThree borBlack radFive">
+                    <div class="flxCol flxWd65 flxHt bckOffset pos3 borBlack rad5">
                       <div class="flxRow flxWd">
-                        <div class="flxRow flxWd marLtThree marBtOne">Run
-                          <div class="flxHt0 marTpOne flxWd4 posLt420 flxCol posAbs borBlack"></div>
+                        <div class="flxRow flxWd marLt3 marBt1">Run
+                          <div class="flxCol flxHt0 marTp1 flxWd4 posLt420 posAbs borBlack"></div>
                         </div>
-                        <div class="flxRow flxWd marLtFive marBtOne">Run_PACS
-                          <div class="flxHt0 marTpOne flxWd4 marLtFour flxCol posAbs borBlack"></div>
+                        <div class="flxRow flxWd50">Run_PACS
+                          <div class="flxCol flxHt0 marTp1 flxWd4 marLt5 posAbs borBlack"></div>
                         </div>
                       </div>
-                      <div class="flxRow flxWd marLtThree marBtOne">Ready
-                        <div class="flxHt0 marTpOne flxWd4 posLt420 flxCol posAbs borBlack"></div>
+                      <div class="flxRow flxWd marLt3 marBt1">Ready
+                        <div class="flxCol flxHt0 marTp1 flxWd4 posLt420 posAbs borBlack"></div>
                       </div>
-                      <div class="flxRow flxWd marLtThree marBtOne">Safety
-                        <div class="flxHt0 marTpOne flxWd4 posLt420 flxCol posAbs borBlack"></div>
+                      <div class="flxRow flxWd marLt3 marBt1">Safety
+                        <div class="flxCol flxHt0 marTp1 flxWd4 posLt420 posAbs borBlack"></div>
                       </div>
-                      <div class="flxRow flxWd marLtThree marBtOne">Stop
-                        <div class="flxHt0 marTpOne flxWd4 posLt420 flxCol posAbs borBlack"></div>
+                      <div class="flxRow flxWd marLt3 marBt1">Stop
+                        <div class="flxCol flxHt0 marTp1 flxWd4 posLt420 posAbs borBlack"></div>
                       </div>
-                      <div class="flxRow flxWd marLtThree marBtOne">Running
-                        <div class="flxHt0 marTpOne flxWd4 posLt420 flxCol posAbs borBlack"></div>
+                      <div class="flxRow flxWd marLt3 marBt1">Running
+                        <div class="flxCol flxHt0 marTp1 flxWd4 posLt420 posAbs borBlack"></div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <!---->
-                <!--Section- Main ladder logic section-->
+                <!--Section- cLadder-->
                 <!---->
-                <div class="flxCol flxFull alnCenter bckTransparent cStructure cLadder">
+                <div class="flxCol flxFull cStructure cLadder">
+                  <strong>Ladder Loggic Example:</strong>
                   <div class="flxRow flxFull posRel alnCenter flxLadder">
-                    <div class="flxRow flxWd35 flxHt20 alnCenter posAbs">
+                    <div class="flxRow flxWd flxHt65 alnCenter posAbs">
                       <div class="flxCol flxFull alnCenter">
-                        <div class="flxRow flxFull alnCenter bckDefault borBtBlack posOne">
+                        <div class="flxRow flxFull alnCenter bckDefault borBtBlack pos1">
                           <div class="flxCol flxFull flxTpBranch posRel">Run_Button
                             <div id="plcStart">
                               <span>[</span>
@@ -1239,7 +1394,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="flxRow flxFull alnCenter borBranch bckDefault posZero">
+                        <div class="flxRow flxFull alnCenter borBranch bckDefault pos0">
                           <div class="flxCol flxWd65 flxBtBranch posRel bckTransparent">Running
                             <div id="plcRunning" class="lgxCarrots">
                               <span class="brLeft">[</span>
@@ -1316,32 +1471,33 @@
         <!--Section- Forms-->
         <!---->  
         <div class="flxCol flxFull bckTransparent animTrans section sectForms">
-          <div class="flxTitle"><h1>Customer Forms.</h1></div>
+          <div class="flxTitle"><h1>Customer Forms. **New details added frequently</h1></div>
           <div class="flxColRow flxWd">
-            <p class="fntH2 flxRow flxWd35">Choose your form.</p>
+            <p class="fntH2 flxRow flxWd">Choose your form.
             <div class="flxRow flxWd alnCtrLt">
-              <div class="flxRow flxWd50 alnCtrLt bckTransparent">
-                <div class="flxWd35 fntBtn flxRow marRtTen alnCenter borBlack radFive bckWhite hvrBlue">
+              <div class="flxRow flxWd alnCtrLt bckTransparent">
+                <div class="flxWd20 fntBtn flxRow marRt10 alnCenter borBlack rad5 bckWhite hvrBlue">
                   <a class="btnCmd" id="btnPre" data-sect="cPre">Help</a>
                 </div>
-                <div class="flxWd35 fntBtn flxRow marRtTen alnCenter borBlack radFive bckWhite hvrBlue">
-                  <a class="btnCmd" id="btnSi" data-sect="cSi">Signup</a>
+                <div class="flxWd20 fntBtn flxRow marRt10 alnCenter borBlack rad5 bckWhite hvrBlue">
+                  <a class="btnCmd" id="btnSi" data-sect="cSi">Signup</a> <!---->
                 </div>
-                <div class="flxWd35 fntBtn flxRow alnCenter borBlack radFive bckWhite hvrBlue">
-                  <a class="btnCmd" id="btnPa" data-sect="cPa">Paper</a>
+                <div class="flxWd20 fntBtn flxRow alnCenter borBlack rad5 bckWhite hvrBlue">
+                  <!--<a class="btnCmd" id="btnPa" data-sect="cPa">PACS Paper</a>-->
                 </div>
               </div>
-            </div>        
+            </div>
+          </p>        
           </div>   
           <!---->
           <!--Section- cPre-->
           <!---->
           <div class="flxFull">
-            <div class="flxCol flxFull bckOffset radFive padLtHf padRtHf fnt8 cForm cPre">
+            <div class="flxCol flxFull bckOffset rad5 padLt_5 padRt_5 fnt8 cForm cPre">
               <form action=".PHP/prelim.php" method="post">
                 <div class="flxCol flxFull">
-                  <div class="flxRow flxWd padLtHf padRtHf">
-                    <div class="flxRow flxWd padTenth">
+                  <div class="flxRow flxWd padLt_5 padRt_5">
+                    <div class="flxRow flxWd">
                       <div class="flxRow flxWd alnCtrLt">
                         <label for="srvProcess" class="flxWd75 alnCtrLt">What is your most critical process?</label>
                         <input class="flxWd alnCtrLt borBtDefault bckTransparent" type="text" id="srvProcess" name="srvProcess"><br><br>
@@ -1350,100 +1506,100 @@
                     <div class="flxCol flxWd alnCtrRt">
                       <div class="flxRow flxWd alnCtrRt">
                         <label for="srvAutomation">Do you currently have any automation?</label>
-                        <input class="marLtThree chkBox" type="checkbox" id="srvAutomation" name="srvAutomation"><br><br>
+                        <input class="marLt3 chkBox" type="checkbox" id="srvAutomation" name="srvAutomation"><br><br>
                       </div>
                       <div class="flxRow flxWd alnCtrRt">
                         <label for="srvSoftware">If yes, do you have the software?</label>
-                        <input class="marLtThree chkBox" type="checkbox" id="srvSoftware" name="srvSoftware">
+                        <input class="marLt3 chkBox" type="checkbox" id="srvSoftware" name="srvSoftware">
                       </div>
                     </div>
                   </div>
                   <div class="flxCol flxWd"><strong>What are you looking for?</strong>
                     <div><strong>Graphics Design / Databasing</strong>
-                      <label class="marLtThree" for="srvgSCADA">SCADA</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgSCADA" name="srvgSCADA">
-                      <label class="marLtThree" for="srvgHMI">HMI/Windows</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgHMI" name="srvgHMI">
-                      <label class="marLtThree" for="srvgDATA">Database</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgDATA" name="srvgDATA">
+                      <label class="marLt3" for="srvgSCADA">SCADA</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgSCADA" name="srvgSCADA">
+                      <label class="marLt3" for="srvgHMI">HMI/Windows</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgHMI" name="srvgHMI">
+                      <label class="marLt3" for="srvgDATA">Database</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgDATA" name="srvgDATA">
                     </div>
                     <div class="flxRow flxWd alnCenter">
-                      <label class="marLtThree" for="srvgCreation">Creation</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgCreation" name="srvgCreation">
-                      <label class="marLtThree" for="srvgRevisions">Revisions</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgRevisions" name="srvgRevisions">
-                      <label class="marLtThree" for="srvgTrouble">Troubleshooting</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgTrouble" name="srvgTrouble">
-                      <div class="flxRow flxWd75 alnCtrLt marLtOne">
+                      <label class="marLt3" for="srvgCreation">Creation</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgCreation" name="srvgCreation">
+                      <label class="marLt3" for="srvgRevisions">Revisions</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgRevisions" name="srvgRevisions">
+                      <label class="marLt3" for="srvgTrouble">Troubleshooting</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgTrouble" name="srvgTrouble">
+                      <div class="flxRow flxWd75 alnCtrLt marLt1">
                         <label class="alnCtrLt" for="srvgOther">Other</label>
-                        <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="text" id="srvgOther" name="srvgOther">
+                        <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="text" id="srvgOther" name="srvgOther">
                       </div>
                     </div>
                     <div><strong>PLC Programming</strong></div>
                     <div class="flxRow flxWd alnCenter">
-                      <label class="marLtThree" for="srvpCreation">Creation</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvpCreation" name="srvpCreation">
-                      <label class="marLtThree" for="srvpRevisions">Revisions</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvpRevisions" name="srvpRevisions">
-                      <label class="marLtThree" for="srvpTrouble">Troubleshooting</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvpTrouble" name="srvpTrouble">
-                      <div class="flxRow flxWd75 alnCtrLt marLtOne"> 
+                      <label class="marLt3" for="srvpCreation">Creation</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvpCreation" name="srvpCreation">
+                      <label class="marLt3" for="srvpRevisions">Revisions</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvpRevisions" name="srvpRevisions">
+                      <label class="marLt3" for="srvpTrouble">Troubleshooting</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvpTrouble" name="srvpTrouble">
+                      <div class="flxRow flxWd75 alnCtrLt marLt1"> 
                         <label class="alnCtrLt" for="srvpOther">Other</label>
-                        <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="text" id="srvpOther" name="srvpOther">
+                        <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="text" id="srvpOther" name="srvpOther">
                       </div>
                     </div>
                     <div><strong>Preferred Software</strong></div>
                     <div><strong>Graphics</strong></div>
                     <div class="flxRow flxWd alnCenter">
-                      <label class="marLtThree" for="srvgIgnition">Ignition</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgIgnition" name="srvgIgnition">
-                      <label class="marLtThree" for="srvgAVEVA">AVEVA</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgAVEVA" name="srvgAVEVA">
-                      <label class="marLtThree" for="srvgRockwell">Rockwell</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvgRockwell" name="srvgRockwell">
-                      <div class="flxRow flxWd alnCtrLt marLtOne">
+                      <label class="marLt3" for="srvgIgnition">Ignition</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgIgnition" name="srvgIgnition">
+                      <label class="marLt3" for="srvgAVEVA">AVEVA</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgAVEVA" name="srvgAVEVA">
+                      <label class="marLt3" for="srvgRockwell">Rockwell</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvgRockwell" name="srvgRockwell">
+                      <div class="flxRow flxWd alnCtrLt marLt1">
                         <label class="alnCtrLt" for="srvgOther1">Other</label>
-                        <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="text" id="srvgOther1" name="srvgOther1">
+                        <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="text" id="srvgOther1" name="srvgOther1">
                       </div>
                     </div>
                     <div><strong>PLC</strong></div>
-                    <div class="flxRow flxWd alnCenter">
-                      <label class="marLtThree" for="srvpRockwell">Rockwell</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvpRockwell" name="srvpRockwell">
-                      <label class="marLtThree" for="srvpSiemens">Siemens</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvpSiemens" name="srvpSiemens">
-                      <label class="marLtThree" for="srvpDirect">AutomationDirect</label>
-                      <input class="marLtOne chkBox" type="checkbox" id="srvpDirect" name="srvpDirect">
-                      <div class="flxRow flxWd75 alnCtrLt marLtOne">
+                    <div class="flxRow flxWd alnCtrLt">
+                      <label class="marLt3" for="srvpRockwell">Rockwell</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvpRockwell" name="srvpRockwell">
+                      <label class="marLt3" for="srvpSiemens">Siemens</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvpSiemens" name="srvpSiemens">
+                      <label class="marLt3" for="srvpDirect">AutomationDirect</label>
+                      <input class="marLt1 chkBox" type="checkbox" id="srvpDirect" name="srvpDirect">
+                      <div class="flxRow flxWd50 alnCtrLt marLt1">
                         <label class="alnCtrLt" for="srvpOther1">Other</label>
-                        <input class="flxWd alnCtrLt marLtOne borBtDefault bckTransparent" type="text" id="srvpOther1" name="srvpOther1">
-                        <div class="flxRow flxWd alnCenter">
-                          <div class="flxRow flxWd marRtOne alnCtrRt">
-                            <button type="submit">Submit</button>
-                          </div>
-                        </div>
+                        <input class="flxWd alnCtrLt marLt1 borBtDefault bckTransparent" type="text" id="srvpOther1" name="srvpOther1">
                       </div>
                     </div>
                   </div>
-                  <div class="flxRow flxWd borDefault radFive">
+                  <div class="flxRow flxFull alnCenter">
+                    <div class="flxRow flxWd alnCtrLt">
+                      <button type="submit">Submit</button>
+                    </div>
+                  </div>
+                  <div class="flxRow flxWd borDefault rad5">
                     <div class="flxCol flxWd">
                       <div class="flxCol flxWd alnCenter">
                         <p><strong>Thoughts of Service Selection</strong></p>
                         <div class="flxWd75 flxRow alnCenter">
-                          <label class="marRtThree" for="srvConsult">Looking for Consulting service?</label>
-                          <input class="marLtOne chkBox" type="checkbox" id="srvConsult" name="srvConsult">
+                          <label class="marRt3" for="srvConsult">Looking for Consulting service?</label>
+                          <input class="marLt1 chkBox" type="checkbox" id="srvConsult" name="srvConsult">
                         </div>
                         <div class="flxWd75 flxRow alnCenter">
-                          <label class="marRtThree" for="srvOnsite">Looking for Onsite service?</label>
-                          <input class="marLtOne chkBox" type="checkbox" id="srvOnsite" name="srvOnsite">
+                          <label class="marRt3" for="srvOnsite">Looking for Onsite service?</label>
+                          <input class="marLt1 chkBox" type="checkbox" id="srvOnsite" name="srvOnsite">
                         </div>
                         <div class="flxWd75 flxRow alnCenter">
-                          <label class="marRtThree" for="srvRemote">Looking for Remote service?</label>
-                          <input class="marLtOne chkBox" type="checkbox" id="srvRemote" name="srvRemote"> 
+                          <label class="marRt3" for="srvRemote">Looking for Remote service?</label>
+                          <input class="marLt1 chkBox" type="checkbox" id="srvRemote" name="srvRemote"> 
                         </div>
                         <div class="flxWd75 flxRow alnCenter">
-                          <label class="marRtThree" for="srvEngineering">Looking for Engineering service?</label>
-                          <input class="marLtOne chkBox" type="checkbox" id="srvEngineering" name="srvEngineering">        
+                          <label class="marRt3" for="srvEngineering">Looking for Engineering service?</label>
+                          <input class="marLt1 chkBox" type="checkbox" id="srvEngineering" name="srvEngineering">        
                         </div>
                       </div>
                     </div>
@@ -1452,19 +1608,19 @@
                         <p><strong>Contact Information</strong></p>
                         <div class="flxWd75 flxRow alnCenter">
                           <label class="alnCtrLt" for="srvCompany">Company</label>            
-                          <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="text" id="srvCompany" name="srvCompany">
+                          <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="text" id="srvCompany" name="srvCompany">
                         </div>
                         <div class="flxWd75 flxRow alnCenter">
                           <label class="alnCtrLt" for="srvName">Name</label>
-                          <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="text" id="srvName" name="srvName" required>
+                          <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="text" id="srvName" name="srvName" required>
                         </div>
                         <div class="flxWd75 flxRow alnCenter">
                           <label class="alnCtrLt" for="srvEmail">Email</label>
-                          <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="email" id="srvEmail" name="srvEmail" required> 
+                          <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="email" id="srvEmail" name="srvEmail" required> 
                         </div> 
                         <div class="flxWd75 flxRow alnCenter">
                           <label class="alnCtrLt" for="srvPhone">Phone</label>
-                          <input class="flxWd50 alnCtrLt marLtOne borBtDefault bckTransparent" type="tel" id="srvPhone" name="srvPhone" required> 
+                          <input class="flxWd50 alnCtrLt marLt1 borBtDefault bckTransparent" type="tel" id="srvPhone" name="srvPhone" required> 
                         </div> 
                       </div>
                     </div>
@@ -1475,24 +1631,85 @@
             <!---->
             <!--Section- cSi-->
             <!---->
-            <div class="flxRow flxFull bckOffset padLtHf padRtHf cForm cSi">
-              <form action=".PHP/signup.php" method="post">
-                  <label for="username">Username:</label>
-                  <input type="text" name="username" id="username" required><br><br>
-                  <label for="password">Password:</label>
-                  <input type="password" name="password" id="password" required><br><br>
-                  <input type="submit" value="Sign Up">
-              </form>
+            <div class="flxCol flxFull borDefault rad5 padLt_5 padBt_5 padRt_5 bckOffset cForm cSi">
+              <!---->
+              <!--Section- Left paragraph-->
+              <!---->
+              <!--<p class="fnt22 alnCenter"><strong>Welcome!</strong></p>-->
+              <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
+                <aside class="flxCol flxFull">
+                  <div class="lftPara">
+                    <!---->
+                    <!--Section- Contact form-->
+                    <!---->
+                    <div class="flxCol flxFull borDefault rad5 padLt_5 padBt_5 padRt_5">
+                      <form action=".PHP/signup.php" method="post">
+                        <h1>Sign up for our exclusive content!</h1>
+                        <div class="flxCol flxWd95 marTp3 padLt1">
+                          <label class="borBtDefault flxWd35" for="snName"><strong>Name: *</strong></label>
+                          <input type="text" id="snName" name="snName" placeholder="Enter your name" required autocomplete="on">
+                        </div>
+                        <div class="flxCol flxWd95 marTp3 padLt1">
+                          <label class="borBtDefault flxWd35" for="snUser"><strong>Email: *</strong></label>
+                          <input type="email" id="snUser" name="snUser" placeholder="Enter your email" required autocomplete="on">
+                        </div>
+                        <div class="flxCol flxWd95 marTp3 padLt1">
+                          <label class="borBtDefault flxWd35" for="snPass"><strong>Password: *</strong></label>
+                          <input type="password" id="snPass" name="snPass" placeholder="Enter your password" required autocomplete="on">
+                        </div>
+                        <div class="flxCol flxWd95 marTp3 padLt1">
+                          <label class="borBtDefault flxWd35" for="snCompany">Company:</label>
+                          <input type="password" id="snCompany" name="snCompany" placeholder="Enter your company (optional)" autocomplete="on">
+                        </div>
+                        <div class="btnForm pad1">
+                          <div class="btnForm">
+                            <button type="submit">Submit</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </aside>
+                <!---->
+                <!--Section- Right paragraph-->
+                <!---->
+                <aside class="flxCol flxFull rhtContent">
+                  <p class="fntH2"><strong>CONTENT COMING NOVEMBER 2023</strong>
+                    <div class="rhtPara"> 
+                    </div>
+                  </p>
+                  <p class="fntH2">
+                    <div class="rhtPara"> 
+                    </div>
+                  </p>
+                </aside>
+              </div>
             </div>
             <!---->
             <!--Section- cPa-->
             <!---->
-            <div class="flxRow flxFull bckOffset padLtHf padTpHf cForm cPa">
-              <form action="#" method="post">
-                  <div class="flxRow">
-                    <textarea class="flxFull" id="notepad" name="message" placeholder="Use this as a notepad!"></textarea>
-                  </div>
-              </form>
+            <div class="flxCol flxFull bckOffset padLt_5 padTp_5 alnCenter cForm cPa">
+              <div class="flxRow flxFull bckTransparent alnCenter">
+                <div class="flxRow flxFull alnCenter">
+                  <textarea class="flxWd75 flxHt rad15 borBlack bckDefault" id="pPAD" name="message" placeholder="Performance"></textarea>
+                </div>
+                <div class="flxRow flxFull alnCenter">
+                  <textarea class="flxWd75 flxHt rad15 borBlack bckDefault" id="aPAD" name="message" placeholder="Accountability"></textarea>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCenter">
+                <div class="flxRow flxFull alnCenter">
+                  <textarea class="flxWd35 flxHt rad15 borBlack bckDefault" id="dPAD" name="message" placeholder="Decision"></textarea>
+                </div>
+              </div>
+              <div class="flxRow flxFull alnCenter">
+                <div class="flxRow flxFull alnCenter">
+                  <textarea class="flxWd75 flxHt rad15 borBlack bckDefault" id="cPAD" name="message" placeholder="Cost"></textarea>
+                </div>
+                <div class="flxRow flxFull alnCenter">
+                  <textarea class="flxWd75 flxHt rad15 borBlack bckDefault" id="sPAD" name="message" placeholder="Safety"></textarea>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1501,22 +1718,41 @@
         <!---->  
         <div class="flxCol flxFull alnCenter bckTransparent animTrans section sectPortal">
           <div class="flxTitle"><h1>Customer Login.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
             <aside class="flxCol flxFull">
-              <p class="fntH2"><strong>COMING SOON.</strong></p>
-              <div class="lftPara"> 
-                <br>
-                <br>
+              <p class="fnt22"><strong>Welcome!</strong></p><!---->
+              <div class="lftPara">
+                <!---->
+                <!--Section- Contact form-->
+                <!---->
+                <div class="flxCol flxFull borDefault rad5 padLt_5 padBt_5 padRt_5">
+                  <form action=".PHP/login.php" method="post">
+                    <h1>Login.</h1>
+                    <div class="flxCol flxWd95 marTp3 padLt1">
+                      <label class="borBtDefault flxWd35" for="lgnUser"><strong>Email: *</strong></label>
+                      <input type="email" id="lgnUser" name="lgnUser" placeholder="Enter your email" required autocomplete="on">
+                    </div>
+                    <div class="flxCol flxWd95 marTp3 padLt1">
+                      <label class="borBtDefault flxWd35" for="lgnPass"><strong>Password: *</strong></label>
+                      <input type="password" id="lgnPass" name="lgnPass" placeholder="Enter your password" required autocomplete="on">
+                    </div>
+                    <div class="btnForm pad1">
+                      <div class="btnForm">
+                        <button type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </aside>
             <!---->
-              <!--Section- Right paragraph-->
-              <!---->
+            <!--Section- Right paragraph-->
+            <!---->
             <aside class="flxCol flxFull rhtContent">
-              <p class="fntH2"><strong>:)</strong>
+              <p class="fntH2"><strong>COMING NOVEMBER 2023</strong>
                 <div class="rhtPara"> 
                 </div>
               </p>
@@ -1525,6 +1761,10 @@
                 </div>
               </p>
             </aside>
+            <div id="popup" class="popup hidden">
+              <p>Successful login!</p>
+              <button id="closePopup">Close</button>
+            </div>
           </div>
         </div>
         <!---->
@@ -1532,26 +1772,26 @@
         <!---->  
         <div class="flxCol flxFull alnCenter bckTransparent animTrans section sectContact">
           <div class="flxTitle"><h1>Contact Us.</h1></div>
-          <div class="flxColRow flxFull bckOffset padLtHf padRtHf">
+          <div class="flxColRow flxFull bckOffset padLt_5 padRt_5">
             <!---->
             <!--Section- Left paragraph-->
             <!---->
-            <aside class="flxCol flxFull marLtOne marTpOne">
+            <aside class="flxCol flxFull marLt1 marTp1">
               <!---->
               <!--Section- Contact form-->
               <!---->
-              <div class="flxCol borDefault radFive padLtHf padBtHf padRtHf">
+              <div class="flxCol borDefault rad5 padLt_5 padBt_5 padRt_5">
                 <form action=".PHP/form.php" method="post">
                   <h1>Send us an email!</h1>
-                  <div class="flxCol flxWd95 marTpThree padLtOne">
-                    <label class="borBtDefault flxWd35" for="name">Your name: *</label>
+                  <div class="flxCol flxWd95 marTp3 padLt1">
+                    <label class="borBtDefault flxWd35" for="name"><strong>Your name: *</strong></label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="on">
                   </div>
-                  <div class="flxCol flxWd95 marTpThree padLtOne borBtDefault">
-                    <label class="borBtDefault flxWd35" for="email">Your email: *</label>
+                  <div class="flxCol flxWd95 marTp3 padLt1">
+                    <label class="borBtDefault flxWd35" for="email"><strong>Your email: *</strong></label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="on">
                   </div>
-                  <div class="flxCol flxWd95 marTpThree padLtOne">
+                  <div class="flxCol flxWd95 marTp3 padLt1 marBt1">
                     <label class="borBtDefault flxWd50" for="message">Brief message:</label>
                     <textarea id="message" name="message" placeholder="Enter your message"></textarea>
                   </div>
@@ -1573,17 +1813,18 @@
                   <br>
                   <br>
                   Customer's helped WORLDWIDE!
+                </div> 
+                <div class="selfStructure">
+                  <img src=".IMG/Globe.png" alt="">
+                  <img src=".IMG/AL.png" alt="">
                 </div>
               </p>
-              <div class="selfStructure">
-                <img src=".IMG/Globe.png" alt="">
-                <img src=".IMG/AL.png" alt="">
-              </div>
               <p class="fntH2">Austen Loertscher.
                 <div class="rhtPara">
                   <p>
-                  Owner
-                  <br> 
+                  Automation Engineer - Integrator
+                  <br>
+                  <br>
                   <a class="decorationOff" href="tel:14357706554">Phone: (435)770-6554</a>
                   <br>
                   <a class="decorationOff" href="mailto:austen.pacs@gmail.com">Email: austen.pacs@gmail.com</a>
@@ -1595,6 +1836,35 @@
             </aside>
           </div>
         </div>
+        <!---->
+        <!--Section- Industry-->
+        <!---->        
+        <div class="flxCol flxFull bckTransparent animTrans section sectIndustry">
+          <div class="flxTitle"><h1>Industries.</h1></div>
+          <p class="fntH2 flxRow flxWd marLt3"><strong>Our experience.</strong></p>
+          <div class="flxCol flxFull bckOffset padLt_5 padRt_5">
+            <!---->
+            <!--Section- Widgets-->
+            <!---->
+            <div class="flxRow flxFull">
+              <div class="flxCol flxFull alnCtrBt">
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectBusiness"><img src="#" alt="">Business</a></div>
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectHVAC"><img src="#" alt="">HVAC</a></div>
+                <div class="flxRow flxWd65 flxHt65 rad15 marTp1 alnCtrTp fntH2"><!--<a href="#"><img src="#" alt=""> </a>--></div>
+              </div>
+              <div class="flxCol flxFull alnCtrBt">
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectFood"><img src="#" alt="">Food</a></div>
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectManufacturing"><img src="#" alt="">Manufacturing</a></div>
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectUniversity"><img src="#" alt="">University</a></div>
+              </div>
+              <div class="flxCol flxFull alnCtrBt">
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectHospital"><img src="#" alt="">Hospital</a></div>
+                <div class="flxRow flxWd65 flxHt65 rad15 borDefault marTp1 alnCenter fntH2 flxWidget"><a href="#" class="btnLink decorationOff" data-sect="sectProcess"><img src="#" alt="">Process</a></div>
+                <div class="flxRow flxWd65 flxHt65 rad15 marTp1 alnCenter fntH2"><!--<a href="#"><img src="#" alt=""> </a>--></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </aside> 
     </main>
     <!---->
@@ -1603,7 +1873,7 @@
     <div>
       <footer class="flxRow flxWd fntWhite alnCtrLt bckFoot">&copy; 2023 PACS Consulting, LLC. All rights reserved.</footer>
     </div> 
-    <script src=".JS/index.js?v=5.0.2"></script>
+    <script src=".JS/index.js?v=5.0.7"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>

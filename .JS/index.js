@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector("header");
-const navEnterprise = document.querySelector('header img.Enterprise')
+const navEnterprise = document.querySelector('.Enterprise')
 const headerImg = document.querySelector('header img');
 const htmlElement = document.querySelector('html');
 const bDirIMG = htmlElement.getAttribute('dirimg');
@@ -21,9 +21,31 @@ const abImg = document.querySelector('.imgAB');
 const ab2Img = document.querySelector('.imgAB2');
 const rlImg = document.querySelector('.imgRL');
 const asImg = document.querySelector('.imgAS');
+const businessImg = document.querySelector('.imgBusiness');
+const foodImg = document.querySelector('.imgFood');
+const hospitalImg = document.querySelector('.imgHospital');
+const manufacturingImg = document.querySelector('.imgManufacturing');
+const processImg = document.querySelector('.imgProcess');
+const universityImg = document.querySelector('.imgUniversity');
+const smallImg = document.querySelector('.imgSmall');
+const domainImg = document.querySelector('.imgDomain');
+const corpImg = document.querySelector('.imgCorp');
+const beverageImg = document.querySelector('.imgBeverage');
+const packagedImg = document.querySelector('.imgPackaged');
+const petImg = document.querySelector('.imgPet');
+const hvacImg = document.querySelector('.imgHVAC');
+const plasticImg = document.querySelector('.imgPlastic');
+const specchemImg = document.querySelector('.imgSpecChem');
+const forgeImg = document.querySelector('.imgForge');
+const oemImg = document.querySelector('.imgOEM');
+const waterImg = document.querySelector('.imgWater');
+const electricImg = document.querySelector('.imgElectric');
+const gasImg = document.querySelector('.imgGas');
+const airImg = document.querySelector('.imgAir');
+const steamImg = document.querySelector('.imgSteam');
 const icolink = document.querySelector('link[rel="icon"]');
 const icoshortLink = document.querySelector('link[rel="shortcut icon"]');
-const btnGroups = document.querySelectorAll(".btnHead, .btnCmd, .btnDash, .btnLink");
+const btnGroups = document.querySelectorAll(".btnHead, .btnCmd, .btnDash, .btnLink, .flxPops a, .flxOps a");
 const canvas = document.getElementById("canvasHeader");
 const ctx = canvas.getContext("2d");
 const cirElements = document.querySelectorAll('.fntCir[data-popover]');
@@ -67,6 +89,28 @@ abImg.src = `${bDirIMG}AB.png`;
 ab2Img.src = `${bDirIMG}AB.png`;
 rlImg.src = `${bDirIMG}RL.png`;
 asImg.src = `${bDirIMG}AS.png`;
+businessImg.src = `${bDirIMG}Business.png`;
+foodImg.src = `${bDirIMG}Food.png`;
+hospitalImg.src = `${bDirIMG}Hospital.png`;
+manufacturingImg.src = `${bDirIMG}Manufacturing.png`;
+processImg.src = `${bDirIMG}Process.png`;
+universityImg.src = `${bDirIMG}University.png`;
+smallImg.src = `${bDirIMG}Small.png`;
+domainImg.src = `${bDirIMG}Small.png`;
+corpImg.src = `${bDirIMG}Small.png`;
+beverageImg.src = `${bDirIMG}Beverage.png`;
+packagedImg.src = `${bDirIMG}Packaged.png`;
+petImg.src = `${bDirIMG}Pet.png`;
+hvacImg.src = `${bDirIMG}HVAC.png`;
+plasticImg.src = `${bDirIMG}Pipe.png`;
+specchemImg.src = `${bDirIMG}SpecChem.png`;
+forgeImg.src = `${bDirIMG}Forge.png`;
+oemImg.src = `${bDirIMG}OEM.png`;
+waterImg.src = `${bDirIMG}Water.png`;
+electricImg.src = `${bDirIMG}Electric.png`;
+gasImg.src = `${bDirIMG}Gas.png`;
+airImg.src = `${bDirIMG}Air.png`;
+steamImg.src = `${bDirIMG}Steam.png`;
 
 let isGreen = false;
 
@@ -121,6 +165,7 @@ $(document).ready(function() {
     // On hover out, reset the background color of all sections to the default
     //$('.section').css('background-color', 'white');
   });
+
   $('#btnRun').click(function() {
     var cirColor = $('#btnRun').css('background-color');
 
@@ -134,11 +179,15 @@ btnGroups.forEach(button => {
     event.preventDefault();
     const id = button.getAttribute("id")
     const sectionId = button.getAttribute("data-sect");
-    if (sectionId && sectionId.charAt(0) != "c") {
-      hideSections(sectionId);
-      showSection(sectionId, id);
-    }
-    showOption(sectionId, id); 
+    if (id != "btnRun") {
+      if (sectionId) {
+        if (sectionId.charAt(0) != "c") {
+          hideSections(sectionId);
+        }
+        showSection(sectionId, id);
+      }
+      //showOption(sectionId, id);
+    } 
   });
 });
 
@@ -146,22 +195,34 @@ function showSection(sectionId, id) {
   const btnID = document.getElementById(id);
   const section = document.querySelector(`.${sectionId}`);
 
-  document.querySelectorAll(".btnDash, .btnCmd").forEach(btn => {
-    if (btn.id != "btnRun") {
-      btn.style.backgroundColor = "#f2f2f280";
-    }
-  });
-
    if (section) {
-    // Reset z-index and visibility for all sections
-    document.querySelectorAll(".flxMain > div, .cStructure").forEach(sec => {
-      sec.style.zIndex = "0";
-      sec.style.display= "none";
-    });
+    if (sectionId.charAt(0) != "c") {
+      document.querySelectorAll(".btnDash, .btnCmd").forEach(btn => {
+        if (btn.id != "btnRun") {
+          btn.style.backgroundColor = "#f2f2f280";
+        }
+      });
+
+      // Reset z-index and visibility for all sections
+      document.querySelectorAll(".flxMain > div, .cStructure, .cForm").forEach(sec => {
+        sec.style.zIndex = "0";
+        sec.style.display= "none";
+      });
+    } else {
+      document.querySelectorAll(".btnCmd").forEach(btn => {
+        btn.style.backgroundColor = "#f2f2f280";
+      });
+
+      // Reset z-index and visibility for all sections
+      document.querySelectorAll(".cStructure, .cForm").forEach(sec => {
+        sec.style.zIndex = "0";
+        sec.style.display = "none";
+      });
+    }
 
     // Display the selected section
-    section.style.zIndex = "1";
     section.style.display = "flex";
+    section.style.zIndex = "1";
 
     if (btnID) {
       if (btnID.className === "btnLink") {
@@ -181,11 +242,7 @@ function showSection(sectionId, id) {
           cntctButton.style.color = "#000000";
         } else if (btnID.id === "lnkCase1" || btnID.id === "lnkCase2" || btnID.id === "lnkCase3") {
         }
-    
-        showOption();  
-
-      } else if (btnID.className === "btnHead") {
-
+      } else if (btnID.id === "btnEye" || btnID.id === "lnkContact") {
         if (btnID.id === "btnEye") {
           homeButton.style.backgroundColor = "#AEE2FC";
           homeButton.style.color = "#000000";
@@ -193,43 +250,9 @@ function showSection(sectionId, id) {
           cntctButton.style.backgroundColor = "#AEE2FC";
           cntctButton.style.color = "#000000";
         }
-
       } else {
         btnID.style.backgroundColor = "#AEE2FC";
       }
-    }
-  }
-}
-
-function showOption(sectionId, id) {
-  const btnID = document.getElementById(id);
-  const section = document.querySelector(`.${sectionId}`);
-
-  document.querySelectorAll(".btnCmd").forEach(btn => {
-    if (btn.id != "btnRun") {
-      btn.style.backgroundColor = "#f2f2f280";
-    }
-  });
-
-  // Reset z-index and visibility for all sections
-  document.querySelectorAll(".cStructure, .cForm").forEach(sec => {
-    sec.style.display = "none";
-    sec.style.zIndex = "0";
-  });
-
-  if (section) {
-    // Display the selected section
-    section.style.display = "flex";
-    section.style.zIndex = "1";
-
-    if (btnID) {
-      if (btnID.className != "btnLink") {
-        btnID.style.backgroundColor = "#AEE2FC";
-      }    
-    } else {
-      document.querySelectorAll(".cStructure, .cForm").forEach(sec => {
-        sec.style.display = "none";
-      });
     }
   }
 }
@@ -319,7 +342,7 @@ cirElements.forEach(cirElement => {
 
     // Position the popover above the cir element
     const rect = cirStructure.getBoundingClientRect();
-    popover.style.top = rect.top + 15 + 'px';
+    popover.style.top = rect.top + 30 + 'px';
     popover.style.left = rect.left + 'px';
 
     popover.style.display = 'flex';
@@ -330,6 +353,16 @@ cirElements.forEach(cirElement => {
     popover.style.display = 'none';
   });
 });
+
+// Check if the user is logged in by making an AJAX request to a PHP script
+// that returns the username stored in the session.
+fetch('.PHP/chkLogin.php')
+  .then(response => response.text())
+  .then(username => {
+    if (username !== "") {
+      document.getElementById('welcomeMessage').textContent = 'Welcome, ' + username + '!';
+    }
+  });
 
 //Email submition code for contacting.
 // Wait for the DOM to be loaded
