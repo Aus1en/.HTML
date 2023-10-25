@@ -12,7 +12,7 @@
   @media (max-width: 1149px) {
   @keyframes moveEnterprise {
     0% {
-      left: -100px;
+      left: -50px;
       }
     100% {
       left: calc(99% - 75px);
@@ -53,7 +53,12 @@
     background-color: #00aaff;
   }
   
-  .bxShadow {box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);}
+  .flxWidget:hover {
+    font-weight: bold;
+    transform: scale(.9);
+    background-color: #f2f2f2;
+    transition: background-color 0.3s;
+  }
 
   .posBelow {z-index: -10;}
   .pos0 {z-index: 0;}
@@ -96,6 +101,7 @@
   }
    
   input {border: transparent;}
+  .opac15 {opacity: 15%;}
   .rad5 {border-radius: 5px;}
   .rad15 {border-radius: 15px;}
   .borTransparent {border: transparent;}
@@ -299,6 +305,11 @@
     height: 99.5%;
   }
   
+  .flxMain {
+    width: 100%;
+    height: 100%;
+  }
+  
   .flxFull {
     width: 100%;
     height: 100%;
@@ -318,6 +329,15 @@
   .flxRun {
     width: 35%;
     height: 25%;
+  }
+
+  .flxWidget {
+    width: 100%;
+    height: 20%;
+    margin: 1%;
+    font-size: 12px;
+    display: -webkit-flex;
+    box-shadow: 0px 8px 16px 0px #cccccc;
   }
 
   .flxPops {
@@ -493,13 +513,13 @@
   li {
     font-size: 10px;
     margin-top: 3%;
-    list-style-type: "->";
+    list-style-type: "-> ";
     font-weight: bold;
     color: #000000;
     border: transparent;
   }
   
-  li img {
+  li img, .flxIndustry img {
     width: 20px;
     height: 20px;
   }

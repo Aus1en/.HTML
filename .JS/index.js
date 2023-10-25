@@ -22,11 +22,17 @@ const ab2Img = document.querySelector('.imgAB2');
 const rlImg = document.querySelector('.imgRL');
 const asImg = document.querySelector('.imgAS');
 const businessImg = document.querySelector('.imgBusiness');
+const business2Img = document.querySelector('.imgBusiness2');
 const foodImg = document.querySelector('.imgFood');
+const food2Img = document.querySelector('.imgFood2');
 const hospitalImg = document.querySelector('.imgHospital');
+const hospital2Img = document.querySelector('.imgHospital2');
 const manufacturingImg = document.querySelector('.imgManufacturing');
+const manufacturing2Img = document.querySelector('.imgManufacturing2');
 const processImg = document.querySelector('.imgProcess');
+const process2Img = document.querySelector('.imgProcess2');
 const universityImg = document.querySelector('.imgUniversity');
+const university2Img = document.querySelector('.imgUniversity2');
 const smallImg = document.querySelector('.imgSmall');
 const domainImg = document.querySelector('.imgDomain');
 const corpImg = document.querySelector('.imgCorp');
@@ -34,9 +40,11 @@ const beverageImg = document.querySelector('.imgBeverage');
 const packagedImg = document.querySelector('.imgPackaged');
 const petImg = document.querySelector('.imgPet');
 const hvacImg = document.querySelector('.imgHVAC');
+const hvac2Img = document.querySelector('.imgHVAC2');
 const plasticImg = document.querySelector('.imgPlastic');
 const specchemImg = document.querySelector('.imgSpecChem');
 const forgeImg = document.querySelector('.imgForge');
+const cementImg = document.querySelector('.imgCement');
 const oemImg = document.querySelector('.imgOEM');
 const waterImg = document.querySelector('.imgWater');
 const electricImg = document.querySelector('.imgElectric');
@@ -60,6 +68,7 @@ const proButton = document.getElementById("dshPLC");
 const porButton = document.getElementById("dshPortal");
 const forButton = document.getElementById("dshDraft");
 const lgxCarrots = document.querySelectorAll(".lgxCarrots, .brCarrots");
+const widgets = ["indFood", "indBusiness", "indProcess", "indManufacturing", "indHVAC", "indUniversity", "indHospital"];
 const headerHeight = header.clientHeight;
 canvas.width = header.clientWidth; 
 canvas.height = headerHeight;
@@ -90,11 +99,17 @@ ab2Img.src = `${bDirIMG}AB.png`;
 rlImg.src = `${bDirIMG}RL.png`;
 asImg.src = `${bDirIMG}AS.png`;
 businessImg.src = `${bDirIMG}Business.png`;
+business2Img.src = `${bDirIMG}Business.png`;
 foodImg.src = `${bDirIMG}Food.png`;
+food2Img.src = `${bDirIMG}Food.png`;
 hospitalImg.src = `${bDirIMG}Hospital.png`;
+hospital2Img.src = `${bDirIMG}Hospital.png`;
 manufacturingImg.src = `${bDirIMG}Manufacturing.png`;
+manufacturing2Img.src = `${bDirIMG}Manufacturing.png`;
 processImg.src = `${bDirIMG}Process.png`;
+process2Img.src = `${bDirIMG}Process.png`;
 universityImg.src = `${bDirIMG}University.png`;
+university2Img.src = `${bDirIMG}University.png`;
 smallImg.src = `${bDirIMG}Small.png`;
 domainImg.src = `${bDirIMG}Small.png`;
 corpImg.src = `${bDirIMG}Small.png`;
@@ -102,6 +117,7 @@ beverageImg.src = `${bDirIMG}Beverage.png`;
 packagedImg.src = `${bDirIMG}Packaged.png`;
 petImg.src = `${bDirIMG}Pet.png`;
 hvacImg.src = `${bDirIMG}HVAC.png`;
+hvac2Img.src = `${bDirIMG}HVAC.png`;
 plasticImg.src = `${bDirIMG}Pipe.png`;
 specchemImg.src = `${bDirIMG}SpecChem.png`;
 forgeImg.src = `${bDirIMG}Forge.png`;
@@ -111,6 +127,7 @@ electricImg.src = `${bDirIMG}Electric.png`;
 gasImg.src = `${bDirIMG}Gas.png`;
 airImg.src = `${bDirIMG}Air.png`;
 steamImg.src = `${bDirIMG}Steam.png`;
+cementImg.src = `${bDirIMG}Cement.png`;
 
 let isGreen = false;
 
@@ -289,6 +306,78 @@ function hideSections(sectId) {
   });
 }
 
+widgets.forEach(function(id) {
+  const widget = document.getElementById(id);
+  
+  if (widget) {
+    widget.addEventListener("mouseenter", function () {
+      if (widget.id === "indBusiness") {
+        business2Img.src = `${bDirIMG}bckBusiness.png`;
+        business2Img.style.width = 100 + '%';
+        business2Img.style.height = 100 + '%';
+        business2Img.style.opacity = 100 + '%';
+      } else if (widget.id === "indFood") {
+        food2Img.src = `${bDirIMG}bckFood.png`;
+        food2Img.style.width = 100 + '%';
+        food2Img.style.height = 100 + '%';
+        food2Img.style.opacity = 100 + '%';
+      } else if (widget.id === "indHVAC") {
+      } else if (widget.id === "indHospital") {
+      } else if (widget.id === "indManufacturing") {
+        manufacturing2Img.src = `${bDirIMG}bckManufacturing.png`;
+        manufacturing2Img.style.width = 100 + '%';
+        manufacturing2Img.style.height = 100 + '%';
+        manufacturing2Img.style.opacity = 100 + '%';
+      } else if (widget.id === "indProcess") {
+        process2Img.src = `${bDirIMG}bckProcess.png`;
+        process2Img.style.width = 100 + '%';
+        process2Img.style.height = 100 + '%';
+        process2Img.style.opacity = 100 + '%';
+      } else if (widget.id === "indUniversity") {
+      }
+    });
+
+    widget.addEventListener("mouseleave", function () {
+      if (widget.id === "indBusiness") {
+        business2Img.src = `${bDirIMG}Business.png`;
+        business2Img.style.width = 10 + '%';
+        business2Img.style.height = 15 + '%';
+        business2Img.style.opacity = 15 + '%';
+      } else if (widget.id === "indFood") {
+        food2Img.src = `${bDirIMG}Food.png`;
+        food2Img.style.width = 10 + '%';
+        food2Img.style.height = 15 + '%';
+        food2Img.style.opacity = 15 + '%';
+      } else if (widget.id === "indHVAC") {
+        hvac2Img.src = `${bDirIMG}HVAC.png`;
+        hvac2Img.style.width = 10 + '%';
+        hvac2Img.style.height = 15 + '%';
+        hvac2Img.style.opacity = 15 + '%';
+      } else if (widget.id === "indHospital") {
+        hospital2Img.src = `${bDirIMG}Hospital.png`;
+        hospital2Img.style.width = 10 + '%';
+        hospital2Img.style.height = 15 + '%';
+        hospital2Img.style.opacity = 15 + '%';
+      } else if (widget.id === "indManufacturing") {
+        manufacturing2Img.src = `${bDirIMG}Manufacturing.png`;
+        manufacturing2Img.style.width = 10 + '%';
+        manufacturing2Img.style.height = 15 + '%';
+        manufacturing2Img.style.opacity = 15 + '%';
+      } else if (widget.id === "indProcess") {
+        process2Img.src = `${bDirIMG}Process.png`;
+        process2Img.style.width = 10 + '%';
+        process2Img.style.height = 15 + '%';
+        process2Img.style.opacity = 15 + '%';
+      } else if (widget.id === "indUniversity") {
+        university2Img.src = `${bDirIMG}University.png`;
+        university2Img.style.width = 10 + '%';
+        university2Img.style.height = 15 + '%';
+        university2Img.style.opacity = 15 + '%';
+      }
+    });
+  }
+});
+
 // Show home section on startup
 showSection('sectHome', 'btnHome');
 StartHomeSections();
@@ -342,7 +431,7 @@ cirElements.forEach(cirElement => {
 
     // Position the popover above the cir element
     const rect = cirStructure.getBoundingClientRect();
-    popover.style.top = rect.top + 30 + 'px';
+    popover.style.top = rect.top + 100 + 'px';
     popover.style.left = rect.left + 'px';
 
     popover.style.display = 'flex';

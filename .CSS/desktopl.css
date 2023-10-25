@@ -11,7 +11,7 @@
     left: -100px;
     }
   100% {
-    left: calc(99.5% - 75px);
+    left: calc(97% - 100px);
   }}
 
 @font-face {
@@ -46,11 +46,6 @@ form label:hover, form input:hover {
 button:hover {
   color: #000000;
   background-color: #00aaff;
-}
-
-.flxWidget {
-  display: flex;
-  box-shadow: 0px 8px 16px 0px #cccccc;
 }
 
 .flxWidget:hover {
@@ -91,6 +86,7 @@ button:hover {
 }
 
 input {border: transparent;}
+.opac15 {opacity: 15%;}
 .rad5 {border-radius: 5px;}
 .rad15 {border-radius: 15px;}
 .borTransparent {border: transparent;}
@@ -321,6 +317,14 @@ body {
   height: 5%;
 }
 
+.flxWidget {
+  width: 65%;
+  height: 65%;
+  margin: 1%;
+  display: flex;
+  box-shadow: 0px 8px 16px 0px #cccccc;
+}
+
 .flxPops {
   right: 1%;
   top: 9%;
@@ -385,62 +389,6 @@ main {
   flex: 1;
   display: flex;
   z-index: 2;
-}
-
-li {
-  font-size: 16px;
-  margin-top: 2%;
-  list-style-type: "->";
-  font-weight: bold;
-  color: #000000;
-  border: transparent;
-}
-
-li img, .flxIndustry img {
-  width: 25px;
-  height: 25px;
-}
-
-.btnLink, .decorationOff {
-  text-decoration: none !important;
-  color:#000000 !important;
-}
-
-.alnCenter {
-  align-items: center;
-  justify-content: center;
-}
-
-.alnCtrRt {
-  align-items: center;
-  justify-content: right;
-}
-
-.alnCtrLt {
-  align-items: center;
-  justify-content: left;
-}
-
-.alnLt {
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.alnRt {
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.alnCtrBt {
-  align-items: center;
-  align-content: center;
-  justify-content: flex-end;
-}
-
-.alnCtrTp {
-  align-items: flex-start;
-  align-content: center;
-  justify-content: center;
 }
 
 .dashHeader {
@@ -549,6 +497,62 @@ button {
   align-items: center;
   background-color: #f2f2f2;
   z-index: 10;
+}
+
+li {
+  font-size: 16px;
+  margin-top: 2%;
+  list-style-type: "-> ";
+  font-weight: bold;
+  color: #000000;
+  border: transparent;
+}
+
+li img, .flxIndustry img {
+  width: 25px;
+  height: 25px;
+}
+
+.btnLink, .decorationOff {
+  text-decoration: none !important;
+  color:#000000 !important;
+}
+
+.alnCenter {
+  align-items: center;
+  justify-content: center;
+}
+
+.alnCtrRt {
+  align-items: center;
+  justify-content: right;
+}
+
+.alnCtrLt {
+  align-items: center;
+  justify-content: left;
+}
+
+.alnLt {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.alnRt {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.alnCtrBt {
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.alnCtrTp {
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
 }
 
 table {
