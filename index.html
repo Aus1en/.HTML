@@ -23,8 +23,8 @@
     <meta http-equiv="pragma" content="no-cache" />
     <title>PACS Consulting, LLC</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href=".CSS/mobile.css?v=5.0.7">
-    <link rel="stylesheet" href=".CSS/desktopl.css?v=5.0.7">
+    <link rel="stylesheet" href=".CSS/mobile.css?v=5.0.8">
+    <link rel="stylesheet" href=".CSS/desktopl.css?v=5.0.8">
     <link rel="icon" href="#" type="image/x-icon">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <!---->
@@ -468,7 +468,7 @@
                         Wonderware-Indusoft (AVEVA)</a>
                     </li>
                     <li><img class="imgADI flxCol" src="#" alt=""><a class="decorationOff" href="https://adisra.com/" target="_blank" rel="noopener">
-                      Adisra Smartview</a>
+                      ADISRA Smartview</a>
                     </li>
                     <li><img class="imgSI flxCol" src="#" alt=""><a class="decorationOff" href="https://www.siemens.com/global/en/products/automation/industry-software/automation-software/scada.html" target="_blank" rel="noopener">
                       Siemens</a>
@@ -1511,7 +1511,7 @@
           <!---->
           <div class="flxFull">
             <div class="flxCol flxFull bckOffset rad5 padLt_5 padRt_5 fnt8 cForm cPre">
-              <form action=".PHP/prelim.php" method="post">
+              <form action=".PHP/prelim.php" method="post" id="frmPrelim">
                 <div class="flxCol flxFull">
                   <div class="flxRow flxWd padLt_5 padRt_5">
                     <div class="flxRow flxWd">
@@ -1657,10 +1657,10 @@
                 <aside class="flxCol flxFull">
                   <div class="lftPara">
                     <!---->
-                    <!--Section- Contact form-->
+                    <!--Section- Signup form-->
                     <!---->
                     <div class="flxCol flxFull borDefault rad5 padLt_5 padBt_5 padRt_5">
-                      <form action=".PHP/signup.php" method="post">
+                      <form action=".PHP/signup.php" method="post" id="frmSignup">
                         <h1>Sign up for our exclusive content!</h1>
                         <div class="flxCol flxWd95 marTp3 padLt1">
                           <label class="borBtDefault flxWd35" for="snName"><strong>Name: *</strong></label>
@@ -1676,7 +1676,7 @@
                         </div>
                         <div class="flxCol flxWd95 marTp3 padLt1">
                           <label class="borBtDefault flxWd35" for="snCompany">Company:</label>
-                          <input type="password" id="snCompany" name="snCompany" placeholder="Enter your company (optional)" autocomplete="on">
+                          <input type="text" id="snCompany" name="snCompany" placeholder="Enter your company (optional)" autocomplete="on">
                         </div>
                         <div class="btnForm pad1">
                           <div class="btnForm">
@@ -1743,10 +1743,10 @@
               <p class="fnt22"><strong>Welcome!</strong></p><!---->
               <div class="lftPara">
                 <!---->
-                <!--Section- Contact form-->
+                <!--Section- Login form-->
                 <!---->
                 <div class="flxCol flxFull borDefault rad5 padLt_5 padBt_5 padRt_5">
-                  <form action=".PHP/login.php" method="post">
+                  <form action=".PHP/login.php" method="post" id="frmLogin">
                     <h1>Login. Go to our forms to signup.</h1>
                     <div class="flxCol flxWd95 marTp3 padLt1">
                       <label class="borBtDefault flxWd35" for="lgnUser"><strong>Email: *</strong></label>
@@ -1778,10 +1778,10 @@
                 </div>
               </p>
             </aside>
-            <div id="popup" class="popup hidden">
+            <!--<div id="popup" class="popup hidden">
               <p>Successful login!</p>
               <button id="closePopup">Close</button>
-            </div>
+            </div>-->
           </div>
         </div>
         <!---->
@@ -1798,7 +1798,7 @@
               <!--Section- Contact form-->
               <!---->
               <div class="flxCol borDefault rad5 padLt_5 padBt_5 padRt_5">
-                <form action=".PHP/form.php" method="post">
+                <form action=".PHP/form.php" method="post" id="frmContact">
                   <h1>Send us an email!</h1>
                   <div class="flxCol flxWd95 marTp3 padLt1">
                     <label class="borBtDefault flxWd35" for="name"><strong>Your name: *</strong></label>
@@ -1853,6 +1853,18 @@
             </aside>
           </div>
         </div>
+        <!---->
+        <!--Section- Popup-->
+        <!----> 
+        <div id="pup" class="pup">
+          <div class="flxRow flxFull alnCenter">
+            <div class="pupContent">
+              <span class="close" id="pupClose">&times;</span>
+              <h2 id="pupHeader"></h2>
+              <p id="pupPara"></p>
+            </div>
+          </div>
+        </div> 
         <!---->
         <!--Section- Industry-->
         <!---->        
@@ -1917,7 +1929,7 @@
             </div>
           </div>
         </div>
-      </aside> 
+      </aside>
     </main>
     <!---->
     <!--Section- Footer-->
@@ -1925,7 +1937,7 @@
     <div>
       <footer class="flxRow flxWd fntWhite alnCtrLt bckFoot">&copy; 2023 PACS Consulting, LLC. All rights reserved.</footer>
     </div> 
-    <script src=".JS/index.js?v=5.0.7"></script>
+    <script src=".JS/index.js?v=5.0.8"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>

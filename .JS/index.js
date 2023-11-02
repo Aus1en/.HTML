@@ -252,7 +252,7 @@ function showSection(sectionId, id) {
           proButton.style.backgroundColor ="#AEE2FC";
         } else if (btnID.id === "lnkPortal") {
           porButton.style.backgroundColor ="#AEE2FC";
-        } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm" || btnID.id === "lnkHelp") {
+        } else if (btnID.id === "lnkPreForm" || btnID.id === "lnkpgForm" || btnID.id === "lnkHelp" || btnID.id === "lnkHelp2") {
           forButton.style.backgroundColor ="#AEE2FC";
         } else if (btnID.id === "lnkContact" || btnID.id === "lnkContact2" || btnID.id === "lnkContact3") {
           cntctButton.style.backgroundColor ="#AEE2FC";
@@ -305,6 +305,68 @@ function hideSections(sectId) {
     }
   });
 }
+
+document.querySelector("#frmContact").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  formSelection('.PHP/form.php', this);
+});
+
+document.querySelector("#frmSignup").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  formSelection('.PHP/signup.php', this);
+});
+
+document.querySelector("#frmLogin").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  formSelection('.PHP/login.php', this);
+  // Check if the user is logged in by making an AJAX request to a PHP script
+  // that returns the username stored in the session.
+  fetch('.PHP/chkLogin.php')
+  .then(response => response.text())
+  .then(username => {
+    if (username !== "") {
+      document.getElementById('welcomeMessage').textContent = 'Welcome, ' + username + '!';
+      //Add secure page
+    }
+  });
+});
+
+document.querySelector("#frmPrelim").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  formSelection('.PHP/prelim.php', this);
+});
+
+function formSelection (phpFile, frmData) {
+  // Serialize the form data
+  const formData = new FormData(frmData);
+  
+  fetch(phpFile, {
+    method: 'POST',
+    body: formData,
+  })
+  
+  .then((response) => response.json()) // Assuming your PHP script returns JSON
+  .then((data) => {
+    if (data.success) {
+      // Show the success popup
+      document.getElementById("pup").style.display = "flex";
+      document.getElementById("pup").style.zIndex = "10";
+      document.getElementById("pupHeader").textContent = data.head;
+      document.getElementById("pupPara").textContent = data.message;
+    } else {
+      // Show the success popup
+      document.getElementById("pup").style.display = "flex";
+      document.getElementById("pup").style.zIndex = "10";
+      document.getElementById("pupHeader").textContent = data.error;
+      document.getElementById("pupPara").textContent = '';
+    }
+  })
+}
+
+document.getElementById("pupClose").addEventListener("click", function () {
+  // Close the popup when the close button is clicked
+  document.getElementById("pup").style.display = "none";
+});
 
 widgets.forEach(function(id) {
   const widget = document.getElementById(id);
@@ -442,16 +504,6 @@ cirElements.forEach(cirElement => {
     popover.style.display = 'none';
   });
 });
-
-// Check if the user is logged in by making an AJAX request to a PHP script
-// that returns the username stored in the session.
-fetch('.PHP/chkLogin.php')
-  .then(response => response.text())
-  .then(username => {
-    if (username !== "") {
-      document.getElementById('welcomeMessage').textContent = 'Welcome, ' + username + '!';
-    }
-  });
 
 //Email submition code for contacting.
 // Wait for the DOM to be loaded

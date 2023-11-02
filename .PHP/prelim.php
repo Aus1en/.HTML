@@ -196,13 +196,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </html>';
         // Send the email
         if ($mail->send()) {
-    // Set a session variable with the thank you message
-    $_SESSION['thank_you_message'] = "Thank you for contacting us! Your message has been sent.";
-    header("Location: " . $_SERVER['HTTP_REFERER']);
-            exit;
+            $response = array("success" => true, "head" => "You got it!", "message" => "We will get back to you shortly.");
         } else {
-            echo "Message could not be sent. Mailer Error: " . $mail->ErrorInfo;
+            $response = array("success" => false, "error" => "Message could not be sent. Mailer Error: " . $mail->ErrorInfo);
         }
+        // Set the response header to indicate JSON content
+        header("Content-Type: application/json");
+        // Output the response as JSON
+        echo json_encode($response);
     } catch (Exception $e) {
         echo "Message could not be sent. Exception: " . $e->getMessage();
     }

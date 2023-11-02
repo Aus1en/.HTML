@@ -40,15 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = "Contact Form Submission from " . $name;
         $mail->Body = "Name: " . $name . "\nEmail: " . $email . "\nMessage:\n" . $message;
 
-        // Send the email
         if ($mail->send()) {
-            echo "Thank you for contacting us!";
-            // Redirect back to the previous page
-            header("Location: " . $_SERVER['HTTP_REFERER']);
-            exit;
+            $response = array("success" => true, "head" => "Successful!", "message" => "We will get back to you within 24 hours.");
         } else {
-            echo "Message could not be sent. Mailer Error: " . $mail->ErrorInfo;
+            $response = array("success" => false, "error" => "Message could not be sent. Mailer Error: " . $mail->ErrorInfo);
         }
+        // Set the response header to indicate JSON content
+        header("Content-Type: application/json");
+        // Output the response as JSON
+        echo json_encode($response);
     } catch (Exception $e) {
         echo "Message could not be sent. Exception: " . $e->getMessage();
     }

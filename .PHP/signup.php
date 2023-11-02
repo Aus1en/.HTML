@@ -20,7 +20,7 @@
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            echo "Username already exists. Please choose a different username.";
+            $response = array("success" => false, "error" => "User already exists.");
         } else {
             // Insert user data into the database
             $insertQuery = "INSERT INTO users (username, password, company, actname) VALUES (?, ?, ?, ?)";
@@ -28,11 +28,15 @@
             $stmt->bind_param("ssss", $username, $password, $company , $acntName);
 
             if ($stmt->execute()) {
-                header("Location: " . $_SERVER['HTTP_REFERER']);
+                $response = array("success" => true, "head" => "Thanks!", "message" => "You have been signed up.");
             } else {
-                echo "Error: " . $db->error;
+                $response = array("success" => false, "error" => "Message could not be sent. Mailer Error: " . $mail->ErrorInfo);
             }
         }
+        // Set the response header to indicate JSON content
+        header("Content-Type: application/json");
+        // Output the response as JSON
+        echo json_encode($response);
 
         $stmt->close();
         $db->close();

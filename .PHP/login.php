@@ -6,7 +6,6 @@
 session_start();
 header("Content-Type: application/json");
 
-$loginSuccess = false;
 $loginMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -36,29 +35,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($password, $dbPassword)) {
                 // Set a session variable for the authenticated user
                 $_SESSION['username'] = $username;
-                $loginSuccess = true;
-                $loginMessage = "Login successful.";
-                $_SESSION['showPopup'] = true;
-                header("Location: " . $_SERVER['HTTP_REFERER']);
+                $response = array("success" => true, "head" => "You got it!", "message" => "We will get back to you shortly.");
+                //header("Location: " . $_SERVER['HTTP_REFERER']);
             } else {
-                $loginMessage = "Invalid password.";
+                $response = array("success" => false, "error" => "Login Unsuccessful.");
             }
         } else {
             $loginMessage = "User not found.";
         }
     } else {
-        $loginMessage = "Error: " . $db->error;
+        $loginMessage = "DB Error: " . $db->error;
     }
+
+    // Set the response header to indicate JSON content
+    header("Content-Type: application/json");
+    // Output the response as JSON
+    echo json_encode($response);
 
     $stmt->close();
     $db->close();
 }
-
-// Return JSON response for JavaScript
-$response = [
-    'success' => $loginSuccess,
-    'message' => $loginMessage,
-];
-
-echo json_encode($response);
 ?>
